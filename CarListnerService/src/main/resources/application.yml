@@ -1,1 +1,10 @@
-spring.application.name=CarListnerService
+server:
+  port: 8082
+
+spring:
+  activemq:
+    broker-url: tcp://localhost:61616
+    user: admin
+    password: admin
+    packages:
+      trust-all: true
