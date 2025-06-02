@@ -26,15 +26,31 @@ public class CarRentalService {
         return carRepository.findById(id);
     }
 
-    public Booking bookCar(Booking booking) {
-        Car car = carRepository.findById(booking.getCarId()).orElseThrow();
-        if (!car.isAvailable()) throw new RuntimeException("Car not available");
+    @Autowired
+private BookingEventProducer bookingEventProducer;
 
-        car.setAvailable(false);
-        carRepository.save(car);
+public Booking bookCar(Booking booking) {
+    Car car = carRepository.findById(booking.getCarId()).orElseThrow();
+    if (!car.isAvailable()) throw new RuntimeException("Car not available");
 
-        return bookingRepository.save(booking);
-    }
+    car.setAvailable(false);
+    carRepository.save(car);
+
+    Booking savedBooking = bookingRepository.save(booking);
+
+    // Send Booking Event
+    bookingEventProducer.sendBookingEvent(BookingEvent.builder()
+            .bookingId(savedBooking.getId())
+            .carId(savedBooking.getCarId())
+            .customerName(savedBooking.getCustomerName())
+            .startDate(savedBooking.getStartDate())
+            .endDate(savedBooking.getEndDate())
+            .totalAmount(savedBooking.getTotalAmount())
+            .build());
+
+    return savedBooking;
+}
+
 
     public Optional<Booking> getBooking(Long id) {
         return bookingRepository.findById(id);
