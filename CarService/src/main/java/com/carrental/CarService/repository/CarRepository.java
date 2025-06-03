@@ -1,6 +1,6 @@
 package com.carrental.CarService.repository;
 
-import com.car.service.model.Car;
+import com.carrental.CarService.model.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 

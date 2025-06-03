@@ -1,10 +1,9 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/car_rental_events
+    url: jdbc:postgresql://localhost:5432/car_rental
     username: postgres
-    password: yourpassword
+    password: postgres
     driver-class-name: org.postgresql.Driver
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -19,6 +18,20 @@ spring:
     password: admin
     packages:
       trust-all: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  file:
+    name: ./Logs/CarListner.log
+
 
 server:
   port: 8082

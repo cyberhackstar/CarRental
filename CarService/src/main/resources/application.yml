@@ -5,8 +5,9 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/car_rental
     username: postgres
-    password: yourpassword
+    password: postgres
     driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -15,12 +16,31 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-
-
-spring:
   activemq:
     broker-url: tcp://localhost:61616
     user: admin
     password: admin
     packages:
       trust-all: true
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+        instance:
+          prefer-ip: true
+        username: admin  # Optional if your admin server is secured
+        password: admin  # Optional if your admin server is secured
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  file:
+    name: ./Logs/CarService.log

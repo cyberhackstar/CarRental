@@ -1,7 +1,5 @@
 package com.carrental.CarService.model;
 
-
-
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,4 +20,5 @@ public class Booking {
     private LocalDate startDate;
     private LocalDate endDate;
     private double totalAmount;
+
 }

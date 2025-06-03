@@ -1,19 +1,19 @@
 package com.carrental.CarService.messaging;
 
-import com.carrental.CarService.dto.BookingEvent;
+import com.carrental.CarService.dto.CarEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BookingEventProducer {
+public class CarEventProducer {
 
-    private static final String QUEUE = "booking-events";
+    private static final String QUEUE = "car-events";
 
     @Autowired
     private JmsTemplate jmsTemplate;
 
-    public void sendBookingEvent(BookingEvent event) {
+    public void sendCarEvent(CarEvent event) {
         jmsTemplate.convertAndSend(QUEUE, event);
     }
 }
