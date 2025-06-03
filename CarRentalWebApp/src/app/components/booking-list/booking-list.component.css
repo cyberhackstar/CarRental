@@ -1,0 +1,23 @@
+.booking-list {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.booking-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+}
+
+.booking-card h3 {
+  margin-top: 0;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,21 @@
+<div class="car-list">
+  <h2>Available Cars</h2>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <div *ngIf="cars.length > 0; else noCars">
+    <a
+      class="car-card"
+      *ngFor="let car of cars"
+      [routerLink]="['/book', car.id]"
+    >
+      <h3>{{ car.brand }} {{ car.model }}</h3>
+      <p><strong>Price per Day:</strong> ₹{{ car.pricePerDay }}</p>
+      <p><strong>Status:</strong> {{ car.available ? 'Available' : 'Not Available' }}</p>
+    </a>
+  </div>
+
+  <ng-template #noCars>
+    <p>No cars available at the moment.</p>
+  </ng-template>
+</div>

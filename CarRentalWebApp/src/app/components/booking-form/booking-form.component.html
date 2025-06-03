@@ -1,0 +1,50 @@
+<div class="booking-form">
+  <h2>Book a Car</h2>
+
+  <form (ngSubmit)="submitBooking()">
+    <label for="car">Select Car:</label>
+    <select id="car" [(ngModel)]="booking.carId" name="carId" required>
+      <option *ngFor="let car of cars" [value]="car.id">
+        {{ car.brand }} {{ car.model }} - ₹{{ car.pricePerDay }}/day
+      </option>
+    </select>
+
+    <label for="customerName">Customer Name:</label>
+    <input
+      type="text"
+      id="customerName"
+      [(ngModel)]="booking.customerName"
+      name="customerName"
+      required
+    />
+
+    <label for="startDate">Start Date:</label>
+    <input
+      type="date"
+      id="startDate"
+      [(ngModel)]="booking.startDate"
+      name="startDate"
+      required
+      (change)="calculateTotalAmount()"
+    />
+
+    <label for="endDate">End Date:</label>
+    <input
+      type="date"
+      id="endDate"
+      [(ngModel)]="booking.endDate"
+      name="endDate"
+      required
+      (change)="calculateTotalAmount()"
+    />
+
+    <p *ngIf="booking.totalAmount">
+      <strong>Total Amount:</strong> ₹{{ booking.totalAmount }}
+    </p>
+
+    <button type="submit">Book Now</button>
+  </form>
+
+  <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>
