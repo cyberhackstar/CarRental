@@ -42,10 +42,10 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-<dependency>
+       <dependency>
     <groupId>de.codecentric</groupId>
     <artifactId>spring-boot-admin-starter-server</artifactId>
-    <version>${spring-boot-admin.version}</version>
+    <version>3.1.8</version>
 </dependency>
 
         <dependency>
