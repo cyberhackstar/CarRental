@@ -4,4 +4,6 @@ export class Car {
   model!: string;
   available!: boolean;
   pricePerDay!: number;
+  imageUrl?: string;       // Optional URL to the image
+  imageData?: Blob;        // Optional raw image data as a Blob
 }

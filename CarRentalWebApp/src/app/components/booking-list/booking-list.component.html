@@ -1,20 +1,28 @@
-<div class="booking-list">
-  <h2>All Bookings</h2>
+<div class="booking-list container mt-4">
+  <h2 class="text-center text-primary mb-4">
+    <i class="bi bi-calendar-check-fill me-2"></i>All Bookings
+  </h2>
 
-  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  <div *ngIf="errorMessage" class="alert alert-danger text-center">
+    <i class="bi bi-exclamation-triangle-fill me-2"></i>{{ errorMessage }}
+  </div>
 
   <div *ngIf="bookings.length > 0; else noBookings">
-    <div class="booking-card" *ngFor="let booking of bookings">
-      <h3>Booking #{{ booking.id }}</h3>
-      <p><strong>Customer:</strong> {{ booking.customerName }}</p>
-      <p><strong>Car ID:</strong> {{ booking.carId }}</p>
-      <p><strong>Start Date:</strong> {{ booking.startDate }}</p>
-      <p><strong>End Date:</strong> {{ booking.endDate }}</p>
-      <p><strong>Total Amount:</strong> ₹{{ booking.totalAmount }}</p>
+    <div class="booking-card card shadow-sm mb-4" *ngFor="let booking of bookings">
+      <div class="card-body">
+        <h5 class="card-title text-primary">
+          <i class="bi bi-receipt-cutoff me-2"></i>Booking #{{ booking.id }}
+        </h5>
+        <p><strong>👤 Customer:</strong> {{ booking.customerName }}</p>
+        <p><strong>🚗 Car ID:</strong> {{ booking.carId }}</p>
+        <p><strong>📅 Start Date:</strong> {{ booking.startDate }}</p>
+        <p><strong>📅 End Date:</strong> {{ booking.endDate }}</p>
+        <p><strong>💰 Total Amount:</strong> ₹{{ booking.totalAmount }}</p>
+      </div>
     </div>
   </div>
 
   <ng-template #noBookings>
-    <p>No bookings found.</p>
+    <p class="text-center text-muted fst-italic">No bookings found.</p>
   </ng-template>
 </div>

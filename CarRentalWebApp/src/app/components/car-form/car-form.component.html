@@ -1,32 +1,57 @@
-<div class="car-form-container">
-  <h2>Register a New Car</h2>
+<div class="container mt-5">
+  <div class="card p-4 shadow-lg border-0 car-form-card">
+    <h4 class="text-center mb-4 text-primary fw-bold">
+      <i class="bi bi-car-front-fill me-2"></i>Upload New Car
+    </h4>
 
-  <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="brand">Brand</label>
-      <input id="brand" formControlName="brand" type="text" />
-    </div>
+    <form [formGroup]="carForm" (ngSubmit)="onSubmit()" novalidate>
+      <!-- Brand -->
+      <div class="mb-3">
+        <label for="brand" class="form-label">Brand</label>
+        <input type="text" id="brand" class="form-control" formControlName="brand" placeholder="e.g. Toyota" />
+        <div *ngIf="submitted && f['brand'].errors" class="form-text text-danger">Brand is required.</div>
+      </div>
 
-    <div class="form-group">
-      <label for="model">Model</label>
-      <input id="model" formControlName="model" type="text" />
-    </div>
+      <!-- Model -->
+      <div class="mb-3">
+        <label for="model" class="form-label">Model</label>
+        <input type="text" id="model" class="form-control" formControlName="model" placeholder="e.g. Corolla" />
+        <div *ngIf="submitted && f['model'].errors" class="form-text text-danger">Model is required.</div>
+      </div>
 
-    <div class="form-group">
-      <label for="pricePerDay">Price Per Day</label>
-      <input id="pricePerDay" formControlName="pricePerDay" type="number" />
-    </div>
+      <!-- Price -->
+      <div class="mb-3">
+        <label for="pricePerDay" class="form-label">Rental Price (₹/day)</label>
+        <input type="number" id="pricePerDay" class="form-control" formControlName="pricePerDay" placeholder="e.g. 1500" />
+        <div *ngIf="submitted && f['pricePerDay'].errors" class="form-text text-danger">Price must be at least ₹1.</div>
+      </div>
 
-    <div class="form-group">
-      <label>
-        <input type="checkbox" formControlName="available" />
-        Available
-      </label>
-    </div>
+      <!-- Availability -->
+      <div class="form-check form-switch mb-3">
+        <input type="checkbox" id="available" class="form-check-input" formControlName="available" />
+        <label for="available" class="form-check-label">Available</label>
+      </div>
 
-    <button type="submit" [disabled]="carForm.invalid">Register Car</button>
-  </form>
+      <!-- Image Upload -->
+      <div class="mb-3">
+        <label for="image" class="form-label">Car Image</label>
+        <input type="file" id="image" class="form-control" (change)="onFileChange($event)" />
+        <div *ngIf="submitted && f['image'].errors" class="form-text text-danger">Image is required.</div>
+      </div>
 
-  <div class="message success" *ngIf="successMessage">{{ successMessage }}</div>
-  <div class="message error" *ngIf="errorMessage">{{ errorMessage }}</div>
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary w-100">
+        <i class="bi bi-upload me-2"></i>Upload Car
+      </button>
+
+      <!-- Feedback Messages -->
+      <div *ngIf="responseMessage" class="alert mt-3 text-center"
+           [ngClass]="{
+             'alert-success': responseMessage.includes('success'),
+             'alert-danger': responseMessage.includes('failed') || responseMessage.includes('Please')
+           }">
+        {{ responseMessage }}
+      </div>
+    </form>
+  </div>
 </div>

@@ -3,26 +3,28 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Car } from '../models/car.model';
 import { Booking } from '../models/booking.model';
+import { CarResponse } from '../models/car-response.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarRentalService {
-  private baseUrl = 'http://localhost:8081/api'; // Adjust if your backend runs on a different port
+  private baseUrl = 'http://localhost:8081/api'; // Adjust if needed
 
   constructor(private http: HttpClient) {}
 
   // Car APIs
-  getAvailableCars(): Observable<Car[]> {
-    return this.http.get<Car[]>(`${this.baseUrl}/cars`);
+  getAvailableCars(): Observable<CarResponse[]> {
+    return this.http.get<CarResponse[]>(`${this.baseUrl}/cars`);
   }
 
   getCarById(id: number): Observable<Car> {
     return this.http.get<Car>(`${this.baseUrl}/cars/${id}`);
   }
 
-  createCar(car: Car): Observable<Car> {
-    return this.http.post<Car>(`${this.baseUrl}/cars`, car);
+  // ✅ Updated to support FormData (car + image)
+  createCarWithImage(formData: FormData): Observable<CarResponse> {
+    return this.http.post<CarResponse>(`${this.baseUrl}/cars`, formData);
   }
 
   // Booking APIs

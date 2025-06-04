@@ -6,8 +6,8 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-car-list',
-  imports: [CommonModule, RouterModule],
   standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './car-list.component.html',
   styleUrls: ['./car-list.component.css']
 })
@@ -18,9 +18,19 @@ export class CarListComponent implements OnInit {
   constructor(private carRentalService: CarRentalService) {}
 
   ngOnInit(): void {
+    this.loadCars();
+  }
+
+  loadCars(): void {
     this.carRentalService.getAvailableCars().subscribe({
       next: (data) => this.cars = data,
-      error: (err) => this.errorMessage = 'Failed to load cars.'
+      error: () => this.errorMessage = 'Failed to load cars.'
     });
   }
+
+  getImageUrl(imageName: string | undefined | null): string {
+  const isValidImagePath = imageName && imageName.startsWith('/api/cars/image/');
+  return isValidImagePath ? `http://localhost:8081${imageName}` : 'assets/default-car.jpg';
+}
+
 }
