@@ -1,0 +1,29 @@
+<section class="ftco-section testimony-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-7 text-center heading-section">
+        <span class="subheading">Testimonial</span>
+        <h2 class="mb-3">Happy Clients</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let testimonial of testimonials">
+            <ng-template carouselSlide>
+              <div class="testimony-wrap rounded text-center py-4 pb-5">
+                <div class="user-img mb-2" [ngStyle]="{'background-image': 'url(' + testimonial.image + ')'}"></div>
+                <div class="text pt-4">
+                  <p class="mb-4">{{ testimonial.text }}</p>
+                  <p class="name">{{ testimonial.name }}</p>
+                  <span class="position">{{ testimonial.position }}</span>
+                </div>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</section>
+

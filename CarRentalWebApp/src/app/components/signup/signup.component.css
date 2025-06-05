@@ -1,80 +1,90 @@
-.register-container {
-  max-width: 400px;
-  margin: 60px auto;
-  padding: 25px 30px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* signup.component.css */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: hsl(0, 0%, 96%);
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  color: #333;
+.card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.form-group {
-  margin-bottom: 20px;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
 }
 
-label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #444;
+.form-outline input {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input[type='text'],
-input[type='password'],
-select {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  box-sizing: border-box;
-  transition: border-color 0.3s;
-}
-
-input:focus,
-select:focus {
+.form-outline input:focus {
   border-color: #007bff;
-  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: background-color 0.3s;
+.alert {
+  margin-top: 1rem;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-button:hover {
+.btn-primary {
+  padding: 0.6rem 2rem;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
   background-color: #0056b3;
+  transform: scale(1.02);
 }
 
-button:disabled {
-  background-color: #aaa;
-  cursor: not-allowed;
+a {
+  text-decoration: none;
 }
 
-.success {
-  color: green;
-  margin-top: 15px;
-  text-align: center;
-  font-weight: 500;
+a:hover {
+  text-decoration: underline;
 }
 
-.error {
-  color: red;
-  margin-top: 15px;
-  text-align: center;
-  font-weight: 500;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 576px) {
+  .card {
+    margin: 1rem;
+  }
+  
+  .form-outline input {
+    font-size: 0.9rem;
+  }
+  
+  .btn-primary {
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+.password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6c757d;
+  font-size: 1.1rem;
 }

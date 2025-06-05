@@ -61,6 +61,7 @@ public class SecurityConfig {
                     
                     // Role-based access
                     auth.requestMatchers("/api/admin/**").hasRole("ADMIN");
+                    auth.requestMatchers("/api/super_admin/**").hasRole("SUPER_ADMIN");
                     auth.requestMatchers("/api/user/**").hasAnyRole("USER");
 
 

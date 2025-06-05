@@ -4,18 +4,19 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-signup',
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule,ButtonModule],
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css'
+  styleUrl: './signup.component.css',
 })
 export class SignupComponent {
   user: User = {
     username: '',
     password: '',
-    userRole: 'ROLE_USER' // default
+    userRole: 'ROLE_USER', // default
   };
 
   errorMessage: string = '';
@@ -33,14 +34,25 @@ export class SignupComponent {
 
     this.authService.register(this.user).subscribe({
       next: () => {
-        this.successMessage = 'Registration successful! Redirecting to login...';
-        setTimeout(() => this.router.navigate(['/login']), 2000);
+        this.successMessage =
+          'Registration successful! Redirecting to login...';
+        this.router.navigate(['/login']);
       },
       error: (err) => {
         this.errorMessage = 'Registration failed. Please try again.';
         console.error(err);
-      }
+      },
     });
-  
-}
+  }
+
+  showPassword = false;
+  showConfirmPassword = false;
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+
+  toggleConfirmPasswordVisibility(): void {
+    this.showConfirmPassword = !this.showConfirmPassword;
+  }
 }

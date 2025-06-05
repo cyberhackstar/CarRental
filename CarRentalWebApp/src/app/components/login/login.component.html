@@ -1,46 +1,35 @@
-<div class="login-container">
-  <h2>Login</h2>
-  <form (ngSubmit)="onLogin()">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input
-        type="text"
-        id="username"
-        [(ngModel)]="user.username"
-        name="username"
-        required
-      />
-    </div>
+<div class="login-wrapper d-flex justify-content-center align-items-center vh-100">
+  <div class="login-card p-5 shadow-lg rounded animate__animated animate__fadeIn">
+    <h3 class="text-center mb-4">Login</h3>
 
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        [(ngModel)]="user.password"
-        name="password"
-        required
-      />
-    </div>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          pInputText
+          id="username"
+          name="username"
+          [(ngModel)]="user.username"
+          required
+          class="w-100"
+          placeholder="Enter your username"
+        />
+      </div>
 
-    <div class="form-group remember-me">
-      <input
-        type="checkbox"
-        id="rememberMe"
-        [(ngModel)]="rememberMe"
-        name="rememberMe"
-      />
-      <label for="rememberMe">Remember Me</label>
-    </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <p-password
+          id="password"
+          name="password"
+          [(ngModel)]="user.password"
+          required
+          [feedback]="false"
+          toggleMask="true"
+          class="w-100"
+          placeholder="Enter your password"
+        ></p-password>
+      </div>
 
-    <button type="submit" [disabled]="loading">
-      {{ loading ? 'Logging in...' : 'Login' }}
-    </button>
-
-    <div class="spinner" *ngIf="loading"></div>
-
-    <div class="error" *ngIf="errorMessage">
-      {{ errorMessage }}
-    </div>
-  </form>
-</div>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-2">
+        {{ errorMessage }}
+      </div>

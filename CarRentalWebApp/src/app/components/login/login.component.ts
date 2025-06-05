@@ -1,15 +1,23 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../../models/user.model';
-import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { ButtonModule } from 'primeng/button';
+import { AuthService } from '../../services/auth.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule,CommonModule],
   standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    InputTextModule,
+    PasswordModule,
+    ButtonModule
+  ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -19,34 +27,35 @@ export class LoginComponent {
     password: ''
   };
 
-  rememberMe: boolean = false;
-  errorMessage: string = '';
-  loading: boolean = false;
+  errorMessage = '';
+  loading = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  onLogin(): void {
+  login() {
     this.loading = true;
-    this.authService.login(this.user).subscribe({
-      next: (response) => {
-        if (response.token) {
-          if (this.rememberMe) {
-            localStorage.setItem('token', response.token);
-            localStorage.setItem('username', response.username);
-            localStorage.setItem('userRole', response.userRole || '');
-          } else {
-            sessionStorage.setItem('token', response.token);
-            sessionStorage.setItem('username', response.username);
-            sessionStorage.setItem('userRole', response.userRole || '');
-          }
+    this.errorMessage = '';
 
-          // Role-based redirection
-          if (response.userRole === 'ADMIN') {
-            this.router.navigate(['/admin/dashboard']);
-          } else {
+    this.authService.login(this.user).subscribe({
+      next: ({ token, username, userRole }) => {
+        localStorage.setItem('token', token);
+        localStorage.setItem('username', username);
+        localStorage.setItem('userRole', userRole || '');
+
+        switch (userRole) {
+          case 'USER':
             this.router.navigate(['/user/dashboard']);
-          }
+            break;
+          case 'ADMIN':
+            this.router.navigate(['/admin/dashboard']);
+            break;
+          case 'SUPER_ADMIN':
+            this.router.navigate(['/superadmin/dashboard']);
+            break;
+          default:
+            this.router.navigate(['/unauthorized']);
         }
+
         this.loading = false;
       },
       error: (err) => {

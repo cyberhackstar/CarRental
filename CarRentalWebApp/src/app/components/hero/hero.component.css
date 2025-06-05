@@ -1,0 +1,32 @@
+.hero-wrap {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-wrap .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+.booking-section .icon-box i {
+  display: block;
+  margin: 0 auto;
+}
+
+.booking-section .icon-box h5 {
+  margin-top: 10px;
+  font-weight: 600;
+}

@@ -1,0 +1,21 @@
+<form (ngSubmit)="registerAdmin()" #adminForm="ngForm" novalidate>
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" [(ngModel)]="admin.username" name="username" required minlength="4">
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" [(ngModel)]="admin.password" name="password" required minlength="6">
+  </div>
+
+  <div>
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" [(ngModel)]="admin.confirmPassword" name="confirmPassword" required>
+  </div>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+
+  <button type="submit">Register Admin</button>
+</form>

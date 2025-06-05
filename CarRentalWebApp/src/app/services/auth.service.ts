@@ -3,6 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { User } from '../models/user.model';
 
+export interface LoginResponse {
+  token: string;
+  username: string;
+  userRole: 'USER' | 'ADMIN' | 'SUPER_ADMIN';
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,14 +17,13 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  login(user: User): Observable<User> {
-    return this.http.post<User>(`${this.baseUrl}/login`, user).pipe(
-      tap((response: User) => {
-        if (response.token) {
-          localStorage.setItem('token', response.token);
-          localStorage.setItem('username', response.username);
-          localStorage.setItem('userRole', response.userRole || '');
-        }
+  login(user: User, rememberMe: boolean = false): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(`${this.baseUrl}/login`, user).pipe(
+      tap((response: LoginResponse) => {
+        const storage = rememberMe ? localStorage : sessionStorage;
+        storage.setItem('token', response.token);
+        storage.setItem('username', response.username);
+        storage.setItem('userRole', response.userRole);
       })
     );
   }
@@ -28,16 +33,19 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem('token');
-    localStorage.removeItem('username');
-    localStorage.removeItem('userRole');
+    localStorage.clear();
+    sessionStorage.clear();
   }
 
   getToken(): string | null {
-    return localStorage.getItem('token');
+    return localStorage.getItem('token') || sessionStorage.getItem('token');
+  }
+
+  getUserRole(): string | null {
+    return localStorage.getItem('userRole') || sessionStorage.getItem('userRole');
   }
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('token');
+    return !!this.getToken();
   }
 }
