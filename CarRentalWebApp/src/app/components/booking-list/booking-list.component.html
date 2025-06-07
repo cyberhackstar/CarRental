@@ -1,28 +1,62 @@
-<div class="booking-list container mt-4">
-  <h2 class="text-center text-primary mb-4">
-    <i class="bi bi-calendar-check-fill me-2"></i>All Bookings
-  </h2>
+<!-- Fullscreen Booking Section -->
 
-  <div *ngIf="errorMessage" class="alert alert-danger text-center">
-    <i class="bi bi-exclamation-triangle-fill me-2"></i>{{ errorMessage }}
+<!-- Loading Spinner -->
+<app-loading *ngIf="loading" ></app-loading>
+
+<section
+  class="w-100 min-vh-100 d-flex justify-content-center align-items-center text-white"
+  style="
+    background: url('assets/images/back2.jpg') center center / cover no-repeat;
+    margin: 0;
+    padding: 0;
+  "
+>
+
+  <div class="container px-3 px-md-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <h2 class="text-center fw-bold mb-4 pt-5">
+          <i class="bi bi-calendar-check-fill me-2"></i>All Bookings
+        </h2>
+        <div class="d-flex justify-content-end mb-3">
+    <button class="btn btn-outline-light" (click)="downloadBookingsAsExcel()">
+      <i class="bi bi-download me-2"></i>Download Bookings
+    </button>
   </div>
 
-  <div *ngIf="bookings.length > 0; else noBookings">
-    <div class="booking-card card shadow-sm mb-4" *ngFor="let booking of bookings">
-      <div class="card-body">
-        <h5 class="card-title text-primary">
-          <i class="bi bi-receipt-cutoff me-2"></i>Booking #{{ booking.id }}
-        </h5>
-        <p><strong>👤 Customer:</strong> {{ booking.customerName }}</p>
-        <p><strong>🚗 Car ID:</strong> {{ booking.carId }}</p>
-        <p><strong>📅 Start Date:</strong> {{ booking.startDate }}</p>
-        <p><strong>📅 End Date:</strong> {{ booking.endDate }}</p>
-        <p><strong>💰 Total Amount:</strong> ₹{{ booking.totalAmount }}</p>
+        <!-- Error Message -->
+        <div *ngIf="errorMessage" class="alert alert-danger text-center">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i>{{ errorMessage }}
+        </div>
+
+        <!-- Booking Cards -->
+        <div *ngIf="bookings.length > 0; else noBookings">
+          <div
+            class="card bg-dark bg-opacity-75 text-white border-light shadow-lg mb-4"
+            *ngFor="let booking of bookings"
+          >
+            <div class="card-body">
+              <h5 class="card-title text-info fw-semibold">
+                <i class="bi bi-receipt-cutoff me-2"></i>Booking #{{
+                  booking.id
+                }}
+              </h5>
+              <p><strong>👤 Customer:</strong> {{ booking.customerName }}</p>
+              <p><strong>🚗 Car ID:</strong> {{ booking.carId }}</p>
+              <p><strong>📅 Start Date:</strong> {{ booking.startDate }}</p>
+              <p><strong>📅 End Date:</strong> {{ booking.endDate }}</p>
+              <p>
+                <strong>💰 Total Amount:</strong> ₹{{ booking.totalAmount }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- No Bookings Template -->
+        <ng-template #noBookings>
+          <p class="text-center text-light fst-italic">No bookings found.</p>
+        </ng-template>
       </div>
     </div>
   </div>
-
-  <ng-template #noBookings>
-    <p class="text-center text-muted fst-italic">No bookings found.</p>
-  </ng-template>
-</div>
+</section>

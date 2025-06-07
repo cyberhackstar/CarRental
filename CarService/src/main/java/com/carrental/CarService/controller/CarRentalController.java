@@ -11,14 +11,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.*;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.nio.file.*;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 
@@ -50,27 +51,32 @@ public class CarRentalController {
 
     @GetMapping("/cars")
     // @PreAuthorize("hasRole('ADMIN')")
-    public DeferredResult<ResponseEntity<List<CarResponseDto>>> getAvailableCars() {
+    public ResponseEntity<List<CarResponseDto>> getAvailableCars() {
         logger.info("Fetching all available cars...");
-        DeferredResult<ResponseEntity<List<CarResponseDto>>> output = new DeferredResult<>();
-
-        ForkJoinPool.commonPool().submit(() -> {
+        
             try {
                 List<Car> cars = carRentalService.getAllAvailableCars();
                 List<CarResponseDto> response = cars.stream()
                         .map(CarResponseDto::new)
                         .toList();
                 logger.info("Successfully fetched {} available cars", response.size());
-                output.setResult(ResponseEntity.ok(response));
+                return ResponseEntity.ok(response);
             } catch (Exception e) {
                 logger.error("Failed to fetch available cars", e);
-                output.setErrorResult(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                        .body("Failed to fetch cars: " + e.getMessage()));
+               return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body(List.of());
             }
-        });
+        
 
-        return output;
+       
     }
+
+        @GetMapping("/available")
+public ResponseEntity<List<Car>> getAvailableCars(
+        @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+        @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
+    return ResponseEntity.ok(carRentalService.getAvailableCarsBetween(startDate, endDate));
+}
 
     @GetMapping("/cars/{id}")
     // @PreAuthorize("hasRole('ADMIN')")
@@ -112,6 +118,11 @@ public class CarRentalController {
         logger.info("Image served successfully: {}", filename);
         return new ResponseEntity<>(resource, headers, HttpStatus.OK);
     }
+
+
+
+
+
 
 
     

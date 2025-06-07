@@ -36,14 +36,17 @@ export class CarFormComponent {
     return this.carForm.controls;
   }
 
-  onFileChange(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    if (input.files && input.files.length > 0) {
-      this.selectedFile = input.files[0];
-      this.carForm.patchValue({ image: this.selectedFile });
-      this.carForm.get('image')?.updateValueAndValidity();
-    }
+    onFileChange(event: Event): void {
+  const input = event.target as HTMLInputElement;
+  if (input.files && input.files.length > 0) {
+    const file = input.files[0];
+    this.selectedFileName = file.name;
+    this.selectedFile = file;
   }
+}
+
+
+
 
   onSubmit(): void {
     this.submitted = true;
@@ -77,4 +80,39 @@ export class CarFormComponent {
       }
     });
   }
+
+
+  dragging = false;
+
+onDragOver(event: DragEvent): void {
+  event.preventDefault();
+  this.dragging = true;
+}
+
+onDragLeave(event: DragEvent): void {
+  event.preventDefault();
+  this.dragging = false;
+}
+
+onDrop(event: DragEvent): void {
+  event.preventDefault();
+  this.dragging = false;
+
+  if (event.dataTransfer?.files.length) {
+    const file = event.dataTransfer.files[0];
+    this.selectedFile = file;
+    this.selectedFileName = file.name;
+
+    this.carForm.patchValue({ image: file });
+    this.carForm.get('image')?.updateValueAndValidity();
+  }
+}
+
+
+selectedFileName: string = '';
+
+
+
+
+
 }

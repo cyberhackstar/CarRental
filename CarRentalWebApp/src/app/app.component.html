@@ -1,11 +1,9 @@
-<!-- <app-header></app-header>
-<app-hero></app-hero>
-<app-featured-vehicles></app-featured-vehicles>
-<app-admin-register></app-admin-register>
-<app-signup></app-signup> -->
-<!-- <app-services-section></app-services-section> -->
- <!-- <app-testimonial-section></app-testimonial-section> -->
-  <!-- <app-login>   </app-login> -->
-<!-- <app-header></app-header> -->
 
+
+<app-header></app-header>
+
+<div [ngClass]="{ 'with-navbar-padding': !isHomePage }">
 <router-outlet></router-outlet>
+</div>
+
+<app-footer></app-footer>

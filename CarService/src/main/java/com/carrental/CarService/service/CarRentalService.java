@@ -18,6 +18,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.nio.file.*;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -60,7 +62,7 @@ public class CarRentalService {
         car.setImageUrl(fileName); // Save file name or path
 
         // Save image data to database
-        car.setImageData(imageFile.getBytes());
+        //car.setImageData(imageFile.getBytes());
 
         logger.info("Image uploaded and saved as: {}", fileName);
     }
@@ -110,39 +112,69 @@ public class CarRentalService {
     }
 
     public Booking bookCar(Booking booking) {
-        logger.info("Booking request received for car ID: {}", booking.getCarId());
+    logger.info("Booking request received for car ID: {}", booking.getCarId());
 
-        if (booking.getCarId() == null) {
-            logger.warn("Booking failed: carId is null");
-            throw new IllegalArgumentException("Booking must include a valid carId.");
-        }
-
-        Car car = carRepository.findById(booking.getCarId())
-                .filter(Car::isAvailable)
-                .orElseThrow(() -> {
-                    logger.warn("Car not available for booking: {}", booking.getCarId());
-                    return new RuntimeException("Car not available for booking.");
-                });
-
-        car.setAvailable(false);
-        carRepository.save(car);
-        logger.info("Car marked as unavailable: {}", car.getId());
-
-        Booking savedBooking = bookingRepository.save(booking);
-        logger.info("Booking saved with ID: {}", savedBooking.getId());
-
-        bookingEventProducer.sendBookingEvent(BookingEvent.builder()
-                .bookingId(savedBooking.getId())
-                .carId(savedBooking.getCarId())
-                .customerName(savedBooking.getCustomerName())
-                .startDate(savedBooking.getStartDate())
-                .endDate(savedBooking.getEndDate())
-                .totalAmount(savedBooking.getTotalAmount())
-                .build());
-
-        logger.info("Booking event sent for booking ID: {}", savedBooking.getId());
-        return savedBooking;
+    if (booking.getCarId() == null) {
+        logger.warn("Booking failed: carId is null");
+        throw new IllegalArgumentException("Booking must include a valid carId.");
     }
+
+    Car car = carRepository.findById(booking.getCarId())
+            .orElseThrow(() -> new RuntimeException("Car not found."));
+
+    // Check for overlapping bookings
+    List<Booking> overlapping = bookingRepository.findOverlappingBookings(
+            booking.getCarId(),
+            booking.getStartDate(),
+            booking.getEndDate()
+    );
+
+    if (!overlapping.isEmpty()) {
+        logger.warn("Car is already booked for the selected dates: {}", booking.getCarId());
+        throw new IllegalStateException("Car is already booked for the selected dates.");
+    }
+
+    // Calculate total amount
+    long days = ChronoUnit.DAYS.between(booking.getStartDate(), booking.getEndDate()) + 1;
+    booking.setTotalAmount(days * car.getPricePerDay());
+
+    Booking savedBooking = bookingRepository.save(booking);
+    logger.info("Booking saved with ID: {}", savedBooking.getId());
+
+    bookingEventProducer.sendBookingEvent(BookingEvent.builder()
+            .bookingId(savedBooking.getId())
+            .carId(savedBooking.getCarId())
+            .customerName(savedBooking.getCustomerName())
+            .startDate(savedBooking.getStartDate())
+            .endDate(savedBooking.getEndDate())
+            .totalAmount(savedBooking.getTotalAmount())
+            .build());
+
+    logger.info("Booking event sent for booking ID: {}", savedBooking.getId());
+    return savedBooking;
+}
+
+
+public List<Car> getAvailableCarsBetween(LocalDate startDate, LocalDate endDate) {
+    logger.info("Fetching available cars between {} and {}", startDate, endDate);
+
+    try {
+        List<Long> bookedCarIds = bookingRepository.findBookedCarIdsBetween(startDate, endDate);
+        List<Car> availableCars;
+        if (bookedCarIds.isEmpty()) {
+            availableCars = carRepository.findAll(); // All cars are available
+        } else {
+            availableCars = carRepository.findByIdNotIn(bookedCarIds);
+        }
+        logger.info("Found {} available cars", availableCars.size());
+        return availableCars;
+    } catch (Exception e) {
+        logger.error("Error in getAvailableCarsBetween: ", e);
+        throw e;
+    }
+}
+
+
 
     public Optional<Booking> getBooking(Long id) {
         logger.info("Fetching booking by ID: {}", id);

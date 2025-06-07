@@ -22,9 +22,9 @@ public class Car {
     @Column(name = "image_url")
     private String imageUrl; // Path or URL to the image
 
-    @Lob
-    @Basic(fetch = FetchType.LAZY)
-    @Column(name = "image_data", columnDefinition = "bytea")
-    @JsonIgnore // Optional: prevent large binary data from being serialized in API responses
-    private byte[] imageData;
+    // @Lob
+    // @Basic(fetch = FetchType.LAZY)
+    // @Column(name = "image_data", columnDefinition = "bytea")
+    // @JsonIgnore // Optional: prevent large binary data from being serialized in API responses
+    // private byte[] imageData;
 }

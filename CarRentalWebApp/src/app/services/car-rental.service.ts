@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map, Observable } from 'rxjs';
 import { Car } from '../models/car.model';
 import { Booking } from '../models/booking.model';
 import { CarResponse } from '../models/car-response.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CarRentalService {
   private baseUrl = 'http://localhost:8081/api'; // Adjust if needed
@@ -16,6 +16,15 @@ export class CarRentalService {
   // Car APIs
   getAvailableCars(): Observable<CarResponse[]> {
     return this.http.get<CarResponse[]>(`${this.baseUrl}/cars`);
+  }
+
+  getAvailableCarsByDate(
+    startDate: string,
+    endDate: string
+  ): Observable<CarResponse[]> {
+    return this.http.get<CarResponse[]>(`${this.baseUrl}/available`, {
+      params: { startDate, endDate },
+    });
   }
 
   getCarById(id: number): Observable<Car> {
@@ -39,4 +48,19 @@ export class CarRentalService {
   bookCar(booking: Booking): Observable<Booking> {
     return this.http.post<Booking>(`${this.baseUrl}/bookings`, booking);
   }
+
+  getImageWithAuth(imageName: string): Observable<string> {
+  const token = localStorage.getItem('token');
+  const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+  return this.http
+    .get(`http://localhost:8081/api/cars/image/${imageName}`, {
+      headers,
+      responseType: 'blob',
+    })
+    .pipe(
+      map((blob) => URL.createObjectURL(blob))
+    );
+}
+
 }

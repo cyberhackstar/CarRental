@@ -1,19 +1,7 @@
-.login-wrapper {
-  background: linear-gradient(to right, #e0eafc, #cfdef3);
+input:-webkit-autofill {
+  background-color: #00000000 !important;
+  -webkit-box-shadow: 0 0 0px 1000px #00000000 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
-.login-card {
-  background-color: #ffffff;
-  width: 100%;
-  max-width: 400px;
-  border-radius: 12px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.login-card:hover {
-  transform: translateY(-5px);
-}
-
-.alert {
-  font-size: 0.9rem;
-}

@@ -7,7 +7,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.carrental.CarService.model.User;
-import com.carrental.CarService.repository.UserRepo;
+
 import com.carrental.CarService.service.UserService;
 
 import jakarta.validation.Valid;

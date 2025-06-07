@@ -1,0 +1,18 @@
+<div *ngIf="isLoading" class="spinner-overlay">
+  <div class="spinner-wrapper">
+    <video
+      #spinnerVideo
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+      class="loading-spinner"
+    >
+      <source src="assets/videos/carloading.mp4" type="video/mp4" />
+    </video>
+    <div class="css-road">
+      <div class="road-line"></div>
+    </div>
+  </div>
+</div>

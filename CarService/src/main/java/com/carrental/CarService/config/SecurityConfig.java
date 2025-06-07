@@ -56,7 +56,7 @@ public class SecurityConfig {
                 })
                 .authorizeHttpRequests(auth -> {
                     logger.debug("Configuring URL access rules");
-                    auth.requestMatchers("/api/login", "/api/register", "/api/public/**","/api/cars/image/**", "/api/cars","/error","/actuator/**").permitAll();
+                    auth.requestMatchers("/api/login", "/api/register", "/api/public/**","/api/cars/image/**","/error","/actuator/**").permitAll();
                     auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll();
                     
                     // Role-based access

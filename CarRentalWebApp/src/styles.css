@@ -1,8 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
 
+
 body {
-  font-family: 'Poppins', 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
+ 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.with-navbar-padding {
+  padding-top: 55px; /* Adjust to match your navbar height */
+}
+
+
+section {
+  scroll-margin-top: 80px; /* Adjust based on your navbar height */
 }
 
 

@@ -6,46 +6,31 @@ import { BookingListComponent } from './components/booking-list/booking-list.com
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
-
-import { RoleGuard } from'./guards/role.guard';
 import { DialogHeadlessDemo } from './components/dialog-headless-demo/dialog-headless-demo.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ServicesSectionComponent } from './components/services-section/services-section.component';
+import { HeroSection2Component } from './components/hero-section2/hero-section2.component';
 
 export const routes: Routes = [
-  { path: '', component: LoginComponent },
+  // Public routes
+  { path: '', component: HeroSection2Component },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
 
-  // User routes
-  {
-    path: 'book/:carId',
-    component: BookingFormComponent,
-    canActivate: [RoleGuard],
-    data: { roles: ['USER'] }
-  },
-  {
-    path: 'bookings',
-    component: BookingListComponent,
-    canActivate: [RoleGuard],
-    data: { roles: ['USER'] }
-  },
+  // Booking routes (no auth for now)
+  { path: 'book/:carId', component: BookingFormComponent },
+  { path: 'bookings', component: BookingListComponent },
 
-  // Admin routes
-  {
-    path: 'cars/new',
-    component: CarFormComponent,
-    canActivate: [RoleGuard],
-    data: { roles: ['ADMIN'] }
-  },
-  {
-    path: 'cars',
-    component: CarListComponent,
-    canActivate: [RoleGuard],
-    data: { roles: ['ADMIN'] }
-  },
+  // Admin routes (auth removed for now)
+  { path: 'cars/new', component: CarFormComponent },
+  { path: 'cars', component: CarListComponent },
 
-  // Shared or public
+  // Shared components
   { path: 'header', component: HeaderComponent },
+  { path: 'footer', component: FooterComponent },
+  { path: 'services', component: ServicesSectionComponent },
+  { path: 'dialog-demo', component: DialogHeadlessDemo },
 
-  // Fallback
+  // Fallback route
   { path: '**', redirectTo: '' }
 ];

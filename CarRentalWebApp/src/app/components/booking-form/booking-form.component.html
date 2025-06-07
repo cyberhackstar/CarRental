@@ -1,50 +1,102 @@
-<div class="booking-form">
-  <h2>Book a Car</h2>
+<section
+  class="bsb-cta-1 px-2 py-5 bsb-overlay"
+  style="background-image: url('assets/images/car3.jpg'); background-size: cover; background-position: center;"
+>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+        <div class="card bg-dark bg-opacity-75 border-0 shadow-lg text-white">
+          <div class="card-body p-4 p-md-5">
+            <form (ngSubmit)="submitBooking()" #bookingForm="ngForm">
+              <h2 class="display-6 fw-bold text-white mb-4">Book Your Ride</h2>
 
-  <form (ngSubmit)="submitBooking()">
-    <label for="car">Select Car:</label>
-    <select id="car" [(ngModel)]="booking.carId" name="carId" required>
-      <option *ngFor="let car of cars" [value]="car.id">
-        {{ car.brand }} {{ car.model }} - ₹{{ car.pricePerDay }}/day
-      </option>
-    </select>
+              <!-- Selected Car Info -->
+              <div class="mb-3">
+              <label class="form-label text-white">Selected Car</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  [value]="selectedCar?.brand + ' ' + selectedCar?.model + ' - ₹' + selectedCar?.pricePerDay + '/day'"
+                  readonly
+                />
+              </div>
 
-    <label for="customerName">Customer Name:</label>
-    <input
-      type="text"
-      id="customerName"
-      [(ngModel)]="booking.customerName"
-      name="customerName"
-      required
-    />
+              <!-- Customer Name -->
+              <div class="mb-3">
+                <label class="form-label text-white" for="customerName">Your Name</label>
+                <input
+                  type="text"
+                  id="customerName"
+                  class="form-control"
+                  [(ngModel)]="booking.customerName"
+                  name="customerName"
+                  required
+                />
+              </div>
 
-    <label for="startDate">Start Date:</label>
-    <input
-      type="date"
-      id="startDate"
-      [(ngModel)]="booking.startDate"
-      name="startDate"
-      required
-      (change)="calculateTotalAmount()"
-    />
+              <div class="row">
+                <!-- Start Date -->
+                <div class="col-md-6 mb-3">
+                  <label for="startDate" class="form-label text-white">Start Date</label>
+                  <p-calendar
+                    [(ngModel)]="booking.startDate"
+                    name="startDate"
+                    inputId="startDate"
+                    dateFormat="yy-mm-dd"
+                    class="w-100"
+                    [showIcon]="true"
+                    [disabled]="true"
+                  ></p-calendar>
+                </div>
 
-    <label for="endDate">End Date:</label>
-    <input
-      type="date"
-      id="endDate"
-      [(ngModel)]="booking.endDate"
-      name="endDate"
-      required
-      (change)="calculateTotalAmount()"
-    />
+                <!-- End Date -->
+                <div class="col-md-6 mb-3">
+                  <label for="endDate" class="form-label text-white">End Date</label>
+                  <p-calendar
+                    [(ngModel)]="booking.endDate"
+                    name="endDate"
+                    inputId="endDate"
+                    dateFormat="yy-mm-dd"
+                    class="w-100"
+                    [showIcon]="true"
+                    [disabled]="true"
+                  ></p-calendar>
+                </div>
+              </div>
 
-    <p *ngIf="booking.totalAmount">
-      <strong>Total Amount:</strong> ₹{{ booking.totalAmount }}
-    </p>
+              <!-- Total Amount -->
+              <div class="mb-3">
+                <label class="form-label text-white">Total Amount</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  [value]="'₹' + booking.totalAmount"
+                  readonly
+                />
+              </div>
 
-    <button type="submit">Book Now</button>
-  </form>
+              <!-- Submit Button -->
+              <div class="d-grid mt-4">
+                <button
+                  type="submit"
+                  class="btn btn-outline-light btn-lg"
+                  [disabled]="!bookingForm.form.valid"
+                >
+                  <i class="bi bi-calendar-check me-2"></i>Confirm Booking
+                </button>
+              </div>
 
-  <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
-  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
-</div>
+              <!-- Feedback Messages -->
+              <div *ngIf="successMessage" class="alert alert-success mt-4 text-center">
+                {{ successMessage }}
+              </div>
+              <div *ngIf="errorMessage" class="alert alert-danger mt-4 text-center">
+                {{ errorMessage }}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,57 +1,79 @@
-<div class="container mt-5">
-  <div class="card p-4 shadow-lg border-0 car-form-card">
-    <h4 class="text-center mb-4 text-primary fw-bold">
-      <i class="bi bi-car-front-fill me-2"></i>Upload New Car
-    </h4>
+<section class="bsb-cta-1 px-2 py-5 bsb-overlay" style="background-image: url('assets/images/car3.jpg'); background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+        <div class="card bg-dark bg-opacity-75 border-0 shadow-lg text-white">
+          <div class="card-body p-4 p-md-5">
+            <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+              <h2 class="display-6 fw-bold text-white">Brand</h2>
+              <div class="mb-3">
+                <input type="text" id="brand" class="form-control" formControlName="brand" placeholder="e.g. Toyota" />
+              </div>
 
-    <form [formGroup]="carForm" (ngSubmit)="onSubmit()" novalidate>
-      <!-- Brand -->
-      <div class="mb-3">
-        <label for="brand" class="form-label">Brand</label>
-        <input type="text" id="brand" class="form-control" formControlName="brand" placeholder="e.g. Toyota" />
-        <div *ngIf="submitted && f['brand'].errors" class="form-text text-danger">Brand is required.</div>
+              <!-- Model -->
+              <div class="mb-3">
+                <label for="model" class="form-label text-white">Model</label>
+                <input type="text" id="model" class="form-control" formControlName="model" placeholder="e.g. Corolla" />
+              </div>
+
+              <!-- Price -->
+              <div class="mb-3">
+                <label for="pricePerDay" class="form-label text-white">Rental Price (₹/day)</label>
+                <input type="number" id="pricePerDay" class="form-control" formControlName="pricePerDay" placeholder="e.g. 1500" />
+              </div>
+
+              <!-- Availability -->
+              <div class="form-check form-switch mb-3">
+                <input type="checkbox" id="available" class="form-check-input" formControlName="available" />
+                <label for="available" class="form-check-label text-white">Available</label>
+              </div>
+
+              <!-- Drag & Drop Upload -->
+              <div
+                class="mb-3 p-4 border border-light rounded text-center bg-dark bg-opacity-50"
+                (dragover)="onDragOver($event)"
+                (dragleave)="onDragLeave($event)"
+                (drop)="onDrop($event)"
+                [class.border-primary]="dragging"
+              >
+                <p class="text-white mb-2">
+                  <i class="bi bi-cloud-arrow-up-fill fs-3"></i><br>
+                  Drag & drop car image here or click to upload
+                </p>
+                <input
+                  type="file"
+                  id="image"
+                  class="form-control d-none"
+                  (change)="onFileChange($event)"
+                  #fileInput
+                />
+                <button type="button" class="btn btn-outline-light btn-sm mt-2" (click)="fileInput.click()">Choose File</button>
+
+                <!-- Show selected file name -->
+                <p class="text-white mt-2" *ngIf="selectedFileName">
+                  Selected file: <strong>{{ selectedFileName }}</strong>
+                </p>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-outline-light btn-lg">
+                  <i class="bi bi-upload me-2"></i>Upload Car
+                </button>
+              </div>
+
+              <!-- Feedback Message -->
+              <div *ngIf="responseMessage" class="alert mt-4 text-center"
+                   [ngClass]="{
+                     'alert-success': responseMessage.includes('success'),
+                     'alert-danger': responseMessage.includes('failed') || responseMessage.includes('Please')
+                   }">
+                {{ responseMessage }}
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-
-      <!-- Model -->
-      <div class="mb-3">
-        <label for="model" class="form-label">Model</label>
-        <input type="text" id="model" class="form-control" formControlName="model" placeholder="e.g. Corolla" />
-        <div *ngIf="submitted && f['model'].errors" class="form-text text-danger">Model is required.</div>
-      </div>
-
-      <!-- Price -->
-      <div class="mb-3">
-        <label for="pricePerDay" class="form-label">Rental Price (₹/day)</label>
-        <input type="number" id="pricePerDay" class="form-control" formControlName="pricePerDay" placeholder="e.g. 1500" />
-        <div *ngIf="submitted && f['pricePerDay'].errors" class="form-text text-danger">Price must be at least ₹1.</div>
-      </div>
-
-      <!-- Availability -->
-      <div class="form-check form-switch mb-3">
-        <input type="checkbox" id="available" class="form-check-input" formControlName="available" />
-        <label for="available" class="form-check-label">Available</label>
-      </div>
-
-      <!-- Image Upload -->
-      <div class="mb-3">
-        <label for="image" class="form-label">Car Image</label>
-        <input type="file" id="image" class="form-control" (change)="onFileChange($event)" />
-        <div *ngIf="submitted && f['image'].errors" class="form-text text-danger">Image is required.</div>
-      </div>
-
-      <!-- Submit Button -->
-      <button type="submit" class="btn btn-primary w-100">
-        <i class="bi bi-upload me-2"></i>Upload Car
-      </button>
-
-      <!-- Feedback Messages -->
-      <div *ngIf="responseMessage" class="alert mt-3 text-center"
-           [ngClass]="{
-             'alert-success': responseMessage.includes('success'),
-             'alert-danger': responseMessage.includes('failed') || responseMessage.includes('Please')
-           }">
-        {{ responseMessage }}
-      </div>
-    </form>
+    </div>
   </div>
-</div>
+</section>

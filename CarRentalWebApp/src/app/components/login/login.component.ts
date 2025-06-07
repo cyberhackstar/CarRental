@@ -2,37 +2,39 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { InputTextModule } from 'primeng/inputtext';
-import { PasswordModule } from 'primeng/password';
-import { ButtonModule } from 'primeng/button';
 import { AuthService } from '../../services/auth.service';
 import { User } from '../../models/user.model';
+import { PasswordModule } from 'primeng/password';
+import { FloatLabelModule } from 'primeng/floatlabel';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    InputTextModule,
-    PasswordModule,
-    ButtonModule
-  ],
+  imports: [CommonModule, FormsModule, PasswordModule, FloatLabelModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   user: User = {
     username: '',
-    password: ''
+    password: '',
   };
+
+  isUsernameFocused: boolean = false;
+  isPasswordFocused: boolean = false;
+  showPassword = false;
 
   errorMessage = '';
   loading = false;
-
+  value!: string;
   constructor(private authService: AuthService, private router: Router) {}
 
   login() {
+    if (!this.user.username || !this.user.password) {
+      this.errorMessage = 'Please enter both username and password.';
+      return;
+    }
+
     this.loading = true;
     this.errorMessage = '';
 
@@ -62,7 +64,14 @@ export class LoginComponent {
         this.loading = false;
         this.errorMessage = 'Invalid username or password';
         console.error('Login error:', err);
-      }
+      },
     });
   }
+
+  
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+
+  
 }

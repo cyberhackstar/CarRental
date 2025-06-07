@@ -1,35 +1,133 @@
-<div class="login-wrapper d-flex justify-content-center align-items-center vh-100">
-  <div class="login-card p-5 shadow-lg rounded animate__animated animate__fadeIn">
-    <h3 class="text-center mb-4">Login</h3>
+<section
+  class="login-section position-relative text-white"
+  style="
+    background-image: url('assets/images/car1.jpg');
+    background-size: cover;
+    background-position: center;
+  "
+>
+  <div
+    class="overlay position-absolute top-0 start-0 w-100 h-100"
+    style="background-color: rgba(0, 0, 0, 0.6)"
+  ></div>
+  <div class="container position-relative py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card bg-dark bg-opacity-75 text-white shadow-lg border-0">
+          <div class="card-body p-4">
+            <div class="text-center mb-4">
+              <img
+                src="assets/images/logoLight.png"
+                alt="Logo"
+                width="175"
+                height="57"
+              />
+            </div>
+            <h4 class="text-center mb-4">Ready to Hit the Road?</h4>
 
-    <form (ngSubmit)="login()" #loginForm="ngForm">
-      <div class="mb-3">
-        <label for="username" class="form-label">Username</label>
-        <input
-          pInputText
-          id="username"
-          name="username"
-          [(ngModel)]="user.username"
-          required
-          class="w-100"
-          placeholder="Enter your username"
-        />
-      </div>
+            <form #loginForm="ngForm" (ngSubmit)="login()" novalidate>
+              <!-- Username Field -->
+              <div class="form-floating mb-4">
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  [(ngModel)]="user.username"
+                  class="form-control bg-transparent text-white border-light"
+                  placeholder=" "
+                  style="
+                    height: 3.2rem;
+                    font-size: 1rem;
+                    line-height: normal;
+                    padding-top: 0.5rem;
+                  "
+                  required
+                  (focus)="isUsernameFocused = true"
+                  (blur)="isUsernameFocused = false"
+                />
+                <label
+                  *ngIf="!isUsernameFocused && !user.username"
+                  for="username"
+                  class="text-white"
+                  >Username</label
+                >
+              </div>
 
-      <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <p-password
-          id="password"
-          name="password"
-          [(ngModel)]="user.password"
-          required
-          [feedback]="false"
-          toggleMask="true"
-          class="w-100"
-          placeholder="Enter your password"
-        ></p-password>
-      </div>
+              <!-- Password Field -->
+              <div class="form-floating mb-4">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  [(ngModel)]="user.password"
+                  class="form-control bg-transparent text-white border-light"
+                  placeholder=" "
+                  style="
+                    height: 3.2rem;
+                    font-size: 1rem;
+                    line-height: normal;
+                    padding-top: 0.5rem;
+                  "
+                  required
+                  (focus)="isPasswordFocused = true"
+                  (blur)="isPasswordFocused = false"
+                />
+                <label
+                  *ngIf="!isPasswordFocused && !user.password"
+                  for="password"
+                  class="text-white"
+                  >Password</label
+                >
+                <button
+                  type="button"
+                  class="btn btn-sm position-absolute top-50 end-0 translate-middle-y me-3 text-white"
+                  (click)="togglePasswordVisibility()"
+                  tabindex="-1"
+                >
+                  <i
+                    class="bi"
+                    [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"
+                  ></i>
+                </button>
+              </div>
 
-      <div *ngIf="errorMessage" class="alert alert-danger mt-2">
-        {{ errorMessage }}
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="remember_me"
+                />
+                <label class="form-check-label text-white" for="remember_me"
+                  >Keep me logged in</label
+                >
+              </div>
+
+              <div class="d-grid">
+                <button
+                  class="btn btn-outline-light btn-lg"
+                  type="submit"
+                  [disabled]="loading"
+                >
+                  {{ loading ? "Logging in..." : "Log in now" }}
+                </button>
+              </div>
+
+              <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+                {{ errorMessage }}
+              </div>
+            </form>
+
+            <div class="d-flex justify-content-center gap-4 mt-4">
+              <a href="/signup" class="link-light text-decoration-none"
+                >Create new account</a
+              >
+              <a href="/forgot-password" class="link-light text-decoration-none"
+                >Forgot password</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+</section>

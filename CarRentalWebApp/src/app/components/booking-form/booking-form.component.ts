@@ -5,23 +5,24 @@ import { Booking } from '../../models/booking.model';
 import { CarRentalService } from '../../services/car-rental.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { CalendarModule } from 'primeng/calendar';
 
 @Component({
   selector: 'app-booking-form',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, CalendarModule],
   templateUrl: './booking-form.component.html',
-  styleUrls: ['./booking-form.component.css']
+  styleUrls: ['./booking-form.component.css'],
 })
 export class BookingFormComponent implements OnInit {
   cars: Car[] = [];
+  selectedCar: Car | undefined;
   booking: Booking = {
     carId: 0,
     customerName: '',
     startDate: '',
     endDate: '',
-    totalAmount: 0
+    totalAmount: 0,
   };
   successMessage = '';
   errorMessage = '';
@@ -33,13 +34,26 @@ export class BookingFormComponent implements OnInit {
 
   ngOnInit(): void {
     const carIdFromRoute = this.route.snapshot.paramMap.get('carId');
+    const startDateFromQuery = this.route.snapshot.queryParamMap.get('startDate');
+    const endDateFromQuery = this.route.snapshot.queryParamMap.get('endDate');
+
     if (carIdFromRoute) {
       this.booking.carId = +carIdFromRoute;
     }
+    if (startDateFromQuery) {
+      this.booking.startDate = startDateFromQuery;
+    }
+    if (endDateFromQuery) {
+      this.booking.endDate = endDateFromQuery;
+    }
 
     this.carRentalService.getAvailableCars().subscribe({
-      next: (data) => this.cars = data,
-      error: (err) => this.errorMessage = 'Failed to load cars.'
+      next: (data) => {
+        this.cars = data;
+        this.selectedCar = this.cars.find(car => car.id === this.booking.carId);
+        this.calculateTotalAmount();
+      },
+      error: () => this.errorMessage = 'Failed to load cars.'
     });
   }
 

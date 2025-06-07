@@ -19,18 +19,20 @@ export class SignupComponent {
     userRole: 'ROLE_USER', // default
   };
 
+  isUsernameFocused: boolean = false;
+  isPasswordFocused: boolean = false;
+  isConfirmPasswordFocused: boolean = false;
+  agreed: boolean = false;
+  confirmPassword: string = ''
+
+
+
   errorMessage: string = '';
   successMessage: string = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
   register(): void {
-    // Ensure role is prefixed correctly
-    if (this.user.userRole === 'ADMIN') {
-      this.user.userRole = 'ROLE_ADMIN';
-    } else {
-      this.user.userRole = 'ROLE_USER';
-    }
 
     this.authService.register(this.user).subscribe({
       next: () => {
@@ -55,4 +57,7 @@ export class SignupComponent {
   toggleConfirmPasswordVisibility(): void {
     this.showConfirmPassword = !this.showConfirmPassword;
   }
+
+
+
 }

@@ -1,0 +1,31 @@
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255, 255, 255); /* Pure white background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner-wrapper {
+  width: 50vh;
+  height: 50vh;
+  border-radius: 10%;
+  overflow: hidden;
+  background: transparent; /* No background or shadow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-spinner {
+  width: 84%;
+  height: 130%;
+  object-fit: cover;
+  border: none; /* No border */
+  box-shadow: none; /* No shadow */
+}

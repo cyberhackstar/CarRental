@@ -1,156 +1,209 @@
-2025-06-05 00:00:03 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
-2025-06-05 00:00:03 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:00:03 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
-2025-06-05 00:00:13 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:00:13 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:00:13 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:00:33 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:00:33 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:00:33 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:00:53 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:00:53 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:00:53 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:01:13 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:01:13 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:01:13 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:01:33 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:01:33 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:01:33 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:01:53 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:01:53 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:01:53 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:02:03 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
-2025-06-05 00:02:03 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:02:03 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
-2025-06-05 00:02:13 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:02:13 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:02:13 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:02:33 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:02:33 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:02:33 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:02:53 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:02:53 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:02:53 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:03:13 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:03:13 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:03:13 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:03:33 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:03:33 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:03:33 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:03:53 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:03:53 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:03:53 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:04:03 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
-2025-06-05 00:04:03 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:04:03 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
-2025-06-05 00:04:13 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:04:13 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:04:13 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:04:33 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:04:33 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:04:33 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:04:53 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:04:53 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:04:53 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:05:03 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
-2025-06-05 00:05:03 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:05:03 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
-2025-06-05 00:05:13 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:05:13 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:05:13 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:05:33 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:05:33 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:05:33 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:05:53 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:05:53 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:05:53 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:06:13 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:06:13 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:06:13 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:06:33 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:06:33 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:06:33 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:06:53 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:06:53 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:06:53 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:07:03 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
-2025-06-05 00:07:03 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:07:03 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
-2025-06-05 00:07:13 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:07:13 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:07:13 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:07:33 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:07:33 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:07:33 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:07:53 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:07:53 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:07:53 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:08:13 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:08:13 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:08:13 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:08:33 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:08:33 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:08:33 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:08:53 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:08:53 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:08:53 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:09:03 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
-2025-06-05 00:09:03 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:09:03 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
-2025-06-05 00:09:13 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:09:13 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:09:13 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:09:33 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:09:33 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:09:33 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:09:53 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:09:53 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:09:53 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:10:13 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:10:13 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:10:13 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:10:33 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:10:33 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:10:33 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:10:53 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:10:53 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:10:53 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:11:03 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
-2025-06-05 00:11:03 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:11:03 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
-2025-06-05 00:11:13 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:11:13 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:11:13 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:11:33 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:11:33 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:11:33 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:11:53 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-05 00:11:53 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 00:11:53 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-05 00:11:57 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-05 00:11:57 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-06-05 00:11:57 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-05 00:11:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-05 00:11:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-05 11:56:48 [main] INFO  c.c.CarService.CarServiceApplication - Starting CarServiceApplication using Java 21.0.6 with PID 20128 (C:\WorkSpace\New folder\CarRental\CarService\target\classes started by 10827643 in C:\WorkSpace\New folder\CarRental)
-2025-06-05 11:56:48 [main] INFO  c.c.CarService.CarServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-05 11:56:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-05 11:56:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 3 JPA repository interfaces.
-2025-06-05 11:56:50 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-05 11:56:50 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
-2025-06-05 11:56:50 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-05 11:56:50 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-05 11:56:50 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-05 11:56:50 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2133 ms
-2025-06-05 11:56:50 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-05 11:56:50 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-05 11:56:51 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-05 11:56:51 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-05 11:56:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-05 11:56:51 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3a7d914c
-2025-06-05 11:56:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-05 11:56:51 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-05 11:56:51 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2025-06-08 02:17:36 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-08 02:17:36 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-08 02:17:36 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-08 02:17:36 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/available?startDate=2025-06-10&endDate=2025-06-21
+2025-06-08 02:17:36 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/available?startDate=2025-06-10&endDate=2025-06-21
+2025-06-08 02:17:36 [http-nio-8081-exec-1] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:17:36 [http-nio-8081-exec-1] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:17:36 [http-nio-8081-exec-1] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:17:36 [http-nio-8081-exec-1] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:17:36 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/available?startDate=2025-06-10&endDate=2025-06-21
+2025-06-08 02:17:36 [http-nio-8081-exec-1] INFO  c.c.C.service.CarRentalService - Fetching available cars between 2025-06-10 and 2025-06-21
+2025-06-08 02:17:36 [http-nio-8081-exec-1] INFO  c.c.C.service.CarRentalService - Found 4 available cars
+2025-06-08 02:17:36 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:17:36 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:17:36 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:17:36 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:17:36 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:17:36 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:17:36 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:17:36 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:17:36 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:17:36 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:17:36 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:17:37 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:17:37 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:17:37 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:17:37 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:17:37 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:17:37 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:17:37 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:17:37 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:17:37 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Image served successfully: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:17:45 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/cars
+2025-06-08 02:17:45 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
+2025-06-08 02:17:45 [http-nio-8081-exec-7] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:17:45 [http-nio-8081-exec-7] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:17:45 [http-nio-8081-exec-7] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:17:45 [http-nio-8081-exec-7] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:17:45 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
+2025-06-08 02:17:45 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Fetching all available cars...
+2025-06-08 02:17:45 [http-nio-8081-exec-7] INFO  c.c.C.service.CarRentalService - Fetching all available cars...
+2025-06-08 02:17:45 [http-nio-8081-exec-7] INFO  c.c.C.service.CarRentalService - Found 6 available cars
+2025-06-08 02:17:45 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Successfully fetched 6 available cars
+2025-06-08 02:17:55 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:17:55 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/bookings
+2025-06-08 02:17:55 [http-nio-8081-exec-6] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:17:55 [http-nio-8081-exec-6] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:17:55 [http-nio-8081-exec-6] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:17:55 [http-nio-8081-exec-6] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:17:55 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/bookings
+2025-06-08 02:17:56 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Booking request received for car ID: 6
+2025-06-08 02:17:56 [http-nio-8081-exec-6] INFO  c.c.C.service.CarRentalService - Booking request received for car ID: 6
+2025-06-08 02:17:56 [http-nio-8081-exec-6] INFO  c.c.C.service.CarRentalService - Booking saved with ID: 5
+2025-06-08 02:17:56 [http-nio-8081-exec-6] INFO  c.c.C.service.CarRentalService - Booking event sent for booking ID: 5
+2025-06-08 02:17:56 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Booking successful with ID: 5
+2025-06-08 02:18:13 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:18:13 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:18:13 [http-nio-8081-exec-1] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:18:13 [http-nio-8081-exec-1] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:18:13 [http-nio-8081-exec-1] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:18:13 [http-nio-8081-exec-1] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:18:13 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:18:13 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:18:13 [http-nio-8081-exec-1] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:18:13 [http-nio-8081-exec-1] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:18:13 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:21:52 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:21:52 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:21:52 [http-nio-8081-exec-8] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:21:52 [http-nio-8081-exec-8] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:21:52 [http-nio-8081-exec-8] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:21:52 [http-nio-8081-exec-8] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:21:52 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:21:52 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:21:52 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:21:52 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:21:52 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:21:57 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:21:57 [http-nio-8081-exec-6] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:21:57 [http-nio-8081-exec-6] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:21:57 [http-nio-8081-exec-6] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:21:57 [http-nio-8081-exec-6] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:21:57 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:21:57 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:21:57 [http-nio-8081-exec-6] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:21:57 [http-nio-8081-exec-6] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:21:57 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:24:12 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:24:12 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:24:12 [http-nio-8081-exec-3] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:24:12 [http-nio-8081-exec-3] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:24:12 [http-nio-8081-exec-3] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:24:12 [http-nio-8081-exec-3] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:24:12 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:24:12 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:24:12 [http-nio-8081-exec-3] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:24:12 [http-nio-8081-exec-3] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:24:12 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:24:19 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:24:19 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:24:19 [http-nio-8081-exec-4] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:24:19 [http-nio-8081-exec-4] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:24:19 [http-nio-8081-exec-4] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:24:19 [http-nio-8081-exec-4] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:24:19 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:24:19 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:24:19 [http-nio-8081-exec-4] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:24:19 [http-nio-8081-exec-4] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:24:19 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:24:22 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:24:22 [http-nio-8081-exec-2] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:24:22 [http-nio-8081-exec-2] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:24:22 [http-nio-8081-exec-2] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:24:22 [http-nio-8081-exec-2] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:24:22 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:24:22 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:24:22 [http-nio-8081-exec-2] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:24:22 [http-nio-8081-exec-2] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:24:22 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:24:24 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:24:24 [http-nio-8081-exec-9] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:24:24 [http-nio-8081-exec-9] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:24:24 [http-nio-8081-exec-9] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:24:24 [http-nio-8081-exec-9] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:24:24 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:24:24 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:24:24 [http-nio-8081-exec-9] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:24:24 [http-nio-8081-exec-9] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:24:24 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:24:26 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:24:26 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:24:26 [http-nio-8081-exec-8] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:24:26 [http-nio-8081-exec-8] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:24:26 [http-nio-8081-exec-8] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:24:26 [http-nio-8081-exec-8] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:24:26 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:24:26 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:24:26 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:24:26 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:24:26 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:24:27 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:24:27 [http-nio-8081-exec-6] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:24:27 [http-nio-8081-exec-6] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:24:27 [http-nio-8081-exec-6] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:24:27 [http-nio-8081-exec-6] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:24:27 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:24:27 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:24:27 [http-nio-8081-exec-6] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:24:27 [http-nio-8081-exec-6] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:24:27 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:24:30 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:24:30 [http-nio-8081-exec-10] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:24:30 [http-nio-8081-exec-10] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:24:30 [http-nio-8081-exec-10] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:24:30 [http-nio-8081-exec-10] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:24:30 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:24:30 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:24:30 [http-nio-8081-exec-10] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:24:30 [http-nio-8081-exec-10] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:24:30 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:24:32 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:24:32 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:24:32 [http-nio-8081-exec-3] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:24:32 [http-nio-8081-exec-3] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:24:32 [http-nio-8081-exec-3] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:24:32 [http-nio-8081-exec-3] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:24:32 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:24:32 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:24:32 [http-nio-8081-exec-3] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:24:32 [http-nio-8081-exec-3] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:24:32 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:24:38 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:24:38 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:24:38 [http-nio-8081-exec-4] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:24:38 [http-nio-8081-exec-4] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:24:38 [http-nio-8081-exec-4] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:24:38 [http-nio-8081-exec-4] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:24:38 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:24:38 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:24:38 [http-nio-8081-exec-4] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:24:38 [http-nio-8081-exec-4] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:24:38 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:24:43 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-08 02:24:43 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-08 02:24:43 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-08 02:24:43 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-08 02:24:43 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-08 02:33:34 [main] INFO  c.c.CarService.CarServiceApplication - Starting CarServiceApplication using Java 21.0.6 with PID 12700 (C:\WorkSpace\New folder\CarRental\CarService\target\classes started by 10827643 in C:\WorkSpace\New folder\CarRental)
+2025-06-08 02:33:34 [main] INFO  c.c.CarService.CarServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-08 02:33:35 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-08 02:33:35 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 3 JPA repository interfaces.
+2025-06-08 02:33:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-08 02:33:36 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-06-08 02:33:36 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-08 02:33:36 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-08 02:33:36 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-08 02:33:36 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1685 ms
+2025-06-08 02:33:36 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-08 02:33:36 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-08 02:33:36 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-08 02:33:37 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-08 02:33:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-08 02:33:37 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4a47bc9c
+2025-06-08 02:33:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-08 02:33:37 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-08 02:33:37 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 17.3
@@ -158,26 +211,27 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-06-05 11:56:51 [main] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@2e013ba1) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@2d8c729f)
-2025-06-05 11:56:51 [main] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@740ee00f) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@430106cf)
-2025-06-05 11:56:52 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-05 11:56:52 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-05 11:56:53 [main] INFO  c.c.CarService.config.SecurityConfig - Initializing PasswordEncoder (BCrypt)
-2025-06-05 11:56:53 [main] INFO  c.c.CarService.config.SecurityConfig - Configuring DaoAuthenticationProvider
-2025-06-05 11:56:53 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-06-05 11:56:53 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
-2025-06-05 11:56:53 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-05 11:56:53 [main] INFO  c.c.CarService.config.SecurityConfig - Configuring SecurityFilterChain
-2025-06-05 11:56:53 [main] INFO  c.c.CarService.config.WebConfig - Configuring resource handler for '/uploads/**' to serve from 'file:uploads/'
-2025-06-05 11:56:53 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 14 endpoints beneath base path '/actuator'
-2025-06-05 11:56:53 [main] INFO  c.c.CarService.config.SecurityConfig - Setting up CORS configuration
-2025-06-05 11:56:53 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
-2025-06-05 11:56:53 [main] INFO  c.c.CarService.config.WebConfig - Initializing StandardServletMultipartResolver
-2025-06-05 11:56:53 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-05 11:56:54 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
-2025-06-05 11:56:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
-2025-06-05 11:56:54 [main] INFO  c.c.CarService.CarServiceApplication - Started CarServiceApplication in 6.701 seconds (process running for 7.124)
-2025-06-05 11:56:54 [registrationTask1] WARN  d.c.b.a.c.r.ApplicationRegistrator - Failed to register application as Application(name=spring-boot-application, managementUrl=http://192.168.95.113:8081/actuator, healthUrl=http://192.168.95.113:8081/actuator/health, serviceUrl=http://192.168.95.113:8081/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": null. Further attempts are logged on DEBUG level
+2025-06-08 02:33:37 [main] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@647af13d) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@2aac6fa7)
+2025-06-08 02:33:37 [main] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@29a1ec65) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@625db0e0)
+2025-06-08 02:33:38 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-08 02:33:38 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-08 02:33:38 [main] INFO  c.c.CarService.config.SecurityConfig - Initializing PasswordEncoder (BCrypt)
+2025-06-08 02:33:38 [main] INFO  c.c.CarService.config.SecurityConfig - Configuring DaoAuthenticationProvider
+2025-06-08 02:33:38 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-08 02:33:38 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-08 02:33:38 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-08 02:33:39 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-08 02:33:39 [main] INFO  c.c.CarService.config.SecurityConfig - Configuring SecurityFilterChain
+2025-06-08 02:33:39 [main] INFO  c.c.CarService.config.WebConfig - Configuring resource handler for '/uploads/**' to serve from 'file:uploads/'
+2025-06-08 02:33:39 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 14 endpoints beneath base path '/actuator'
+2025-06-08 02:33:40 [main] INFO  c.c.CarService.config.SecurityConfig - Setting up CORS configuration
+2025-06-08 02:33:40 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-06-08 02:33:40 [main] INFO  c.c.CarService.config.WebConfig - Initializing StandardServletMultipartResolver
+2025-06-08 02:33:40 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-08 02:33:40 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-06-08 02:33:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-06-08 02:33:40 [main] INFO  c.c.CarService.CarServiceApplication - Started CarServiceApplication in 6.575 seconds (process running for 6.95)
+2025-06-08 02:33:40 [registrationTask1] WARN  d.c.b.a.c.r.ApplicationRegistrator - Failed to register application as Application(name=spring-boot-application, managementUrl=http://192.168.212.113:8081/actuator, healthUrl=http://192.168.212.113:8081/actuator/health, serviceUrl=http://192.168.212.113:8081/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": null. Further attempts are logged on DEBUG level
 org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8080/instances": null
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:697)
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:582)
@@ -213,148 +267,520 @@ Caused by: java.nio.channels.ClosedChannelException: null
 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
 	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
 	... 9 common frames omitted
-2025-06-05 11:57:02 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-05 11:57:02 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-05 11:57:02 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
-2025-06-05 11:57:02 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 11:57:02 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 11:57:02 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 11:57:02 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Fetching all available cars...
-2025-06-05 11:57:02 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Fetching all available cars...
-2025-06-05 11:57:02 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Found 1 available cars
-2025-06-05 11:57:02 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.controller.CarRentalController - Successfully fetched 1 available cars
-2025-06-05 11:57:02 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 11:57:02 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 11:57:02 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 11:57:05 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 11:57:05 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 11:57:05 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 11:57:05 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetching all available cars...
-2025-06-05 11:57:05 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Fetching all available cars...
-2025-06-05 11:57:06 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Found 1 available cars
-2025-06-05 11:57:06 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.controller.CarRentalController - Successfully fetched 1 available cars
-2025-06-05 11:57:06 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 11:57:06 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 11:57:06 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 11:57:13 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 11:57:13 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 11:57:13 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 11:57:13 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Fetching all available cars...
-2025-06-05 11:57:13 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Fetching all available cars...
-2025-06-05 11:57:13 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Found 1 available cars
-2025-06-05 11:57:13 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.controller.CarRentalController - Successfully fetched 1 available cars
-2025-06-05 11:57:13 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 11:57:13 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 11:57:13 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 12:00:16 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 12:00:16 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 12:00:16 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 12:00:16 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching all available cars...
-2025-06-05 12:00:16 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Fetching all available cars...
-2025-06-05 12:00:16 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Found 1 available cars
-2025-06-05 12:00:16 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.controller.CarRentalController - Successfully fetched 1 available cars
-2025-06-05 12:00:16 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 12:00:16 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 12:00:16 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 12:00:29 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 12:00:29 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 12:00:29 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 12:00:29 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Fetching all available cars...
-2025-06-05 12:00:29 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Fetching all available cars...
-2025-06-05 12:00:29 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Found 1 available cars
-2025-06-05 12:00:29 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.controller.CarRentalController - Successfully fetched 1 available cars
-2025-06-05 12:00:29 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 12:00:29 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 12:00:29 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 12:01:29 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 12:01:29 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 12:01:29 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 12:01:29 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Fetching all available cars...
-2025-06-05 12:01:29 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Fetching all available cars...
-2025-06-05 12:01:29 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Found 1 available cars
-2025-06-05 12:01:29 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.controller.CarRentalController - Successfully fetched 1 available cars
-2025-06-05 12:01:29 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 12:01:29 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 12:01:29 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 12:01:43 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/login
-2025-06-05 12:01:43 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/login
-2025-06-05 12:01:43 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 12:01:43 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/login
-2025-06-05 12:01:43 [http-nio-8081-exec-6] INFO  c.c.C.controller.AuthController - Login attempt for username: user
-2025-06-05 12:01:43 [http-nio-8081-exec-6] INFO  c.c.C.service.UserServiceImpl - Login attempt for username: user
-2025-06-05 12:01:43 [http-nio-8081-exec-6] INFO  c.c.C.config.MyUserDetailsService - User found: user
-2025-06-05 12:01:44 [http-nio-8081-exec-6] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: user
-2025-06-05 12:01:44 [http-nio-8081-exec-6] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
-2025-06-05 12:01:44 [http-nio-8081-exec-6] INFO  c.c.CarService.config.JwtUtils - Generating token for user 'user'
-2025-06-05 12:01:44 [http-nio-8081-exec-6] INFO  c.c.C.service.UserServiceImpl - Login successful for username: user
-2025-06-05 12:01:44 [http-nio-8081-exec-6] INFO  c.c.C.controller.AuthController - Login successful for username: user
-2025-06-05 12:01:52 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 12:01:52 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 12:01:52 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 12:01:52 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetching all available cars...
-2025-06-05 12:01:52 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Fetching all available cars...
-2025-06-05 12:01:52 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.service.CarRentalService - Found 1 available cars
-2025-06-05 12:01:52 [ForkJoinPool.commonPool-worker-1] INFO  c.c.C.controller.CarRentalController - Successfully fetched 1 available cars
-2025-06-05 12:01:52 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
-2025-06-05 12:01:52 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
-2025-06-05 12:01:52 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 12:20:31 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m39s165ms362µs200ns).
-2025-06-05 12:53:25 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=29m50s765ms706µs300ns).
-2025-06-05 15:20:27 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h46m6s298ms885µs600ns).
-2025-06-05 16:00:37 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/login
-2025-06-05 16:00:37 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/login
-2025-06-05 16:00:37 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 16:00:37 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/login
-2025-06-05 16:00:37 [http-nio-8081-exec-9] INFO  c.c.C.controller.AuthController - Login attempt for username: user
-2025-06-05 16:00:37 [http-nio-8081-exec-9] INFO  c.c.C.service.UserServiceImpl - Login attempt for username: user
-2025-06-05 16:00:37 [http-nio-8081-exec-9] INFO  c.c.C.config.MyUserDetailsService - User found: user
-2025-06-05 16:00:37 [http-nio-8081-exec-9] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: user
-2025-06-05 16:00:37 [http-nio-8081-exec-9] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
-2025-06-05 16:00:37 [http-nio-8081-exec-9] INFO  c.c.CarService.config.JwtUtils - Generating token for user 'user'
-2025-06-05 16:00:37 [http-nio-8081-exec-9] INFO  c.c.C.service.UserServiceImpl - Login successful for username: user
-2025-06-05 16:00:37 [http-nio-8081-exec-9] INFO  c.c.C.controller.AuthController - Login successful for username: user
-2025-06-05 16:27:18 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/register
-2025-06-05 16:27:18 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/register
-2025-06-05 16:27:18 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 16:27:18 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/register
-2025-06-05 16:27:18 [http-nio-8081-exec-3] INFO  c.c.C.controller.AuthController - Received registration request for username: bhawesh
-2025-06-05 16:27:18 [http-nio-8081-exec-3] INFO  c.c.C.service.UserServiceImpl - Attempting to register user: bhawesh
-2025-06-05 16:27:19 [http-nio-8081-exec-3] INFO  c.c.C.service.UserServiceImpl - User registered successfully with username: bhawesh
-2025-06-05 16:27:19 [http-nio-8081-exec-3] INFO  c.c.C.controller.AuthController - User registered successfully: bhawesh
-2025-06-05 16:28:10 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/register
-2025-06-05 16:28:10 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/register
-2025-06-05 16:28:10 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 16:28:10 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/register
-2025-06-05 16:28:10 [http-nio-8081-exec-6] INFO  c.c.C.controller.AuthController - Received registration request for username: user
-2025-06-05 16:28:10 [http-nio-8081-exec-6] INFO  c.c.C.service.UserServiceImpl - Attempting to register user: user
-2025-06-05 16:28:10 [http-nio-8081-exec-6] WARN  c.c.C.service.UserServiceImpl - Registration failed: Username already exists - user
-2025-06-05 16:28:10 [http-nio-8081-exec-6] WARN  c.c.C.controller.AuthController - Registration failed for username user: Username or Email already exists
-2025-06-05 16:28:17 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/register
-2025-06-05 16:28:17 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/register
-2025-06-05 16:28:17 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 16:28:17 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/register
-2025-06-05 16:28:17 [http-nio-8081-exec-7] INFO  c.c.C.controller.AuthController - Received registration request for username: user
-2025-06-05 16:28:17 [http-nio-8081-exec-7] INFO  c.c.C.service.UserServiceImpl - Attempting to register user: user
-2025-06-05 16:28:17 [http-nio-8081-exec-7] WARN  c.c.C.service.UserServiceImpl - Registration failed: Username already exists - user
-2025-06-05 16:28:17 [http-nio-8081-exec-7] WARN  c.c.C.controller.AuthController - Registration failed for username user: Username or Email already exists
-2025-06-05 16:28:26 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/register
-2025-06-05 16:28:26 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/register
-2025-06-05 16:28:26 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 16:28:26 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/register
-2025-06-05 16:28:26 [http-nio-8081-exec-10] INFO  c.c.C.controller.AuthController - Received registration request for username: user1
-2025-06-05 16:28:26 [http-nio-8081-exec-10] INFO  c.c.C.service.UserServiceImpl - Attempting to register user: user1
-2025-06-05 16:28:27 [http-nio-8081-exec-10] INFO  c.c.C.service.UserServiceImpl - User registered successfully with username: user1
-2025-06-05 16:28:27 [http-nio-8081-exec-10] INFO  c.c.C.controller.AuthController - User registered successfully: user1
-2025-06-05 16:28:43 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/login
-2025-06-05 16:28:43 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/login
-2025-06-05 16:28:43 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-05 16:28:43 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/login
-2025-06-05 16:28:43 [http-nio-8081-exec-2] INFO  c.c.C.controller.AuthController - Login attempt for username: user
-2025-06-05 16:28:43 [http-nio-8081-exec-2] INFO  c.c.C.service.UserServiceImpl - Login attempt for username: user
-2025-06-05 16:28:43 [http-nio-8081-exec-2] INFO  c.c.C.config.MyUserDetailsService - User found: user
-2025-06-05 16:28:43 [http-nio-8081-exec-2] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: user
-2025-06-05 16:28:43 [http-nio-8081-exec-2] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
-2025-06-05 16:28:43 [http-nio-8081-exec-2] INFO  c.c.CarService.config.JwtUtils - Generating token for user 'user'
-2025-06-05 16:28:43 [http-nio-8081-exec-2] INFO  c.c.C.service.UserServiceImpl - Login successful for username: user
-2025-06-05 16:28:43 [http-nio-8081-exec-2] INFO  c.c.C.controller.AuthController - Login successful for username: user
-2025-06-05 22:35:43 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h6m50s442ms265µs300ns).
+2025-06-08 02:33:49 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-08 02:33:49 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-08 02:33:49 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-08 02:33:49 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:33:49 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:33:50 [http-nio-8081-exec-2] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:33:50 [http-nio-8081-exec-2] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:33:50 [http-nio-8081-exec-2] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:33:50 [http-nio-8081-exec-2] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:33:50 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:33:50 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:33:50 [http-nio-8081-exec-2] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:33:50 [http-nio-8081-exec-2] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:33:50 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:34:01 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:34:01 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:34:01 [http-nio-8081-exec-7] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:34:01 [http-nio-8081-exec-7] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:34:01 [http-nio-8081-exec-7] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:34:01 [http-nio-8081-exec-7] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:34:01 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:34:01 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:34:01 [http-nio-8081-exec-7] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:34:01 [http-nio-8081-exec-7] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:34:01 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:34:04 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:34:04 [http-nio-8081-exec-10] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:34:04 [http-nio-8081-exec-10] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:34:04 [http-nio-8081-exec-10] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:34:04 [http-nio-8081-exec-10] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:34:04 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:34:04 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:34:04 [http-nio-8081-exec-10] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:34:04 [http-nio-8081-exec-10] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:34:04 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:34:05 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:34:05 [http-nio-8081-exec-6] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:34:05 [http-nio-8081-exec-6] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:34:05 [http-nio-8081-exec-6] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:34:05 [http-nio-8081-exec-6] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:34:05 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:34:05 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:34:05 [http-nio-8081-exec-6] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:34:05 [http-nio-8081-exec-6] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:34:05 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:34:07 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:34:07 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:34:07 [http-nio-8081-exec-8] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:34:07 [http-nio-8081-exec-8] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:34:07 [http-nio-8081-exec-8] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:34:07 [http-nio-8081-exec-8] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:34:07 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:34:07 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:34:07 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:34:07 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:34:07 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:34:15 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:34:15 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:34:15 [http-nio-8081-exec-9] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:34:15 [http-nio-8081-exec-9] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:34:15 [http-nio-8081-exec-9] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:34:15 [http-nio-8081-exec-9] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:34:15 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:34:15 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:34:15 [http-nio-8081-exec-9] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:34:15 [http-nio-8081-exec-9] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:34:15 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:34:16 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:34:16 [http-nio-8081-exec-1] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:34:16 [http-nio-8081-exec-1] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:34:16 [http-nio-8081-exec-1] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:34:16 [http-nio-8081-exec-1] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:34:16 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:34:16 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:34:16 [http-nio-8081-exec-1] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:34:16 [http-nio-8081-exec-1] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:34:16 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:34:23 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:34:23 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:34:23 [http-nio-8081-exec-3] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:34:23 [http-nio-8081-exec-3] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:34:23 [http-nio-8081-exec-3] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:34:23 [http-nio-8081-exec-3] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:34:23 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:34:23 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:34:23 [http-nio-8081-exec-3] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:34:23 [http-nio-8081-exec-3] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:34:23 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:34:48 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:34:49 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:34:49 [http-nio-8081-exec-10] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:34:49 [http-nio-8081-exec-10] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:34:49 [http-nio-8081-exec-10] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:34:49 [http-nio-8081-exec-10] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:34:49 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:34:49 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:34:49 [http-nio-8081-exec-10] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:34:49 [http-nio-8081-exec-10] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:34:49 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:34:59 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:34:59 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:34:59 [http-nio-8081-exec-4] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:34:59 [http-nio-8081-exec-4] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:34:59 [http-nio-8081-exec-4] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:34:59 [http-nio-8081-exec-4] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:34:59 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:34:59 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:34:59 [http-nio-8081-exec-4] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:34:59 [http-nio-8081-exec-4] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:34:59 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:35:05 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:35:05 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:35:05 [http-nio-8081-exec-5] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:35:05 [http-nio-8081-exec-5] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:35:05 [http-nio-8081-exec-5] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:35:05 [http-nio-8081-exec-5] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:35:05 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:35:05 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:35:05 [http-nio-8081-exec-5] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:35:05 [http-nio-8081-exec-5] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:35:05 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:35:43 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/available?startDate=2025-06-17&endDate=2025-06-27
+2025-06-08 02:35:43 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/available?startDate=2025-06-17&endDate=2025-06-27
+2025-06-08 02:35:43 [http-nio-8081-exec-1] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:35:43 [http-nio-8081-exec-1] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:35:43 [http-nio-8081-exec-1] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:35:43 [http-nio-8081-exec-1] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:35:43 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/available?startDate=2025-06-17&endDate=2025-06-27
+2025-06-08 02:35:43 [http-nio-8081-exec-1] INFO  c.c.C.service.CarRentalService - Fetching available cars between 2025-06-17 and 2025-06-27
+2025-06-08 02:35:43 [http-nio-8081-exec-1] INFO  c.c.C.service.CarRentalService - Found 3 available cars
+2025-06-08 02:35:43 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:35:43 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:35:43 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:35:43 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:35:43 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:35:43 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:35:43 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:35:43 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:35:43 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:35:43 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:35:43 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:35:43 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:35:43 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:35:43 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:35:43 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:38:18 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/available?startDate=2025-06-11&endDate=2025-06-20
+2025-06-08 02:38:18 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/available?startDate=2025-06-11&endDate=2025-06-20
+2025-06-08 02:38:18 [http-nio-8081-exec-9] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:38:18 [http-nio-8081-exec-9] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:38:18 [http-nio-8081-exec-9] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:38:18 [http-nio-8081-exec-9] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:38:18 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/available?startDate=2025-06-11&endDate=2025-06-20
+2025-06-08 02:38:18 [http-nio-8081-exec-9] INFO  c.c.C.service.CarRentalService - Fetching available cars between 2025-06-11 and 2025-06-20
+2025-06-08 02:38:18 [http-nio-8081-exec-9] INFO  c.c.C.service.CarRentalService - Found 3 available cars
+2025-06-08 02:38:18 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:38:18 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:38:18 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:38:18 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:38:18 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:38:18 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:38:18 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:38:18 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:38:18 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:38:18 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:38:18 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:38:18 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:38:18 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:38:18 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:38:18 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:38:24 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/available?startDate=2025-06-11&endDate=2025-06-20
+2025-06-08 02:38:24 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/available?startDate=2025-06-11&endDate=2025-06-20
+2025-06-08 02:38:24 [http-nio-8081-exec-10] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:38:24 [http-nio-8081-exec-10] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:38:24 [http-nio-8081-exec-10] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:38:24 [http-nio-8081-exec-10] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:38:24 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/available?startDate=2025-06-11&endDate=2025-06-20
+2025-06-08 02:38:24 [http-nio-8081-exec-10] INFO  c.c.C.service.CarRentalService - Fetching available cars between 2025-06-11 and 2025-06-20
+2025-06-08 02:38:24 [http-nio-8081-exec-10] INFO  c.c.C.service.CarRentalService - Found 3 available cars
+2025-06-08 02:38:24 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:38:24 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:38:24 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:38:24 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:38:24 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:38:24 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:38:24 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:38:24 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:38:24 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:38:24 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:38:24 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:38:24 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:38:24 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:38:24 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:38:24 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:40:24 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:40:24 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:40:24 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:40:24 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:40:24 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:40:24 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:40:24 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:40:24 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:40:24 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:40:24 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:40:24 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:40:24 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:40:24 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:40:24 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:40:24 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:40:26 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:40:26 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:40:26 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:40:26 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:40:26 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:40:26 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:40:26 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:40:26 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:40:26 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:40:26 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:40:26 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:40:26 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:40:26 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:40:26 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:40:26 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:40:28 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:40:28 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:40:28 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:40:28 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:40:28 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:40:28 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:40:28 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:40:28 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:40:28 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:40:28 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:40:28 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:40:28 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:40:28 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:40:28 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:40:28 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:43:36 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/available?startDate=2025-06-18&endDate=2025-06-24
+2025-06-08 02:43:36 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/available?startDate=2025-06-18&endDate=2025-06-24
+2025-06-08 02:43:36 [http-nio-8081-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+io.jsonwebtoken.ExpiredJwtException: JWT expired at 2025-06-07T21:09:37Z. Current time: 2025-06-07T21:13:36Z, a difference of 239635 milliseconds.  Allowed clock skew: 0 milliseconds.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:427)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173)
+	at com.carrental.CarService.config.JwtUtils.extractAllClaims(JwtUtils.java:45)
+	at com.carrental.CarService.config.JwtUtils.extractClaim(JwtUtils.java:36)
+	at com.carrental.CarService.config.JwtUtils.extractUsername(JwtUtils.java:27)
+	at com.carrental.CarService.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:58)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-08 02:43:36 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error?startDate=2025-06-18&endDate=2025-06-24
+2025-06-08 02:43:36 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:43:36 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error?startDate=2025-06-18&endDate=2025-06-24
+2025-06-08 02:45:08 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/login
+2025-06-08 02:45:08 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/login
+2025-06-08 02:45:08 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:08 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/login
+2025-06-08 02:45:08 [http-nio-8081-exec-8] INFO  c.c.C.controller.AuthController - Login attempt for username: Bhawesh
+2025-06-08 02:45:08 [http-nio-8081-exec-8] INFO  c.c.C.service.UserServiceImpl - Login attempt for username: Bhawesh
+2025-06-08 02:45:08 [http-nio-8081-exec-8] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:45:08 [http-nio-8081-exec-8] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:45:09 [http-nio-8081-exec-8] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-06-08 02:45:09 [http-nio-8081-exec-8] INFO  c.c.CarService.config.JwtUtils - Generating token for user 'Bhawesh'
+2025-06-08 02:45:09 [http-nio-8081-exec-8] INFO  c.c.C.service.UserServiceImpl - Login successful for username: Bhawesh
+2025-06-08 02:45:09 [http-nio-8081-exec-8] INFO  c.c.C.controller.AuthController - Login successful for username: Bhawesh
+2025-06-08 02:45:21 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/available?startDate=2025-06-25&endDate=2025-06-26
+2025-06-08 02:45:21 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/available?startDate=2025-06-25&endDate=2025-06-26
+2025-06-08 02:45:21 [http-nio-8081-exec-3] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:45:21 [http-nio-8081-exec-3] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:45:21 [http-nio-8081-exec-3] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:45:21 [http-nio-8081-exec-3] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:45:21 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/available?startDate=2025-06-25&endDate=2025-06-26
+2025-06-08 02:45:21 [http-nio-8081-exec-3] INFO  c.c.C.service.CarRentalService - Fetching available cars between 2025-06-25 and 2025-06-26
+2025-06-08 02:45:21 [http-nio-8081-exec-3] INFO  c.c.C.service.CarRentalService - Found 5 available cars
+2025-06-08 02:45:21 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:21 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:21 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:21 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:21 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:21 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:21 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:21 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:21 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:21 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:21 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:21 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:21 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:21 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:21 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:21 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:21 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:21 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:21 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:21 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:21 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:21 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:21 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:21 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Image served successfully: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:21 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Image served successfully: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:25 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/available?startDate=2025-06-25&endDate=2025-06-26
+2025-06-08 02:45:25 [http-nio-8081-exec-6] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:45:25 [http-nio-8081-exec-6] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:45:25 [http-nio-8081-exec-6] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:45:25 [http-nio-8081-exec-6] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:45:25 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/available?startDate=2025-06-25&endDate=2025-06-26
+2025-06-08 02:45:25 [http-nio-8081-exec-6] INFO  c.c.C.service.CarRentalService - Fetching available cars between 2025-06-25 and 2025-06-26
+2025-06-08 02:45:25 [http-nio-8081-exec-6] INFO  c.c.C.service.CarRentalService - Found 5 available cars
+2025-06-08 02:45:25 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:25 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:25 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:25 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:25 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:25 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:25 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:25 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:25 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:25 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:25 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:25 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:25 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:25 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:25 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:25 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Image served successfully: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:25 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:25 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:26 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:26 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:26 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:26 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:26 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:26 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:26 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Image served successfully: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:30 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/available?startDate=2025-06-25&endDate=2025-06-26
+2025-06-08 02:45:30 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/available?startDate=2025-06-25&endDate=2025-06-26
+2025-06-08 02:45:30 [http-nio-8081-exec-10] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:45:30 [http-nio-8081-exec-10] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:45:30 [http-nio-8081-exec-10] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:45:30 [http-nio-8081-exec-10] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:45:30 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/available?startDate=2025-06-25&endDate=2025-06-26
+2025-06-08 02:45:30 [http-nio-8081-exec-10] INFO  c.c.C.service.CarRentalService - Fetching available cars between 2025-06-25 and 2025-06-26
+2025-06-08 02:45:30 [http-nio-8081-exec-10] INFO  c.c.C.service.CarRentalService - Found 5 available cars
+2025-06-08 02:45:30 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:30 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:30 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:30 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:30 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:30 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:30 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:30 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:30 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:30 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:30 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:30 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:30 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:30 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:30 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:30 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:30 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:30 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:30 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:30 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:30 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:30 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:30 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:30 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Image served successfully: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:30 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Image served successfully: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:40 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/available?startDate=2025-06-25&endDate=2025-06-26
+2025-06-08 02:45:40 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/available?startDate=2025-06-25&endDate=2025-06-26
+2025-06-08 02:45:40 [http-nio-8081-exec-3] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:45:40 [http-nio-8081-exec-3] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:45:40 [http-nio-8081-exec-3] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:45:40 [http-nio-8081-exec-3] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:45:40 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/available?startDate=2025-06-25&endDate=2025-06-26
+2025-06-08 02:45:40 [http-nio-8081-exec-3] INFO  c.c.C.service.CarRentalService - Fetching available cars between 2025-06-25 and 2025-06-26
+2025-06-08 02:45:40 [http-nio-8081-exec-3] INFO  c.c.C.service.CarRentalService - Found 5 available cars
+2025-06-08 02:45:40 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:40 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:40 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:40 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:40 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:40 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:40 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:40 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:40 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:40 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:40 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:40 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-08 02:45:40 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:40 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-08 02:45:40 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:40 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:40 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Image served successfully: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-08 02:45:40 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:41 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:41 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-08 02:45:41 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:41 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:41 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-08 02:45:41 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:41 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Image served successfully: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-08 02:45:58 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:45:58 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:45:58 [http-nio-8081-exec-8] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:45:58 [http-nio-8081-exec-8] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:45:58 [http-nio-8081-exec-8] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:45:58 [http-nio-8081-exec-8] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:45:58 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:45:58 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:45:58 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:45:58 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:45:58 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:46:07 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:46:07 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:46:07 [http-nio-8081-exec-1] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:46:07 [http-nio-8081-exec-1] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:46:07 [http-nio-8081-exec-1] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:46:07 [http-nio-8081-exec-1] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:46:07 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:46:07 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:46:07 [http-nio-8081-exec-1] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:46:07 [http-nio-8081-exec-1] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:46:07 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
+2025-06-08 02:51:31 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-08 02:51:31 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-08 02:51:31 [http-nio-8081-exec-8] INFO  c.c.C.config.MyUserDetailsService - User found: Bhawesh
+2025-06-08 02:51:31 [http-nio-8081-exec-8] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Bhawesh
+2025-06-08 02:51:31 [http-nio-8081-exec-8] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Bhawesh': VALID
+2025-06-08 02:51:31 [http-nio-8081-exec-8] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Bhawesh
+2025-06-08 02:51:31 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-08 02:51:31 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-08 02:51:31 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-08 02:51:31 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Found 5 bookings
+2025-06-08 02:51:31 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetched 5 bookings
