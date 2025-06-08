@@ -11,7 +11,7 @@ import { LoadingComponent } from "./components/loading/loading.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FooterComponent, CommonModule, RouterOutlet, HeaderComponent, LoadingComponent],
+  imports: [FooterComponent, CommonModule, RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

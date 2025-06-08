@@ -17,9 +17,11 @@ public class User {
     
     @NotBlank
     private String username;
+    // private String email;
     
     @NotBlank
     private String password;
+    
     private String userRole;
     private String token;
 
@@ -39,6 +41,15 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    // public String getEmail() {
+    //     return email;
+    // }
+
+    // public void setEmail(String email) {
+    //     this.email = email;
+    // }
+
 
     public String getPassword() {
         return password;

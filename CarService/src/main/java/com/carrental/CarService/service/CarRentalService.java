@@ -1,7 +1,6 @@
 package com.carrental.CarService.service;
 
-import com.carrental.CarService.dto.BookingEvent;
-import com.carrental.CarService.dto.CarEvent;
+import com.carrental.common.dto.CarEvent;
 import com.carrental.CarService.dto.CarRequestDto;
 import com.carrental.CarService.messaging.BookingEventProducer;
 import com.carrental.CarService.messaging.CarEventProducer;
@@ -10,6 +9,8 @@ import com.carrental.CarService.model.Car;
 import com.carrental.CarService.repository.BookingRepository;
 import com.carrental.CarService.repository.CarRepository;
 import com.carrental.CarService.utility.CarMapper;
+import com.carrental.common.dto.BookingEvent;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -145,6 +146,7 @@ public class CarRentalService {
             .bookingId(savedBooking.getId())
             .carId(savedBooking.getCarId())
             .customerName(savedBooking.getCustomerName())
+            .customerEmail(savedBooking.getCustomerEmail())
             .startDate(savedBooking.getStartDate())
             .endDate(savedBooking.getEndDate())
             .totalAmount(savedBooking.getTotalAmount())

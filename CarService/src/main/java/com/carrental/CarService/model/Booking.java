@@ -17,6 +17,7 @@ public class Booking {
 
     private Long carId;
     private String customerName;
+    private String customerEmail;
     private LocalDate startDate;
     private LocalDate endDate;
     private double totalAmount;

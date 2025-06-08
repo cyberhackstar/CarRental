@@ -1,6 +1,6 @@
 package com.carrental.CarService.messaging;
 
-import com.carrental.CarService.dto.CarEvent;
+import com.carrental.common.dto.CarEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;

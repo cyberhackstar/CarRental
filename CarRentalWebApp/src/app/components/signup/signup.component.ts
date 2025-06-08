@@ -20,6 +20,7 @@ export class SignupComponent {
   };
 
   isUsernameFocused: boolean = false;
+  isEmailFocused: boolean = false;
   isPasswordFocused: boolean = false;
   isConfirmPasswordFocused: boolean = false;
   agreed: boolean = false;

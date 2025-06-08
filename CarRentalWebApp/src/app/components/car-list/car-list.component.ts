@@ -33,7 +33,8 @@ export class CarListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Initialization logic can go here if needed
+ 
+
   }
 
   searchAvailableCars(): void {

@@ -1,9 +1,10 @@
 package com.carrental.CarService.messaging;
 
-import com.carrental.CarService.dto.BookingEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
+
+import com.carrental.common.dto.BookingEvent;
 
 @Component
 public class BookingEventProducer {

@@ -4,6 +4,7 @@ spring:
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -19,6 +20,18 @@ spring:
     packages:
       trust-all: true
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sharma2001bhawesh@gmail.com
+    password: kfncuvodviuqtrha
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
 management:
   endpoints:
     web:
@@ -31,7 +44,6 @@ management:
 logging:
   file:
     name: ./Logs/CarListner.log
-
 
 server:
   port: 8082

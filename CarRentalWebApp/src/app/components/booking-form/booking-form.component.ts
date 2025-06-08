@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Car } from '../../models/car.model';
 import { Booking } from '../../models/booking.model';
 import { CarRentalService } from '../../services/car-rental.service';
@@ -20,6 +20,7 @@ export class BookingFormComponent implements OnInit {
   booking: Booking = {
     carId: 0,
     customerName: '',
+    customerEmail: '', 
     startDate: '',
     endDate: '',
     totalAmount: 0,
@@ -29,7 +30,7 @@ export class BookingFormComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private carRentalService: CarRentalService
+    private carRentalService: CarRentalService, private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -73,6 +74,7 @@ export class BookingFormComponent implements OnInit {
       next: () => {
         this.successMessage = 'Booking successful!';
         this.errorMessage = '';
+        this.router.navigate(['/bookings']); // Redirect to bookings page
       },
       error: () => {
         this.errorMessage = 'Booking failed. Please try again.';

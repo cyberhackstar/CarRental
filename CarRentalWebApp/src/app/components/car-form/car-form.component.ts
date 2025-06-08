@@ -28,7 +28,7 @@ export class CarFormComponent {
       model: ['', Validators.required],
       available: [true],
       pricePerDay: [0, [Validators.required, Validators.min(1)]],
-      image: [null, Validators.required]
+      image: [null]
     });
   }
 

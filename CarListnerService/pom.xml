@@ -34,6 +34,13 @@
             <artifactId>spring-boot-starter-activemq</artifactId>
         </dependency>
 
+        <!-- EMail -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
+
         <!-- JPA and PostgreSQL -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

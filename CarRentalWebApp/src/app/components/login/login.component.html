@@ -16,14 +16,26 @@
         <div class="card bg-dark bg-opacity-75 text-white shadow-lg border-0">
           <div class="card-body p-4">
             <div class="text-center mb-4">
-              <img
-                src="assets/images/logoLight.png"
+              <!-- <img
+                src="assets/images/loginlogo.png"
                 alt="Logo"
-                width="175"
+                width="375"
                 height="57"
-              />
+              /> -->
+              <h4 class="text-center mb-4 trade-winds-regular">Ready to Hit the Road?</h4>
             </div>
-            <h4 class="text-center mb-4">Ready to Hit the Road?</h4>
+            <!-- <h4 class="text-center mb-4 " >Login</h4> -->
+             <h4 class="text-center mb-4 trade-winds-regular">
+              
+             Let’s Go   <img
+                src="assets/images/cargif4.gif"
+                alt="Logo"
+                width="80"
+                height="70"
+              />
+
+             
+              </h4>
 
             <form #loginForm="ngForm" (ngSubmit)="login()" novalidate>
               <!-- Username Field -->
@@ -56,7 +68,7 @@
               <!-- Password Field -->
               <div class="form-floating mb-4">
                 <input
-                  type="password"
+                  [type]="showPassword ? 'text' : 'password'"
                   id="password"
                   name="password"
                   [(ngModel)]="user.password"

@@ -1,20 +1,15 @@
-package com.carrental.CarListnerService.model;
+package com.carrental.common.dto;
 
-import jakarta.persistence.*;
 import lombok.*;
-
+import java.io.Serializable;
 import java.time.LocalDate;
 
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "booking_events")
-public class BookingEventEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class BookingEvent implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private Long bookingId;
     private Long carId;

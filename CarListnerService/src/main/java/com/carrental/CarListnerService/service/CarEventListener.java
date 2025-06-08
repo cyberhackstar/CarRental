@@ -1,8 +1,9 @@
 package com.carrental.CarListnerService.service;
 
-import com.carrental.CarListnerService.dto.CarEvent;
 import com.carrental.CarListnerService.model.CarEventEntity;
 import com.carrental.CarListnerService.repository.CarEventRepository;
+import com.carrental.common.dto.CarEvent;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
