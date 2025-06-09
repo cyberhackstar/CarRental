@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: car-service-backend
+    env: java
+    plan: free
+    repo: https://github.com/cyberhackstar/CarRental
+    rootDir: CarService
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target\CarService-0.0.1-SNAPSHOT.jar
+
+  - type: web
+    name: car-admin-monitor
+    env: java
+    plan: free
+    repo: https://github.com/cyberhackstar/CarRental
+    rootDir: CarAdminMonitor
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target\CarAdminMonitor-0.0.1-SNAPSHOT.jar
+
+  - type: web
+    name: car-listener-service
+    env: java
+    plan: free
+    repo: https://github.com/cyberhackstar/CarRental
+    rootDir: CarListnerService
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target\CarListnerService-0.0.1-SNAPSHOT.jar
+
+  - type: web
+    name: car-service-frontend
+    env: node
+    plan: free
+    repo: https://github.com/cyberhackstar/CarRental
+    rootDir: CarRentalWebApp
+    buildCommand: npm install && npm run build --prod
+    startCommand: npx serve -s dist

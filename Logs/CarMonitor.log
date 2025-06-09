@@ -14,3 +14,8 @@
 2025-06-09 15:27:44 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-06-09 15:27:44 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2025-06-09 15:27:44 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-06-09 17:49:22 [main] INFO  c.c.C.CarAdminMonitorApplicationTests - Starting CarAdminMonitorApplicationTests using Java 21.0.6 with PID 1332 (started by 10827643 in C:\WorkSpace\New folder\CarRental\CarAdminMonitor)
+2025-06-09 17:49:22 [main] INFO  c.c.C.CarAdminMonitorApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-06-09 17:49:25 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-06-09 17:49:26 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-06-09 17:49:27 [main] INFO  c.c.C.CarAdminMonitorApplicationTests - Started CarAdminMonitorApplicationTests in 5.051 seconds (process running for 6.622)
