@@ -1,5 +1,5 @@
 <configuration>
-    <property name="LOG_PATH" value="./Logs" />
+    <property name="LOG_PATH" value="C:/WorkSpace/New folder/CarRental/Logs" />
     <property name="LOG_FILE" value="CarMonitor.log" />
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">

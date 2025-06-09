@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -29,7 +30,9 @@ import java.util.concurrent.ForkJoinPool;
 public class CarRentalController {
 
     private static final Logger logger = LoggerFactory.getLogger(CarRentalController.class);
-    private static final String UPLOAD_DIR = "uploads";
+    // private static final String UPLOAD_DIR = "uploads";
+    @Value("${car.image.upload-dir}")
+    private String uploadDir;
 
     @Autowired
     private CarRentalService carRentalService;
@@ -53,30 +56,28 @@ public class CarRentalController {
     // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<CarResponseDto>> getAvailableCars() {
         logger.info("Fetching all available cars...");
-        
-            try {
-                List<Car> cars = carRentalService.getAllAvailableCars();
-                List<CarResponseDto> response = cars.stream()
-                        .map(CarResponseDto::new)
-                        .toList();
-                logger.info("Successfully fetched {} available cars", response.size());
-                return ResponseEntity.ok(response);
-            } catch (Exception e) {
-                logger.error("Failed to fetch available cars", e);
-               return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                        .body(List.of());
-            }
-        
 
-       
+        try {
+            List<Car> cars = carRentalService.getAllAvailableCars();
+            List<CarResponseDto> response = cars.stream()
+                    .map(CarResponseDto::new)
+                    .toList();
+            logger.info("Successfully fetched {} available cars", response.size());
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            logger.error("Failed to fetch available cars", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(List.of());
+        }
+
     }
 
-        @GetMapping("/available")
-public ResponseEntity<List<Car>> getAvailableCars(
-        @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
-        @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
-    return ResponseEntity.ok(carRentalService.getAvailableCarsBetween(startDate, endDate));
-}
+    @GetMapping("/available")
+    public ResponseEntity<List<Car>> getAvailableCars(
+            @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+            @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
+        return ResponseEntity.ok(carRentalService.getAvailableCarsBetween(startDate, endDate));
+    }
 
     @GetMapping("/cars/{id}")
     // @PreAuthorize("hasRole('ADMIN')")
@@ -97,7 +98,9 @@ public ResponseEntity<List<Car>> getAvailableCars(
     // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Resource> getCarImage(@PathVariable String filename) throws IOException {
         logger.info("Fetching image with filename: {}", filename);
-        Path filePath = Paths.get(UPLOAD_DIR).resolve(filename).normalize();
+        Path filePath = Paths.get(uploadDir).resolve(filename).normalize();
+        logger.info("Looking for image at: {}", filePath.toAbsolutePath());
+
         Resource resource = new UrlResource(filePath.toUri());
 
         if (!resource.exists()) {
@@ -119,13 +122,6 @@ public ResponseEntity<List<Car>> getAvailableCars(
         return new ResponseEntity<>(resource, headers, HttpStatus.OK);
     }
 
-
-
-
-
-
-
-    
     @GetMapping("/bookings")
     public ResponseEntity<List<Booking>> getBookings() {
         logger.info("Fetching all bookings...");

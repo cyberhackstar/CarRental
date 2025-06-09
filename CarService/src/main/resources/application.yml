@@ -47,10 +47,14 @@ management:
 
 logging:
   file:
-    name: ./Logs/CarService.log
+    name: C:/WorkSpace/New folder/CarRental/Logs/CarService.log
   level:
     org.hibernate.type.descriptor.sql: TRACE
     org:
       springframework:
         security: DEBUG
 
+
+car:
+  image:
+    upload-dir: C:/WorkSpace/New folder/CarRental/uploads

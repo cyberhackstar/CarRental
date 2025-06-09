@@ -1,0 +1,4 @@
+2025-06-09 15:52:38 [org.springframework.jms.JmsListenerEndpointContainer#0-1] INFO  c.c.C.service.BookingEventListener - 📥 Received Booking Event: BookingEvent(bookingId=20, carId=11, customerName=Agrim, customerEmail=pepesheet@gmail.com, startDate=2025-06-30, endDate=2025-06-30, totalAmount=8999.0)
+2025-06-09 15:52:38 [org.springframework.jms.JmsListenerEndpointContainer#0-1] INFO  c.c.C.service.BookingEventListener - ✅ Booking event saved to database.
+2025-06-09 15:52:45 [org.springframework.jms.JmsListenerEndpointContainer#0-1] INFO  c.c.C.service.BookingEventListener - 📧 Booking confirmation email sent.
+2025-06-09 17:12:11 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m44s284ms757µs700ns).

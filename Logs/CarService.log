@@ -1,0 +1,276 @@
+2025-06-09 15:44:09 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-09 15:44:09 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-09 15:44:09 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-06-09 15:44:09 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/available?startDate=2025-06-26&endDate=2025-06-27
+2025-06-09 15:44:09 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/available?startDate=2025-06-26&endDate=2025-06-27
+2025-06-09 15:44:09 [http-nio-8081-exec-2] INFO  c.c.C.config.MyUserDetailsService - User found: Agrim
+2025-06-09 15:44:09 [http-nio-8081-exec-2] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Agrim
+2025-06-09 15:44:09 [http-nio-8081-exec-2] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Agrim': VALID
+2025-06-09 15:44:09 [http-nio-8081-exec-2] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Agrim
+2025-06-09 15:44:09 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/available?startDate=2025-06-26&endDate=2025-06-27
+2025-06-09 15:44:09 [http-nio-8081-exec-2] INFO  c.c.C.service.CarRentalService - Fetching available cars between 2025-06-26 and 2025-06-27
+2025-06-09 15:44:09 [http-nio-8081-exec-2] INFO  c.c.C.service.CarRentalService - Found 9 available cars
+2025-06-09 15:44:09 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:44:09 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:44:09 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:44:09 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:44:09 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:10 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:10 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:10 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:10 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:10 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:10 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Image served successfully: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Image served successfully: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Image served successfully: c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:10 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:10 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:10 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Image served successfully: a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Image served successfully: 92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:44:10 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:44:10 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Image served successfully: 7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/available?startDate=2025-08-15&endDate=2025-09-20
+2025-06-09 15:44:33 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/available?startDate=2025-08-15&endDate=2025-09-20
+2025-06-09 15:44:33 [http-nio-8081-exec-2] INFO  c.c.C.config.MyUserDetailsService - User found: Agrim
+2025-06-09 15:44:33 [http-nio-8081-exec-2] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Agrim
+2025-06-09 15:44:33 [http-nio-8081-exec-2] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Agrim': VALID
+2025-06-09 15:44:33 [http-nio-8081-exec-2] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Agrim
+2025-06-09 15:44:33 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/available?startDate=2025-08-15&endDate=2025-09-20
+2025-06-09 15:44:33 [http-nio-8081-exec-2] INFO  c.c.C.service.CarRentalService - Fetching available cars between 2025-08-15 and 2025-09-20
+2025-06-09 15:44:33 [http-nio-8081-exec-2] INFO  c.c.C.service.CarRentalService - Found 10 available cars
+2025-06-09 15:44:33 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:33 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:33 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:33 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:33 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:33 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:33 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Image served successfully: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Image served successfully: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Image served successfully: c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:33 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:33 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:33 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Image served successfully: 7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/61dff921-409c-4f26-b96c-2d66545d238f_m4.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Image served successfully: a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:44:33 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Image served successfully: 92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:44:33 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/61dff921-409c-4f26-b96c-2d66545d238f_m4.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 61dff921-409c-4f26-b96c-2d66545d238f_m4.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\61dff921-409c-4f26-b96c-2d66545d238f_m4.webp
+2025-06-09 15:44:33 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Image served successfully: 61dff921-409c-4f26-b96c-2d66545d238f_m4.webp
+2025-06-09 15:44:44 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/cars
+2025-06-09 15:44:44 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
+2025-06-09 15:44:44 [http-nio-8081-exec-4] INFO  c.c.C.config.MyUserDetailsService - User found: Agrim
+2025-06-09 15:44:44 [http-nio-8081-exec-4] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Agrim
+2025-06-09 15:44:44 [http-nio-8081-exec-4] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Agrim': VALID
+2025-06-09 15:44:44 [http-nio-8081-exec-4] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Agrim
+2025-06-09 15:44:44 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
+2025-06-09 15:44:44 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetching all available cars...
+2025-06-09 15:44:44 [http-nio-8081-exec-4] INFO  c.c.C.service.CarRentalService - Fetching all available cars...
+2025-06-09 15:44:44 [http-nio-8081-exec-4] INFO  c.c.C.service.CarRentalService - Found 10 available cars
+2025-06-09 15:44:44 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Successfully fetched 10 available cars
+2025-06-09 15:44:52 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-09 15:44:52 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/bookings
+2025-06-09 15:44:52 [http-nio-8081-exec-5] INFO  c.c.C.config.MyUserDetailsService - User found: Agrim
+2025-06-09 15:44:52 [http-nio-8081-exec-5] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Agrim
+2025-06-09 15:44:52 [http-nio-8081-exec-5] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Agrim': VALID
+2025-06-09 15:44:52 [http-nio-8081-exec-5] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Agrim
+2025-06-09 15:44:52 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/bookings
+2025-06-09 15:44:52 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Booking request received for car ID: 11
+2025-06-09 15:44:52 [http-nio-8081-exec-5] INFO  c.c.C.service.CarRentalService - Booking request received for car ID: 11
+2025-06-09 15:44:53 [http-nio-8081-exec-5] INFO  c.c.C.service.CarRentalService - Booking saved with ID: 19
+2025-06-09 15:44:53 [http-nio-8081-exec-5] INFO  c.c.C.service.CarRentalService - Booking event sent for booking ID: 19
+2025-06-09 15:44:53 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Booking successful with ID: 19
+2025-06-09 15:44:53 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-09 15:44:53 [http-nio-8081-exec-8] INFO  c.c.C.config.MyUserDetailsService - User found: Agrim
+2025-06-09 15:44:53 [http-nio-8081-exec-8] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Agrim
+2025-06-09 15:44:53 [http-nio-8081-exec-8] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Agrim': VALID
+2025-06-09 15:44:53 [http-nio-8081-exec-8] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Agrim
+2025-06-09 15:44:53 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-09 15:44:53 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-09 15:44:53 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-09 15:44:53 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Found 2 bookings
+2025-06-09 15:44:53 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetched 2 bookings
+2025-06-09 15:52:26 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/available?startDate=2025-06-30&endDate=2025-06-30
+2025-06-09 15:52:26 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/available?startDate=2025-06-30&endDate=2025-06-30
+2025-06-09 15:52:26 [http-nio-8081-exec-5] INFO  c.c.C.config.MyUserDetailsService - User found: Agrim
+2025-06-09 15:52:26 [http-nio-8081-exec-5] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Agrim
+2025-06-09 15:52:26 [http-nio-8081-exec-5] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Agrim': VALID
+2025-06-09 15:52:26 [http-nio-8081-exec-5] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Agrim
+2025-06-09 15:52:26 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/available?startDate=2025-06-30&endDate=2025-06-30
+2025-06-09 15:52:26 [http-nio-8081-exec-5] INFO  c.c.C.service.CarRentalService - Fetching available cars between 2025-06-30 and 2025-06-30
+2025-06-09 15:52:26 [http-nio-8081-exec-5] INFO  c.c.C.service.CarRentalService - Found 10 available cars
+2025-06-09 15:52:26 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:52:26 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:52:26 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:52:26 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:52:26 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:52:26 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:52:26 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-2] INFO  c.c.C.controller.CarRentalController - Image served successfully: c4f30447-3733-4c32-aeda-781c60b85ce4_gwagon.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Image served successfully: 79fa5371-3c1f-4760-84cd-59f7c73fa5e2_gwagon.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-7] INFO  c.c.C.controller.CarRentalController - Image served successfully: 1735a0a2-2889-4b1f-89f6-86923c1e6733_fortuner.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Image served successfully: 9166c3d1-1d94-4fdc-9fbc-aa1094671d64_thar.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Image served successfully: 24d6eb00-4ded-40c4-923c-894dece03c0a_astor.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-6] INFO  c.c.C.controller.CarRentalController - Image served successfully: 0ecea1b9-73ae-446f-a462-2c11029f4b4d_alto.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/61dff921-409c-4f26-b96c-2d66545d238f_m4.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars/image/92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:52:26 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:52:26 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:52:26 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-09 15:52:26 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/61dff921-409c-4f26-b96c-2d66545d238f_m4.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars/image/92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Fetching image with filename: 61dff921-409c-4f26-b96c-2d66545d238f_m4.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\61dff921-409c-4f26-b96c-2d66545d238f_m4.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-5] INFO  c.c.C.controller.CarRentalController - Image served successfully: 61dff921-409c-4f26-b96c-2d66545d238f_m4.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-9] INFO  c.c.C.controller.CarRentalController - Image served successfully: a5453773-0666-43b4-bbbe-887d1cda7220_volvo-xc90-black-side-view-wallpaper-preview.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-4] INFO  c.c.C.controller.CarRentalController - Image served successfully: 92df5467-c53e-43ec-b545-4cc84c0718ba_alto.webp
+2025-06-09 15:52:26 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Looking for image at: C:\WorkSpace\New folder\CarRental\uploads\7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:52:26 [http-nio-8081-exec-1] INFO  c.c.C.controller.CarRentalController - Image served successfully: 7c80be52-3ba6-4a55-b2a9-fe0af2246ec4_alto.jpg
+2025-06-09 15:52:31 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/cars
+2025-06-09 15:52:31 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/cars
+2025-06-09 15:52:31 [http-nio-8081-exec-8] INFO  c.c.C.config.MyUserDetailsService - User found: Agrim
+2025-06-09 15:52:31 [http-nio-8081-exec-8] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Agrim
+2025-06-09 15:52:31 [http-nio-8081-exec-8] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Agrim': VALID
+2025-06-09 15:52:31 [http-nio-8081-exec-8] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Agrim
+2025-06-09 15:52:31 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/cars
+2025-06-09 15:52:31 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Fetching all available cars...
+2025-06-09 15:52:31 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Fetching all available cars...
+2025-06-09 15:52:31 [http-nio-8081-exec-8] INFO  c.c.C.service.CarRentalService - Found 10 available cars
+2025-06-09 15:52:31 [http-nio-8081-exec-8] INFO  c.c.C.controller.CarRentalController - Successfully fetched 10 available cars
+2025-06-09 15:52:38 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/bookings
+2025-06-09 15:52:38 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/bookings
+2025-06-09 15:52:38 [http-nio-8081-exec-3] INFO  c.c.C.config.MyUserDetailsService - User found: Agrim
+2025-06-09 15:52:38 [http-nio-8081-exec-3] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Agrim
+2025-06-09 15:52:38 [http-nio-8081-exec-3] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Agrim': VALID
+2025-06-09 15:52:38 [http-nio-8081-exec-3] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Agrim
+2025-06-09 15:52:38 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/bookings
+2025-06-09 15:52:38 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Booking request received for car ID: 11
+2025-06-09 15:52:38 [http-nio-8081-exec-3] INFO  c.c.C.service.CarRentalService - Booking request received for car ID: 11
+2025-06-09 15:52:38 [http-nio-8081-exec-3] INFO  c.c.C.service.CarRentalService - Booking saved with ID: 20
+2025-06-09 15:52:38 [http-nio-8081-exec-3] INFO  c.c.C.service.CarRentalService - Booking event sent for booking ID: 20
+2025-06-09 15:52:38 [http-nio-8081-exec-3] INFO  c.c.C.controller.CarRentalController - Booking successful with ID: 20
+2025-06-09 15:52:38 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bookings
+2025-06-09 15:52:38 [http-nio-8081-exec-10] INFO  c.c.C.config.MyUserDetailsService - User found: Agrim
+2025-06-09 15:52:38 [http-nio-8081-exec-10] INFO  c.c.CarService.config.UserPrinciple - UserPrinciple created for user: Agrim
+2025-06-09 15:52:38 [http-nio-8081-exec-10] INFO  c.c.CarService.config.JwtUtils - Validating token for user 'Agrim': VALID
+2025-06-09 15:52:38 [http-nio-8081-exec-10] INFO  c.c.C.config.JwtAuthenticationFilter - JWT token is valid. Setting authentication for user: Agrim
+2025-06-09 15:52:38 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/bookings
+2025-06-09 15:52:38 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetching all bookings...
+2025-06-09 15:52:38 [http-nio-8081-exec-10] INFO  c.c.C.service.CarRentalService - Fetching all bookings...
+2025-06-09 15:52:38 [http-nio-8081-exec-10] INFO  c.c.C.service.CarRentalService - Found 3 bookings
+2025-06-09 15:52:38 [http-nio-8081-exec-10] INFO  c.c.C.controller.CarRentalController - Fetched 3 bookings
+2025-06-09 17:12:17 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m57s426ms398µs100ns).
+2025-06-09 17:14:39 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-09 17:14:39 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-09 17:14:39 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-09 17:14:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-09 17:14:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

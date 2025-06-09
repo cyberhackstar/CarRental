@@ -14,6 +14,7 @@ import com.carrental.common.dto.BookingEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -29,7 +30,8 @@ import java.util.UUID;
 public class CarRentalService {
 
     private static final Logger logger = LoggerFactory.getLogger(CarRentalService.class);
-    private static final String UPLOAD_DIR = "uploads";
+    @Value("${car.image.upload-dir}")
+    private String uploadDir;
 
     @Autowired
     private CarEventProducer carEventProducer;
@@ -57,7 +59,7 @@ public class CarRentalService {
     if (imageFile != null && !imageFile.isEmpty()) {
         // Save image to local file system
         String fileName = UUID.randomUUID() + "_" + imageFile.getOriginalFilename();
-        Path imagePath = Paths.get(UPLOAD_DIR).resolve(fileName);
+        Path imagePath = Paths.get(uploadDir).resolve(fileName);
         Files.createDirectories(imagePath.getParent());
         Files.copy(imageFile.getInputStream(), imagePath, StandardCopyOption.REPLACE_EXISTING);
         car.setImageUrl(fileName); // Save file name or path
@@ -96,7 +98,7 @@ public class CarRentalService {
             logger.info("Car deleted with ID: {}", id);
             if (car.getImageUrl() != null) {
                 try {
-                    Files.deleteIfExists(Paths.get(UPLOAD_DIR).resolve(car.getImageUrl()));
+                    Files.deleteIfExists(Paths.get(uploadDir).resolve(car.getImageUrl()));
                     logger.info("Deleted image file: {}", car.getImageUrl());
                 } catch (IOException e) {
                     logger.warn("Failed to delete image file: {}", car.getImageUrl(), e);

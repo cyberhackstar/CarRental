@@ -1,5 +1,6 @@
 package com.carrental.CarService;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +15,8 @@ import java.nio.file.Paths;
 @EnableAsync
 public class CarServiceApplication implements CommandLineRunner {
 
-    private static final String UPLOAD_DIR = "uploads";
+    @Value("${car.image.upload-dir}")
+    private String uploadDir;
 
     public static void main(String[] args) {
         SpringApplication.run(CarServiceApplication.class, args);
@@ -23,7 +25,7 @@ public class CarServiceApplication implements CommandLineRunner {
     @Override
     public void run(String... args) {
         try {
-            Path path = Paths.get(UPLOAD_DIR);
+            Path path = Paths.get(uploadDir);
             if (!Files.exists(path)) {
                 Files.createDirectories(path);
                 System.out.println("Upload directory created at: " + path.toAbsolutePath());
