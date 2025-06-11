@@ -6,6 +6,15 @@ services:
     repo: https://github.com/cyberhackstar/CarRental
     rootDir: CarService
     buildCommand: ./mvnw package -DskipTests
+    ports:
+      - 8081
+    envVars:
+      - key: DB_URL
+        value: jdbc:postgresql://dpg-d13dngje5dus73elcbig-a:5432/car_rental_c5ct
+      - key: DB_USERNAME
+        value: car_rental_c5ct_user
+      - key: DB_PASSWORD
+        value: F0hPN4OcyXDWme8LcRP4Gk6CwY2mSSNj
 
   - type: web
     name: car-admin-monitor
@@ -14,6 +23,15 @@ services:
     repo: https://github.com/cyberhackstar/CarRental
     rootDir: CarAdminMonitor
     buildCommand: ./mvnw package -DskipTests
+    ports:
+      - 8080
+    envVars:
+      - key: DB_URL
+        value: jdbc:postgresql://dpg-d13dngje5dus73elcbig-a:5432/car_rental_c5ct
+      - key: DB_USERNAME
+        value: car_rental_c5ct_user
+      - key: DB_PASSWORD
+        value: F0hPN4OcyXDWme8LcRP4Gk6CwY2mSSNj
 
   - type: web
     name: car-listener-service
@@ -22,6 +40,15 @@ services:
     repo: https://github.com/cyberhackstar/CarRental
     rootDir: CarListnerService
     buildCommand: ./mvnw package -DskipTests
+    ports:
+      - 8082
+    envVars:
+      - key: DB_URL
+        value: jdbc:postgresql://dpg-d13dngje5dus73elcbig-a:5432/car_rental_c5ct
+      - key: DB_USERNAME
+        value: car_rental_c5ct_user
+      - key: DB_PASSWORD
+        value: F0hPN4OcyXDWme8LcRP4Gk6CwY2mSSNj
 
   - type: web
     name: car-service-frontend
