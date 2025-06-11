@@ -31,7 +31,3 @@ services:
     rootDir: CarRentalWebApp
     buildCommand: npm install && npm run build --prod
     startCommand: npx serve -s dist/car-rental-web-app
-<<<<<<< HEAD
-=======
-
->>>>>>> 935782cf198abe0a9a8857579ca591759762b962
