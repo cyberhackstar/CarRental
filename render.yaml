@@ -27,4 +27,5 @@ services:
     repo: https://github.com/cyberhackstar/CarRental
     rootDir: CarRentalWebApp
     buildCommand: npm install && npm run build --prod
-    startCommand: npx serve -s dist
+    startCommand: npx serve -s dist/car-rental-web-app
+
