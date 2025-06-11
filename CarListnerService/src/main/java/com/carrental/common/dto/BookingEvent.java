@@ -18,4 +18,7 @@ public class BookingEvent implements Serializable {
     private LocalDate startDate;
     private LocalDate endDate;
     private double totalAmount;
+    private String carBrand;
+    private String carModel;
+    private double pricePerDay;
 }

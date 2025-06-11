@@ -1,11 +1,12 @@
+
 server:
-  port: ${PORT:8081}
+  port: ${PORT:8080}
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/car_rental
-    username: postgres
-    password: postgres
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -16,25 +17,24 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         jdbc:
-           lob:
-             non_contextual_creation: true
-
+          lob:
+            non_contextual_creation: true
 
   activemq:
-    broker-url: tcp://localhost:61616
-    user: admin
-    password: admin
+    broker-url: ${ACTIVEMQ_URL}
+    user: ${ACTIVEMQ_USER}
+    password: ${ACTIVEMQ_PASSWORD}
     packages:
       trust-all: true
 
   boot:
     admin:
       client:
-        url: http://localhost:8080
+        url: ${ADMIN_SERVER_URL}
         instance:
           prefer-ip: true
-        username: admin  # Optional if your admin server is secured
-        password: admin  # Optional if your admin server is secured
+        username: ${ADMIN_USERNAME}
+        password: ${ADMIN_PASSWORD}
 
 management:
   endpoints:
@@ -47,14 +47,21 @@ management:
 
 logging:
   file:
-    name: C:/WorkSpace/New folder/CarRental/Logs/CarService.log
+    name: /app/logs/CarService.log
   level:
     org.hibernate.type.descriptor.sql: TRACE
     org:
       springframework:
         security: DEBUG
 
-
 car:
   image:
-    upload-dir: C:/WorkSpace/New folder/CarRental/uploads
+    upload-dir: /app/uploads
+
+razorpay:
+  keyId: ${RAZORPAY_KEY_ID}
+  keySecret: ${RAZORPAY_KEY_SECRET}
+  currency: INR
+  companyName: YourCompany
+  webhook:
+    secret: ${RAZORPAY_WEBHOOK_SECRET}

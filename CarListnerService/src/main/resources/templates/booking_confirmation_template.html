@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Booking Confirmation</title>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    "
+  >
+    <div
+      style="
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+      "
+    >
+      <h2 style="color: #2c3e50; text-align: center">
+        🚗 Car Rental Booking Confirmation
+      </h2>
+      <p>Hi <strong>{{customer_name}}</strong>,</p>
+      <p>We're excited to have you on board! Below are your booking details:</p>
+
+      <table style="width: 100%; border-collapse: collapse; margin-top: 20px">
+        <tr>
+          <td style="padding: 8px">
+            <img
+              src="https://img.icons8.com/?size=20&id=v7Wpekc3QC6V&format=png&color=000000"
+            />
+            <strong>Booking Id:</strong>
+          </td>
+          <td style="padding: 8px">{{service_details}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px">
+            <img src="https://img.icons8.com/ios-filled/20/000000/car.png" />
+            <strong>Car:</strong>
+          </td>
+          <td style="padding: 8px">{{car_brand}} {{car_model}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px">
+            <img
+              src="https://img.icons8.com/ios-filled/20/000000/price-tag-euro.png"
+            />
+            <strong>Price/Day:</strong>
+          </td>
+          <td style="padding: 8px">₹{{price_per_day}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px">
+            <img
+              src="https://img.icons8.com/ios-filled/20/000000/calendar.png"
+            />
+            <strong>Start Date:</strong>
+          </td>
+          <td style="padding: 8px">{{start_date}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px">
+            <img
+              src="https://img.icons8.com/ios-filled/20/000000/calendar.png"
+            />
+            <strong>End Date:</strong>
+          </td>
+          <td style="padding: 8px">{{end_date}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px">
+            <img src="https://img.icons8.com/ios-filled/20/000000/money.png" />
+            <strong>Total Amount:</strong>
+          </td>
+          <td style="padding: 8px">₹{{total_amount}}</td>
+        </tr>
+      </table>
+
+      <p style="margin-top: 20px">
+        Drive safe and enjoy your journey with CarRental!
+      </p>
+      <hr style="margin-top: 30px" />
+      <p style="font-size: 12px; color: #888; text-align: center">
+        CarRental Services | Contact us: support@carrental.com
+      </p>
+    </div>
+  </body>
+</html>

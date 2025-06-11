@@ -6,6 +6,7 @@ import com.carrental.CarService.messaging.BookingEventProducer;
 import com.carrental.CarService.messaging.CarEventProducer;
 import com.carrental.CarService.model.Booking;
 import com.carrental.CarService.model.Car;
+import com.carrental.CarService.payment.PaymentService;
 import com.carrental.CarService.repository.BookingRepository;
 import com.carrental.CarService.repository.CarRepository;
 import com.carrental.CarService.utility.CarMapper;
@@ -22,7 +23,9 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -45,6 +48,9 @@ public class CarRentalService {
     @Autowired
     private BookingRepository bookingRepository;
 
+    @Autowired
+    private PaymentService paymentService;
+
     public List<Car> getAllAvailableCars() {
         logger.info("Fetching all available cars...");
         List<Car> cars = carRepository.findByAvailableTrue();
@@ -53,38 +59,37 @@ public class CarRentalService {
     }
 
     public Car createCar(CarRequestDto carDto, MultipartFile imageFile) throws IOException {
-    logger.info("Creating new car: {} {}", carDto.getBrand(), carDto.getModel());
-    Car car = CarMapper.toEntity(carDto);
+        logger.info("Creating new car: {} {}", carDto.getBrand(), carDto.getModel());
+        Car car = CarMapper.toEntity(carDto);
 
-    if (imageFile != null && !imageFile.isEmpty()) {
-        // Save image to local file system
-        String fileName = UUID.randomUUID() + "_" + imageFile.getOriginalFilename();
-        Path imagePath = Paths.get(uploadDir).resolve(fileName);
-        Files.createDirectories(imagePath.getParent());
-        Files.copy(imageFile.getInputStream(), imagePath, StandardCopyOption.REPLACE_EXISTING);
-        car.setImageUrl(fileName); // Save file name or path
+        if (imageFile != null && !imageFile.isEmpty()) {
+            // Save image to local file system
+            String fileName = UUID.randomUUID() + "_" + imageFile.getOriginalFilename();
+            Path imagePath = Paths.get(uploadDir).resolve(fileName);
+            Files.createDirectories(imagePath.getParent());
+            Files.copy(imageFile.getInputStream(), imagePath, StandardCopyOption.REPLACE_EXISTING);
+            car.setImageUrl(fileName); // Save file name or path
 
-        // Save image data to database
-        //car.setImageData(imageFile.getBytes());
+            // Save image data to database
+            // car.setImageData(imageFile.getBytes());
 
-        logger.info("Image uploaded and saved as: {}", fileName);
+            logger.info("Image uploaded and saved as: {}", fileName);
+        }
+
+        Car savedCar = carRepository.save(car);
+        logger.info("Car saved with ID: {}", savedCar.getId());
+
+        carEventProducer.sendCarEvent(CarEvent.builder()
+                .carId(savedCar.getId())
+                .brand(savedCar.getBrand())
+                .model(savedCar.getModel())
+                .available(savedCar.isAvailable())
+                .pricePerDay(savedCar.getPricePerDay())
+                .build());
+
+        logger.info("Car event sent for car ID: {}", savedCar.getId());
+        return savedCar;
     }
-
-    Car savedCar = carRepository.save(car);
-    logger.info("Car saved with ID: {}", savedCar.getId());
-
-    carEventProducer.sendCarEvent(CarEvent.builder()
-            .carId(savedCar.getId())
-            .brand(savedCar.getBrand())
-            .model(savedCar.getModel())
-            .available(savedCar.isAvailable())
-            .pricePerDay(savedCar.getPricePerDay())
-            .build());
-
-    logger.info("Car event sent for car ID: {}", savedCar.getId());
-    return savedCar;
-}
-
 
     public Optional<Car> getCarById(Long id) {
         logger.info("Fetching car by ID: {}", id);
@@ -115,73 +120,129 @@ public class CarRentalService {
     }
 
     public Booking bookCar(Booking booking) {
-    logger.info("Booking request received for car ID: {}", booking.getCarId());
+        logger.info("Booking request received for car ID: {}", booking.getCarId());
 
-    if (booking.getCarId() == null) {
-        logger.warn("Booking failed: carId is null");
-        throw new IllegalArgumentException("Booking must include a valid carId.");
-    }
-
-    Car car = carRepository.findById(booking.getCarId())
-            .orElseThrow(() -> new RuntimeException("Car not found."));
-
-    // Check for overlapping bookings
-    List<Booking> overlapping = bookingRepository.findOverlappingBookings(
-            booking.getCarId(),
-            booking.getStartDate(),
-            booking.getEndDate()
-    );
-
-    if (!overlapping.isEmpty()) {
-        logger.warn("Car is already booked for the selected dates: {}", booking.getCarId());
-        throw new IllegalStateException("Car is already booked for the selected dates.");
-    }
-
-    // Calculate total amount
-    long days = ChronoUnit.DAYS.between(booking.getStartDate(), booking.getEndDate()) + 1;
-    booking.setTotalAmount(days * car.getPricePerDay());
-
-    Booking savedBooking = bookingRepository.save(booking);
-    logger.info("Booking saved with ID: {}", savedBooking.getId());
-
-    bookingEventProducer.sendBookingEvent(BookingEvent.builder()
-            .bookingId(savedBooking.getId())
-            .carId(savedBooking.getCarId())
-            .customerName(savedBooking.getCustomerName())
-            .customerEmail(savedBooking.getCustomerEmail())
-            .startDate(savedBooking.getStartDate())
-            .endDate(savedBooking.getEndDate())
-            .totalAmount(savedBooking.getTotalAmount())
-            .build());
-
-    logger.info("Booking event sent for booking ID: {}", savedBooking.getId());
-    return savedBooking;
-}
-
-
-public List<Car> getAvailableCarsBetween(LocalDate startDate, LocalDate endDate) {
-    logger.info("Fetching available cars between {} and {}", startDate, endDate);
-
-    try {
-        List<Long> bookedCarIds = bookingRepository.findBookedCarIdsBetween(startDate, endDate);
-        List<Car> availableCars;
-        if (bookedCarIds.isEmpty()) {
-            availableCars = carRepository.findAll(); // All cars are available
-        } else {
-            availableCars = carRepository.findByIdNotIn(bookedCarIds);
+        if (booking.getCarId() == null) {
+            logger.warn("Booking failed: carId is null");
+            throw new IllegalArgumentException("Booking must include a valid carId.");
         }
-        logger.info("Found {} available cars", availableCars.size());
-        return availableCars;
-    } catch (Exception e) {
-        logger.error("Error in getAvailableCarsBetween: ", e);
-        throw e;
+
+        Car car = carRepository.findById(booking.getCarId())
+                .orElseThrow(() -> new RuntimeException("Car not found."));
+
+        // Check for overlapping bookings
+        List<Booking> overlapping = bookingRepository.findOverlappingBookings(
+                booking.getCarId(),
+                booking.getStartDate(),
+                booking.getEndDate());
+
+        if (!overlapping.isEmpty()) {
+            logger.warn("Car is already booked for the selected dates: {}", booking.getCarId());
+            throw new IllegalStateException("Car is already booked for the selected dates.");
+        }
+
+        // Calculate total amount
+        long days = ChronoUnit.DAYS.between(booking.getStartDate(), booking.getEndDate()) + 1;
+        booking.setTotalAmount(days * car.getPricePerDay());
+
+        Booking savedBooking = bookingRepository.save(booking);
+        logger.info("Booking saved with ID: {}", savedBooking.getId());
+
+        bookingEventProducer.sendBookingEvent(BookingEvent.builder()
+                .bookingId(savedBooking.getId())
+                .carId(savedBooking.getCarId())
+                .customerName(savedBooking.getCustomerName())
+                .customerEmail(savedBooking.getCustomerEmail())
+                .startDate(savedBooking.getStartDate())
+                .endDate(savedBooking.getEndDate())
+                .totalAmount(savedBooking.getTotalAmount())
+                .carBrand(car.getBrand())
+                .carModel(car.getModel())
+                .pricePerDay(car.getPricePerDay())
+                .build());
+
+        logger.info("Booking event sent for booking ID: {}", savedBooking.getId());
+        return savedBooking;
     }
-}
 
+    public List<Car> getAvailableCarsBetween(LocalDate startDate, LocalDate endDate) {
+        logger.info("Fetching available cars between {} and {}", startDate, endDate);
 
+        try {
+            List<Long> bookedCarIds = bookingRepository.findBookedCarIdsBetween(startDate, endDate);
+            List<Car> availableCars;
+            if (bookedCarIds.isEmpty()) {
+                availableCars = carRepository.findAll(); // All cars are available
+            } else {
+                availableCars = carRepository.findByIdNotIn(bookedCarIds);
+            }
+            logger.info("Found {} available cars", availableCars.size());
+            return availableCars;
+        } catch (Exception e) {
+            logger.error("Error in getAvailableCarsBetween: ", e);
+            throw e;
+        }
+    }
 
     public Optional<Booking> getBooking(Long id) {
         logger.info("Fetching booking by ID: {}", id);
         return bookingRepository.findById(id);
     }
+
+    public Map<String, Object> bookCarWithPayment(Booking booking) {
+        logger.info("Booking request received for car ID: {}", booking.getCarId());
+
+        if (booking.getCarId() == null) {
+            logger.warn("Booking failed: carId is null");
+            throw new IllegalArgumentException("Booking must include a valid carId.");
+        }
+
+        Car car = carRepository.findById(booking.getCarId())
+                .orElseThrow(() -> new RuntimeException("Car not found."));
+
+        List<Booking> overlapping = bookingRepository.findOverlappingBookings(
+                booking.getCarId(),
+                booking.getStartDate(),
+                booking.getEndDate());
+
+        if (!overlapping.isEmpty()) {
+            logger.warn("Car is already booked for the selected dates: {}", booking.getCarId());
+            throw new IllegalStateException("Car is already booked for the selected dates.");
+        }
+
+        long days = ChronoUnit.DAYS.between(booking.getStartDate(), booking.getEndDate()) + 1;
+        booking.setTotalAmount(days * car.getPricePerDay());
+
+        String razorpayOrder;
+        try {
+            razorpayOrder = paymentService.createOrder(booking.getTotalAmount());
+        } catch (com.razorpay.RazorpayException e) {
+            logger.error("Failed to create Razorpay order", e);
+            throw new RuntimeException("Payment order creation failed", e);
+        }
+
+        Booking savedBooking = bookingRepository.save(booking);
+        logger.info("Booking saved with ID: {}", savedBooking.getId());
+
+        bookingEventProducer.sendBookingEvent(BookingEvent.builder()
+                .bookingId(savedBooking.getId())
+                .carId(savedBooking.getCarId())
+                .customerName(savedBooking.getCustomerName())
+                .customerEmail(savedBooking.getCustomerEmail())
+                .startDate(savedBooking.getStartDate())
+                .endDate(savedBooking.getEndDate())
+                .totalAmount(savedBooking.getTotalAmount())
+                .carBrand(car.getBrand())
+                .carModel(car.getModel())
+                .pricePerDay(car.getPricePerDay())
+                .build());
+
+        logger.info("Booking event sent for booking ID: {}", savedBooking.getId());
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("booking", savedBooking);
+        response.put("razorpayOrder", razorpayOrder);
+        return response;
+    }
+
 }

@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 
+declare var Razorpay: any;
+
 @Component({
   selector: 'app-booking-form',
   standalone: true,
@@ -82,4 +84,45 @@ export class BookingFormComponent implements OnInit {
       }
     });
   }
+
+  bookCar() {
+  this.carRentalService.bookCarWithPayment(this.booking).subscribe(response => {
+    const booking = response.booking;
+    const razorpayOrder = JSON.parse(response.razorpayOrder); // Parse if it's a JSON string
+
+    const options: any = {
+      key: 'rzp_test_wY3wb7z6dH7O5b', // Replace with your Razorpay key
+      amount: razorpayOrder.amount,
+      currency: razorpayOrder.currency,
+      name: 'CarRental',
+      description: 'Car Booking Payment',
+      order_id: razorpayOrder.id,
+      handler: (res: any) => {
+        this.successMessage = 'Booking successful!';
+        this.errorMessage = '';
+        this.router.navigate(['/bookings']); // Redirect to bookings page
+        console.log('Payment response:', res);
+        // Optionally call backend to confirm payment
+      },
+      prefill: {
+        name: booking.customerName,
+        email: booking.customerEmail
+        
+      },
+      theme: {
+        color: '#007bff'
+      }
+    };
+
+    const rzp = new Razorpay(options);
+    rzp.open();
+  });
 }
+
+}
+
+
+
+
+
+

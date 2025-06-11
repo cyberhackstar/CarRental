@@ -39,8 +39,12 @@ public class BookingEventListener {
         log.info("✅ Booking event saved to database.");
 
         // Send email
-        emailService.sendBookingConfirmation(event);
-        log.info("📧 Booking confirmation email sent.");
+        try {
+            emailService.sendBookingConfirmation(event);
+            log.info("📧 Booking confirmation email sent.");
+        } catch (Exception e) {
+            log.error("❌ Failed to send booking confirmation email.", e);
+        }
     }
 
 }

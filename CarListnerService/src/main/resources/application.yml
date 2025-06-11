@@ -1,8 +1,12 @@
+
+server:
+  port: ${PORT:8080}
+
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/car_rental
-    username: postgres
-    password: postgres
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -14,17 +18,17 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   activemq:
-    broker-url: tcp://localhost:61616
-    user: admin
-    password: admin
+    broker-url: ${ACTIVEMQ_URL}
+    user: ${ACTIVEMQ_USER}
+    password: ${ACTIVEMQ_PASSWORD}
     packages:
       trust-all: true
 
   mail:
     host: smtp.gmail.com
     port: 587
-    username: sharma2001bhawesh@gmail.com
-    password: kfncuvodviuqtrha
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -43,7 +47,4 @@ management:
 
 logging:
   file:
-    name: C:/WorkSpace/New folder/CarRental/Logs/CarListner.log
-
-server:
-  port: 8082
+    name: /app/logs/CarListner.log

@@ -5,6 +5,7 @@ services:
     plan: free
     repo: https://github.com/cyberhackstar/CarRental
     rootDir: CarService
+    buildCommand: ./mvnw package -DskipTests
 
   - type: web
     name: car-admin-monitor
@@ -12,6 +13,7 @@ services:
     plan: free
     repo: https://github.com/cyberhackstar/CarRental
     rootDir: CarAdminMonitor
+    buildCommand: ./mvnw package -DskipTests
 
   - type: web
     name: car-listener-service
@@ -19,6 +21,7 @@ services:
     plan: free
     repo: https://github.com/cyberhackstar/CarRental
     rootDir: CarListnerService
+    buildCommand: ./mvnw package -DskipTests
 
   - type: web
     name: car-service-frontend
@@ -27,4 +30,4 @@ services:
     repo: https://github.com/cyberhackstar/CarRental
     rootDir: CarRentalWebApp
     buildCommand: npm install && npm run build --prod
-    startCommand: npx serve -s dist
+    startCommand: npx serve -s dist/car-rental-web-app

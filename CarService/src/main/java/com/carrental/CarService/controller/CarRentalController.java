@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ForkJoinPool;
 
 @RestController
@@ -136,6 +137,12 @@ public class CarRentalController {
         Booking savedBooking = carRentalService.bookCar(booking);
         logger.info("Booking successful with ID: {}", savedBooking.getId());
         return ResponseEntity.ok(savedBooking);
+    }
+
+    @PostMapping("/bookings/with-payment")
+    public ResponseEntity<Map<String, Object>> bookCarWithPayment(@RequestBody Booking booking) {
+        Map<String, Object> response = carRentalService.bookCarWithPayment(booking);
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/bookings/{id}")
