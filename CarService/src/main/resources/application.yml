@@ -19,6 +19,7 @@ spring:
         jdbc:
           lob:
             non_contextual_creation: true
+    open-in-view: false
 
   # activemq:
   #   broker-url: ${ACTIVEMQ_URL}

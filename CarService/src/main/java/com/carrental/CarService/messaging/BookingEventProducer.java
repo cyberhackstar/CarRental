@@ -1,7 +1,5 @@
 package com.carrental.CarService.messaging;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Component;
 
 import com.carrental.common.dto.BookingEvent;
@@ -21,8 +19,7 @@ import com.carrental.common.dto.BookingEvent;
 
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.stereotype.Component;
-import com.carrental.common.dto.BookingEvent;
+
 
 @Component
 public class BookingEventProducer {
