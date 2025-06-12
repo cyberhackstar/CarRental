@@ -67,6 +67,5 @@ razorpay:
   keyId: ${RAZORPAY_KEY_ID}
   keySecret: ${RAZORPAY_KEY_SECRET}
   currency: INR
-  companyName: YourCompany
-  webhook:
-    secret: ${RAZORPAY_WEBHOOK_SECRET}
+  companyName: CarRental
+  
