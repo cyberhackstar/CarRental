@@ -13,7 +13,7 @@ export interface LoginResponse {
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:8081/api';
+  private baseUrl = 'https://carrentalservice.onrender.com/api';
 
   constructor(private http: HttpClient) {}
 

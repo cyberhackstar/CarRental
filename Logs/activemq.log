@@ -1,6 +1,0 @@
-INFO: Using default configuration
-      Configurations are loaded in the following order: /etc/default/activemq /c/Users/10827643/.activemqrc /c/Users/10827643/Downloads/apache-activemq-6.1.6-bin/apache-activemq-6.1.6/bin/setenv
-
-INFO: Using java '/c/Program Files/Eclipse Adoptium/jdk-21.0.6.7-hotspot/bin/java'
-INFO: Starting - inspect logfiles specified in logging.properties and log4j2.properties to get details
-INFO: pidfile created : '/c/Users/10827643/Downloads/apache-activemq-6.1.6-bin/apache-activemq-6.1.6/data/activemq.pid' (pid '24024')

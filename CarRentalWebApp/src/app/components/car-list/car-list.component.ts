@@ -85,7 +85,7 @@ export class CarListComponent implements OnInit {
   getImageUrl(imageName: string | undefined | null): string {
     const isValidImagePath = imageName && imageName.trim() !== '';
     return isValidImagePath
-      ? `http://localhost:8081/api/cars/image/${imageName}`
+      ? `https://carrentalservice.onrender.com/api/cars/image/${imageName}`
       : 'assets/default-car.jpg';
   }
 

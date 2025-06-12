@@ -9,7 +9,7 @@ import { CarResponse } from '../models/car-response.model';
   providedIn: 'root',
 })
 export class CarRentalService {
-  private baseUrl = 'http://localhost:8081/api'; // Adjust if needed
+  private baseUrl = 'https://carrentalservice.onrender.com/api'; // Adjust if needed
 
   constructor(private http: HttpClient) {}
 
@@ -61,7 +61,7 @@ export class CarRentalService {
   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
   return this.http
-    .get(`http://localhost:8081/api/cars/image/${imageName}`, {
+    .get(`https://carrentalservice.onrender.com/api/cars/image/${imageName}`, {
       headers,
       responseType: 'blob',
     })
