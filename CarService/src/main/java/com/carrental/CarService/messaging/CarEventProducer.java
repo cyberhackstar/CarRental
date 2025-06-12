@@ -18,8 +18,7 @@ import org.springframework.stereotype.Component;
 //     }
 // }
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.stereotype.Component;
-import com.carrental.common.dto.CarEvent;
+
 
 @Component
 public class CarEventProducer {

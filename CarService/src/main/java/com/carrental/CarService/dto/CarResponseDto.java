@@ -20,11 +20,18 @@ public class CarResponseDto {
         this.pricePerDay = car.getPricePerDay();
 
         // Safely construct image URL if image path is available
+        // if (car.getImageUrl() != null && !car.getImageUrl().isBlank()) {
+        //     this.imageUrl = "/api/cars/image/" + Paths.get(car.getImageUrl()).getFileName().toString();
+        // } else {
+        //     this.imageUrl = null;
+        // }
+        
         if (car.getImageUrl() != null && !car.getImageUrl().isBlank()) {
-            this.imageUrl = "/api/cars/image/" + Paths.get(car.getImageUrl()).getFileName().toString();
+        this.imageUrl = "/uploads/" + car.getImageUrl();
         } else {
-            this.imageUrl = null;
+        this.imageUrl = null;
         }
+
     }
 
     // Getters and Setters

@@ -66,7 +66,7 @@ logging:
 
 car:
   image:
-    upload-dir: /app/uploads
+    upload-dir: src/main/resources/static/uploads
 
 razorpay:
   keyId: ${RAZORPAY_KEY_ID}
