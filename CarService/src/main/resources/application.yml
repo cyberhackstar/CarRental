@@ -49,6 +49,10 @@ management:
   endpoint:
     health:
       show-details: always
+      jms:
+        enabled: false
+
+
 
 logging:
   file:

@@ -56,14 +56,14 @@ public class SecurityConfig {
                 })
                 .authorizeHttpRequests(auth -> {
                     logger.debug("Configuring URL access rules");
-                    auth.requestMatchers("/api/login", "/api/register", "/api/public/**","/api/cars/image/**","/error","/actuator/**").permitAll();
+                    auth.requestMatchers("/api/login", "/api/register", "/api/public/**", "/api/cars/image/**",
+                            "/error", "/actuator/**").permitAll();
                     auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll();
-                    
+
                     // Role-based access
                     auth.requestMatchers("/api/admin/**").hasRole("ADMIN");
                     auth.requestMatchers("/api/super_admin/**").hasRole("SUPER_ADMIN");
                     auth.requestMatchers("/api/user/**").hasAnyRole("USER");
-
 
                     auth.anyRequest().authenticated();
                 })
@@ -80,7 +80,12 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         logger.info("Setting up CORS configuration");
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("https://carrentalwebapp.onrender.com")); // your Angular app origin
+
+        // Allow multiple origins
+        configuration.setAllowedOrigins(List.of(
+                "https://carrentalwebapp.onrender.com",
+                "http://localhost:4200"));
+
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept"));
         configuration.setAllowCredentials(true);
