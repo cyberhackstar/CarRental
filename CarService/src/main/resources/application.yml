@@ -20,12 +20,17 @@ spring:
           lob:
             non_contextual_creation: true
 
-  activemq:
-    broker-url: ${ACTIVEMQ_URL}
-    user: ${ACTIVEMQ_USER}
-    password: ${ACTIVEMQ_PASSWORD}
-    packages:
-      trust-all: true
+  # activemq:
+  #   broker-url: ${ACTIVEMQ_URL}
+  #   user: ${ACTIVEMQ_USER}
+  #   password: ${ACTIVEMQ_PASSWORD}
+  #   packages:
+  #     trust-all: true
+
+
+  rabbitmq:
+    addresses: ${CLOUDAMQP_URL}
+
 
   boot:
     admin:

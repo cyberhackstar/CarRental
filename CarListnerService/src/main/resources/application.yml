@@ -17,12 +17,16 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-  activemq:
-    broker-url: ${ACTIVEMQ_URL}
-    user: ${ACTIVEMQ_USER}
-    password: ${ACTIVEMQ_PASSWORD}
-    packages:
-      trust-all: true
+  # activemq:
+  #   broker-url: ${ACTIVEMQ_URL}
+  #   user: ${ACTIVEMQ_USER}
+  #   password: ${ACTIVEMQ_PASSWORD}
+  #   packages:
+  #     trust-all: true
+
+  rabbitmq:
+    addresses: ${CLOUDAMQP_URL}
+
 
   mail:
     host: smtp.gmail.com
