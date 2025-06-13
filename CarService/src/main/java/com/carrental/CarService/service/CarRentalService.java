@@ -127,11 +127,21 @@ public class CarRentalService {
         Car car = CarMapper.toEntity(carDto);
 
         if (imageFile != null && !imageFile.isEmpty()) {
-            logger.info("Uploading image to Cloudinary...");
-            Map uploadResult = cloudinary.uploader().upload(imageFile.getBytes(), ObjectUtils.emptyMap());
+            logger.info("Uploading optimized image to Cloudinary...");
+
+            @SuppressWarnings("unchecked")
+            Map<String, Object> uploadOptions = (Map<String, Object>) ObjectUtils.asMap(
+                    "transformation", new Transformation<>().width(1000)
+                            .crop("scale")
+                            .quality("auto")
+                            .fetchFormat("auto"));
+
+            @SuppressWarnings("unchecked")
+            Map<String, Object> uploadResult = (Map<String, Object>) cloudinary.uploader().upload(imageFile.getBytes(), uploadOptions);
             String imageUrl = uploadResult.get("secure_url").toString();
             car.setImageUrl(imageUrl);
-            logger.info("Image uploaded successfully: {}", imageUrl);
+
+            logger.info("Optimized image uploaded successfully: {}", imageUrl);
         }
 
         Car savedCar = carRepository.save(car);
