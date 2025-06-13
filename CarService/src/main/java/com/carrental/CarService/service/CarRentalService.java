@@ -18,7 +18,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
-import java.nio.file.*;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
@@ -26,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import com.cloudinary.Cloudinary;
+import com.cloudinary.Transformation;
 import com.cloudinary.utils.ObjectUtils;
 
 
@@ -129,12 +129,10 @@ public class CarRentalService {
 
             @SuppressWarnings("unchecked")
             Map<String, Object> uploadOptions = (Map<String, Object>) ObjectUtils.asMap(
-                    "transformation", ObjectUtils.asMap(
-                        "width", 1000,
-                        "crop", "scale",
-                        "quality", "auto",
-                        "fetch_format", "auto"
-                    ));
+                    "transformation", new Transformation<>().width(1000)
+                            .crop("scale")
+                            .quality("auto")
+                            .fetchFormat("auto"));
 
             @SuppressWarnings("unchecked")
             Map<String, Object> uploadResult = (Map<String, Object>) cloudinary.uploader().upload(imageFile.getBytes(), uploadOptions);
