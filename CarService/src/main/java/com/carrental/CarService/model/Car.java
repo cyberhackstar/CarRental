@@ -1,6 +1,5 @@
 package com.carrental.CarService.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,6 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class Car {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,12 +19,6 @@ public class Car {
     private boolean available;
     private double pricePerDay;
 
-    @Column(name = "image_url")
-    private String imageUrl; // Path or URL to the image
-
-    // @Lob
-    // @Basic(fetch = FetchType.LAZY)
-    // @Column(name = "image_data", columnDefinition = "bytea")
-    // @JsonIgnore // Optional: prevent large binary data from being serialized in API responses
-    // private byte[] imageData;
+    @Column(name = "image_url", length = 1000)
+    private String imageUrl; // Stores the Cloudinary image URL
 }

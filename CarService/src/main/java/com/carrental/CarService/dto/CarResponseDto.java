@@ -2,8 +2,6 @@ package com.carrental.CarService.dto;
 
 import com.carrental.CarService.model.Car;
 
-import java.nio.file.Paths;
-
 public class CarResponseDto {
     private Long id;
     private String brand;
@@ -18,20 +16,7 @@ public class CarResponseDto {
         this.model = car.getModel();
         this.available = car.isAvailable();
         this.pricePerDay = car.getPricePerDay();
-
-        // Safely construct image URL if image path is available
-        // if (car.getImageUrl() != null && !car.getImageUrl().isBlank()) {
-        //     this.imageUrl = "/api/cars/image/" + Paths.get(car.getImageUrl()).getFileName().toString();
-        // } else {
-        //     this.imageUrl = null;
-        // }
-        
-        if (car.getImageUrl() != null && !car.getImageUrl().isBlank()) {
-        this.imageUrl = "/uploads/" + car.getImageUrl();
-        } else {
-        this.imageUrl = null;
-        }
-
+        this.imageUrl = car.getImageUrl(); // Direct Cloudinary URL
     }
 
     // Getters and Setters

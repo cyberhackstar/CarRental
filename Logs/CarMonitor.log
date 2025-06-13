@@ -1,0 +1,150 @@
+2025-06-13 09:36:57 [main] INFO  c.c.C.CarAdminMonitorApplication - Starting CarAdminMonitorApplication using Java 21.0.6 with PID 20264 (C:\Users\10827643\OneDrive - LTIMindtree\Desktop\CarRental\CarRental\CarAdminMonitor\target\classes started by 10827643 in C:\Users\10827643\OneDrive - LTIMindtree\Desktop\CarRental\CarRental\CarAdminMonitor)
+2025-06-13 09:36:57 [main] INFO  c.c.C.CarAdminMonitorApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-13 09:37:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-13 09:37:01 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-13 09:37:01 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-13 09:37:01 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-13 09:37:01 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-13 09:37:01 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3632 ms
+2025-06-13 09:37:03 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-06-13 09:37:04 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-06-13 09:37:04 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-13 09:37:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-13 09:37:04 [main] INFO  c.c.C.CarAdminMonitorApplication - Started CarAdminMonitorApplication in 8.871 seconds (process running for 9.993)
+2025-06-13 09:37:15 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-13 09:37:15 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-13 09:37:15 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-13 09:50:52 [parallel-1] WARN  d.c.b.a.s.services.IntervalCheck - Unexpected error in status-check
+reactor.core.Exceptions$OverflowException: Could not emit tick 61 due to lack of requests (interval doesn't support small downstream requests that replenish slower than the ticks)
+	at reactor.core.Exceptions.failWithOverflow(Exceptions.java:251)
+	at reactor.core.publisher.FluxInterval$IntervalRunnable.run(FluxInterval.java:131)
+	at reactor.core.scheduler.PeriodicWorkerTask.call(PeriodicWorkerTask.java:59)
+	at reactor.core.scheduler.PeriodicWorkerTask.run(PeriodicWorkerTask.java:73)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-13 09:51:42 [parallel-2] WARN  d.c.b.a.s.services.IntervalCheck - Unexpected error in info-check
+reactor.core.Exceptions$OverflowException: Could not emit tick 11 due to lack of requests (interval doesn't support small downstream requests that replenish slower than the ticks)
+	at reactor.core.Exceptions.failWithOverflow(Exceptions.java:251)
+	at reactor.core.publisher.FluxInterval$IntervalRunnable.run(FluxInterval.java:131)
+	at reactor.core.scheduler.PeriodicWorkerTask.call(PeriodicWorkerTask.java:59)
+	at reactor.core.scheduler.PeriodicWorkerTask.run(PeriodicWorkerTask.java:73)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-13 10:15:13 [reactor-http-nio-5] WARN  r.n.http.client.HttpClientConnect - [481b0fe4-86, L:/192.168.1.11:55917 ! R:/192.168.1.11:8081] The connection observed an error
+reactor.netty.http.client.PrematureCloseException: Connection prematurely closed BEFORE response
+2025-06-13 10:15:13 [reactor-http-nio-5] INFO  d.c.b.a.s.services.StatusUpdater - Couldn't retrieve status for Instance(id=9de319b5fbc6, version=2, registration=Registration(name=spring-boot-application, managementUrl=http://192.168.1.11:8081/actuator, healthUrl=http://192.168.1.11:8081/actuator/health, serviceUrl=http://192.168.1.11:8081/, source=http-api), registered=true, statusInfo=StatusInfo(status=UP, details={jms={status=UP, details={provider=ActiveMQ}}, ssl={status=UP, details={validChains=[], invalidChains=[]}}, db={status=UP, details={database=PostgreSQL, validationQuery=isValid()}}, diskSpace={status=UP, details={total=511044481024, free=386574127104, threshold=10485760, path=C:\Users\10827643\OneDrive - LTIMindtree\Desktop\CarRental\CarRental\CarService\., exists=true}}, ping={status=UP}}), statusTimestamp=2025-06-13T04:07:16.497139800Z, info=Info(values={}), endpoints=Endpoints(endpoints={caches=Endpoint(id=caches, url=http://192.168.1.11:8081/actuator/caches), loggers=Endpoint(id=loggers, url=http://192.168.1.11:8081/actuator/loggers), logfile=Endpoint(id=logfile, url=http://192.168.1.11:8081/actuator/logfile), health=Endpoint(id=health, url=http://192.168.1.11:8081/actuator/health), env=Endpoint(id=env, url=http://192.168.1.11:8081/actuator/env), scheduledtasks=Endpoint(id=scheduledtasks, url=http://192.168.1.11:8081/actuator/scheduledtasks), mappings=Endpoint(id=mappings, url=http://192.168.1.11:8081/actuator/mappings), beans=Endpoint(id=beans, url=http://192.168.1.11:8081/actuator/beans), configprops=Endpoint(id=configprops, url=http://192.168.1.11:8081/actuator/configprops), threaddump=Endpoint(id=threaddump, url=http://192.168.1.11:8081/actuator/threaddump), sbom=Endpoint(id=sbom, url=http://192.168.1.11:8081/actuator/sbom), metrics=Endpoint(id=metrics, url=http://192.168.1.11:8081/actuator/metrics), conditions=Endpoint(id=conditions, url=http://192.168.1.11:8081/actuator/conditions), info=Endpoint(id=info, url=http://192.168.1.11:8081/actuator/info)}), buildVersion=null, tags=Tags(values={}))
+org.springframework.web.reactive.function.client.WebClientRequestException: Connection prematurely closed BEFORE response
+	at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to GET health [DefaultWebClient]
+Original Stack Trace:
+		at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137)
+		at reactor.core.publisher.MonoErrorSupplied.subscribe(MonoErrorSupplied.java:55)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222)
+		at reactor.core.publisher.MonoNext$NextSubscriber.onError(MonoNext.java:93)
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyMain.onError(MonoFlatMapMany.java:205)
+		at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124)
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.whenError(FluxRetryWhen.java:229)
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenOtherSubscriber.onError(FluxRetryWhen.java:279)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121)
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.maybeOnError(FluxConcatMapNoPrefetch.java:327)
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:212)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+		at reactor.core.publisher.SinkManyEmitterProcessor.drain(SinkManyEmitterProcessor.java:476)
+		at reactor.core.publisher.SinkManyEmitterProcessor$EmitterInner.drainParent(SinkManyEmitterProcessor.java:620)
+		at reactor.core.publisher.FluxPublish$PubSubInner.request(FluxPublish.java:874)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136)
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:337)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136)
+		at reactor.core.publisher.Operators$DeferredSubscription.request(Operators.java:1742)
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.onError(FluxRetryWhen.java:196)
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205)
+		at reactor.netty.http.client.HttpClientConnect$HttpObserver.onUncaughtException(HttpClientConnect.java:417)
+		at reactor.netty.ReactorNetty$CompositeConnectionObserver.onUncaughtException(ReactorNetty.java:715)
+		at reactor.netty.resources.DefaultPooledConnectionProvider$DisposableAcquire.onUncaughtException(DefaultPooledConnectionProvider.java:225)
+		at reactor.netty.resources.DefaultPooledConnectionProvider$PooledConnection.onUncaughtException(DefaultPooledConnectionProvider.java:478)
+		at reactor.netty.http.client.HttpClientOperations.onInboundClose(HttpClientOperations.java:341)
+		at reactor.netty.channel.ChannelOperationsHandler.channelInactive(ChannelOperationsHandler.java:73)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:303)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274)
+		at io.netty.channel.ChannelInboundHandlerAdapter.channelInactive(ChannelInboundHandlerAdapter.java:81)
+		at io.netty.handler.codec.http.HttpContentDecoder.channelInactive(HttpContentDecoder.java:235)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:303)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274)
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelInactive(CombinedChannelDuplexHandler.java:418)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelInputClosed(ByteToMessageDecoder.java:412)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:377)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.channelInactive(HttpClientCodec.java:410)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelInactive(CombinedChannelDuplexHandler.java:221)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:303)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1352)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:301)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:850)
+		at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:811)
+		at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: reactor.netty.http.client.PrematureCloseException: Connection prematurely closed BEFORE response
+2025-06-13 10:22:28 [parallel-4] WARN  d.c.b.a.s.services.IntervalCheck - Unexpected error in info-check
+reactor.core.Exceptions$OverflowException: Could not emit tick 24 due to lack of requests (interval doesn't support small downstream requests that replenish slower than the ticks)
+	at reactor.core.Exceptions.failWithOverflow(Exceptions.java:251)
+	at reactor.core.publisher.FluxInterval$IntervalRunnable.run(FluxInterval.java:131)
+	at reactor.core.scheduler.PeriodicWorkerTask.call(PeriodicWorkerTask.java:59)
+	at reactor.core.scheduler.PeriodicWorkerTask.run(PeriodicWorkerTask.java:73)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-13 10:22:29 [parallel-5] WARN  d.c.b.a.s.services.IntervalCheck - Unexpected error in status-check
+reactor.core.Exceptions$OverflowException: Could not emit tick 147 due to lack of requests (interval doesn't support small downstream requests that replenish slower than the ticks)
+	at reactor.core.Exceptions.failWithOverflow(Exceptions.java:251)
+	at reactor.core.publisher.FluxInterval$IntervalRunnable.run(FluxInterval.java:131)
+	at reactor.core.scheduler.PeriodicWorkerTask.call(PeriodicWorkerTask.java:59)
+	at reactor.core.scheduler.PeriodicWorkerTask.run(PeriodicWorkerTask.java:73)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-13 11:13:40 [main] INFO  c.c.C.CarAdminMonitorApplication - Starting CarAdminMonitorApplication using Java 21.0.6 with PID 25436 (C:\Users\10827643\OneDrive - LTIMindtree\Desktop\CarRental\CarRental\CarAdminMonitor\target\classes started by 10827643 in C:\Users\10827643\OneDrive - LTIMindtree\Desktop\CarRental\CarRental\CarAdminMonitor)
+2025-06-13 11:13:41 [main] INFO  c.c.C.CarAdminMonitorApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-13 11:13:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-13 11:13:47 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-13 11:13:47 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-13 11:13:47 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-13 11:13:47 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-13 11:13:47 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5952 ms
+2025-06-13 11:14:01 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-06-13 11:14:04 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-06-13 11:14:04 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-13 11:14:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-13 11:14:05 [main] INFO  c.c.C.CarAdminMonitorApplication - Started CarAdminMonitorApplication in 27.845 seconds (process running for 30.684)
+2025-06-13 11:14:25 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-13 11:14:25 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-13 11:14:26 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 13 ms

@@ -17,6 +17,8 @@ export class CarFormComponent {
   submitted = false;
   responseMessage = '';
   selectedFile: File | null = null;
+  selectedFileName: string = '';
+  dragging = false;
 
   constructor(
     private fb: FormBuilder,
@@ -36,26 +38,25 @@ export class CarFormComponent {
     return this.carForm.controls;
   }
 
-    onFileChange(event: Event): void {
-  const input = event.target as HTMLInputElement;
-  if (input.files && input.files.length > 0) {
-    const file = input.files[0];
-    this.selectedFileName = file.name;
-    this.selectedFile = file;
+  onFileChange(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      const file = input.files[0];
+      this.selectedFile = file;
+      this.selectedFileName = file.name;
+      this.carForm.patchValue({ image: file });
+      this.carForm.get('image')?.updateValueAndValidity();
+    }
   }
-}
-
-
-
 
   onSubmit(): void {
     this.submitted = true;
+
     if (this.carForm.invalid || !this.selectedFile) {
       this.responseMessage = 'Please fill all fields and select an image.';
       return;
     }
 
-    const formData = new FormData();
     const carData = {
       brand: this.carForm.value.brand,
       model: this.carForm.value.model,
@@ -63,6 +64,7 @@ export class CarFormComponent {
       pricePerDay: this.carForm.value.pricePerDay
     };
 
+    const formData = new FormData();
     formData.append('car', JSON.stringify(carData));
     formData.append('image', this.selectedFile);
 
@@ -71,6 +73,7 @@ export class CarFormComponent {
         this.responseMessage = 'Car registered successfully!';
         this.carForm.reset({ available: true });
         this.selectedFile = null;
+        this.selectedFileName = '';
         this.submitted = false;
         this.router.navigate(['/carList']); // Adjust route as needed
       },
@@ -81,38 +84,27 @@ export class CarFormComponent {
     });
   }
 
-
-  dragging = false;
-
-onDragOver(event: DragEvent): void {
-  event.preventDefault();
-  this.dragging = true;
-}
-
-onDragLeave(event: DragEvent): void {
-  event.preventDefault();
-  this.dragging = false;
-}
-
-onDrop(event: DragEvent): void {
-  event.preventDefault();
-  this.dragging = false;
-
-  if (event.dataTransfer?.files.length) {
-    const file = event.dataTransfer.files[0];
-    this.selectedFile = file;
-    this.selectedFileName = file.name;
-
-    this.carForm.patchValue({ image: file });
-    this.carForm.get('image')?.updateValueAndValidity();
+  onDragOver(event: DragEvent): void {
+    event.preventDefault();
+    this.dragging = true;
   }
-}
 
+  onDragLeave(event: DragEvent): void {
+    event.preventDefault();
+    this.dragging = false;
+  }
 
-selectedFileName: string = '';
+  onDrop(event: DragEvent): void {
+    event.preventDefault();
+    this.dragging = false;
 
+    if (event.dataTransfer?.files.length) {
+      const file = event.dataTransfer.files[0];
+      this.selectedFile = file;
+      this.selectedFileName = file.name;
 
-
-
-
+      this.carForm.patchValue({ image: file });
+      this.carForm.get('image')?.updateValueAndValidity();
+    }
+  }
 }

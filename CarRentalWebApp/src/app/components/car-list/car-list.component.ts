@@ -82,12 +82,12 @@ export class CarListComponent implements OnInit {
       });
   }
 
-  getImageUrl(imageName: string | undefined | null): string {
-    const isValidImagePath = imageName && imageName.trim() !== '';
-    return isValidImagePath
-      ? `https://carrentalservice.onrender.com/api/cars/image/${imageName}`
-      : 'assets/default-car.jpg';
-  }
+  getImageUrl(imageUrl: string | undefined | null): string {
+  return imageUrl && imageUrl.trim() !== ''
+    ? imageUrl
+    : 'assets/default-car.jpg';
+}
+
 
   goToBooking(car: Car): void {
     console.log('Navigating to booking for car:', car);

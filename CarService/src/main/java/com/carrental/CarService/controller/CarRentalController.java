@@ -40,8 +40,22 @@ public class CarRentalController {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
+    // @PostMapping(value = "/cars", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    // // @PreAuthorize("hasRole('ADMIN')")
+    // public ResponseEntity<CarResponseDto> createCar(
+    //         @RequestPart("car") String carJson,
+    //         @RequestPart("image") MultipartFile imageFile) throws IOException {
+
+    //     logger.info("Received request to create a new car with image: {}", imageFile.getOriginalFilename());
+    //     CarRequestDto carDto = objectMapper.readValue(carJson, CarRequestDto.class);
+    //     Car savedCar = carRentalService.createCar(carDto, imageFile);
+    //     logger.info("Car created successfully with ID: {}", savedCar.getId());
+    //     return ResponseEntity.ok(new CarResponseDto(savedCar));
+    // }
+     /**
+     * Create a new car with image upload to Cloudinary
+     */
     @PostMapping(value = "/cars", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CarResponseDto> createCar(
             @RequestPart("car") String carJson,
             @RequestPart("image") MultipartFile imageFile) throws IOException {
@@ -53,8 +67,31 @@ public class CarRentalController {
         return ResponseEntity.ok(new CarResponseDto(savedCar));
     }
 
+
+
+    // @GetMapping("/cars")
+    // // @PreAuthorize("hasRole('ADMIN')")
+    // public ResponseEntity<List<CarResponseDto>> getAvailableCars() {
+    //     logger.info("Fetching all available cars...");
+
+    //     try {
+    //         List<Car> cars = carRentalService.getAllAvailableCars();
+    //         List<CarResponseDto> response = cars.stream()
+    //                 .map(CarResponseDto::new)
+    //                 .toList();
+    //         logger.info("Successfully fetched {} available cars", response.size());
+    //         return ResponseEntity.ok(response);
+    //     } catch (Exception e) {
+    //         logger.error("Failed to fetch available cars", e);
+    //         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+    //                 .body(List.of());
+    //     }
+
+    // }
+     /**
+     * Get all available cars with image URLs
+     */
     @GetMapping("/cars")
-    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<CarResponseDto>> getAvailableCars() {
         logger.info("Fetching all available cars...");
 
@@ -67,11 +104,10 @@ public class CarRentalController {
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             logger.error("Failed to fetch available cars", e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(List.of());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(List.of());
         }
-
     }
+
 
     @GetMapping("/available")
     public ResponseEntity<List<Car>> getAvailableCars(

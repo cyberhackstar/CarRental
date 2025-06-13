@@ -29,6 +29,9 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
+
 @Service
 public class CarRentalService {
 
@@ -46,10 +49,14 @@ public class CarRentalService {
     private CarRepository carRepository;
 
     @Autowired
-    private BookingRepository bookingRepository;
+    private PaymentService paymentService;
 
     @Autowired
-    private PaymentService paymentService;
+    private Cloudinary cloudinary;
+
+    @Autowired
+    private BookingRepository bookingRepository;
+
 
     public List<Car> getAllAvailableCars() {
         logger.info("Fetching all available cars...");
@@ -58,22 +65,73 @@ public class CarRentalService {
         return cars;
     }
 
+    // public Car createCar(CarRequestDto carDto, MultipartFile imageFile) throws IOException {
+    //     logger.info("Creating new car: {} {}", carDto.getBrand(), carDto.getModel());
+    //     Car car = CarMapper.toEntity(carDto);
+
+    //     if (imageFile != null && !imageFile.isEmpty()) {
+    //         // Save image to local file system
+    //         String fileName = UUID.randomUUID() + "_" + imageFile.getOriginalFilename();
+    //         Path imagePath = Paths.get(uploadDir).resolve(fileName);
+    //         Files.createDirectories(imagePath.getParent());
+    //         Files.copy(imageFile.getInputStream(), imagePath, StandardCopyOption.REPLACE_EXISTING);
+    //         car.setImageUrl(fileName); // Save file name or path
+    //         // Optionally, you can also store the image data in the database
+    //         // car.setImageData(imageFile.getBytes());
+    //         logger.info("Image uploaded and stored in database.");
+
+    //         // Save image data to database
+    //         // car.setImageData(imageFile.getBytes());
+
+    //         logger.info("Image uploaded and saved as: {}", fileName);
+    //     }
+
+    //     Car savedCar = carRepository.save(car);
+    //     logger.info("Car saved with ID: {}", savedCar.getId());
+
+    //     carEventProducer.sendCarEvent(CarEvent.builder()
+    //             .carId(savedCar.getId())
+    //             .brand(savedCar.getBrand())
+    //             .model(savedCar.getModel())
+    //             .available(savedCar.isAvailable())
+    //             .pricePerDay(savedCar.getPricePerDay())
+    //             .build());
+
+    //     logger.info("Car event sent for car ID: {}", savedCar.getId());
+    //     return savedCar;
+    // }
+
+    // public Optional<Car> getCarById(Long id) {
+    //     logger.info("Fetching car by ID: {}", id);
+    //     return carRepository.findById(id);
+    // }
+
+    // public void deleteCar(Long id) {
+    //     logger.info("Attempting to delete car with ID: {}", id);
+    //     carRepository.findById(id).ifPresent(car -> {
+    //         carRepository.deleteById(id);
+    //         logger.info("Car deleted with ID: {}", id);
+    //         if (car.getImageUrl() != null) {
+    //             try {
+    //                 Files.deleteIfExists(Paths.get(uploadDir).resolve(car.getImageUrl()));
+    //                 logger.info("Deleted image file: {}", car.getImageUrl());
+    //             } catch (IOException e) {
+    //                 logger.warn("Failed to delete image file: {}", car.getImageUrl(), e);
+    //             }
+    //         }
+    //     });
+    // }
+
     public Car createCar(CarRequestDto carDto, MultipartFile imageFile) throws IOException {
         logger.info("Creating new car: {} {}", carDto.getBrand(), carDto.getModel());
         Car car = CarMapper.toEntity(carDto);
 
         if (imageFile != null && !imageFile.isEmpty()) {
-            // Save image to local file system
-            String fileName = UUID.randomUUID() + "_" + imageFile.getOriginalFilename();
-            Path imagePath = Paths.get(uploadDir).resolve(fileName);
-            Files.createDirectories(imagePath.getParent());
-            Files.copy(imageFile.getInputStream(), imagePath, StandardCopyOption.REPLACE_EXISTING);
-            car.setImageUrl(fileName); // Save file name or path
-
-            // Save image data to database
-            // car.setImageData(imageFile.getBytes());
-
-            logger.info("Image uploaded and saved as: {}", fileName);
+            logger.info("Uploading image to Cloudinary...");
+            Map uploadResult = cloudinary.uploader().upload(imageFile.getBytes(), ObjectUtils.emptyMap());
+            String imageUrl = uploadResult.get("secure_url").toString();
+            car.setImageUrl(imageUrl);
+            logger.info("Image uploaded successfully: {}", imageUrl);
         }
 
         Car savedCar = carRepository.save(car);
@@ -101,15 +159,25 @@ public class CarRentalService {
         carRepository.findById(id).ifPresent(car -> {
             carRepository.deleteById(id);
             logger.info("Car deleted with ID: {}", id);
-            if (car.getImageUrl() != null) {
+
+            if (car.getImageUrl() != null && car.getImageUrl().contains("cloudinary.com")) {
                 try {
-                    Files.deleteIfExists(Paths.get(uploadDir).resolve(car.getImageUrl()));
-                    logger.info("Deleted image file: {}", car.getImageUrl());
-                } catch (IOException e) {
-                    logger.warn("Failed to delete image file: {}", car.getImageUrl(), e);
+                    String publicId = extractPublicIdFromUrl(car.getImageUrl());
+                    cloudinary.uploader().destroy(publicId, ObjectUtils.emptyMap());
+                    logger.info("Deleted image from Cloudinary: {}", publicId);
+                } catch (Exception e) {
+                    logger.warn("Failed to delete image from Cloudinary: {}", car.getImageUrl(), e);
                 }
             }
         });
+    }
+
+    private String extractPublicIdFromUrl(String imageUrl) {
+        // Example: https://res.cloudinary.com/demo/image/upload/v1234567890/sample.jpg
+        // Extract "sample" from the URL
+        String[] parts = imageUrl.split("/");
+        String fileName = parts[parts.length - 1];
+        return fileName.substring(0, fileName.lastIndexOf('.'));
     }
 
     public List<Booking> getAllBookings() {
