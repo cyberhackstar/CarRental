@@ -84,7 +84,8 @@ public class SecurityConfig {
         // Allow multiple origins
         configuration.setAllowedOrigins(List.of(
                 "https://carrentalwebapp.onrender.com",
-                "http://localhost:4200"));
+                "http://localhost:4200",
+                "https://carrentalwebapp.netlify.app"));
 
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept"));
