@@ -11,14 +11,12 @@ import com.carrental.CarService.repository.BookingRepository;
 import com.carrental.CarService.repository.CarRepository;
 import com.carrental.CarService.utility.CarMapper;
 import com.carrental.common.dto.BookingEvent;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.nio.file.*;
 import java.time.LocalDate;
@@ -27,10 +25,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.UUID;
-
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
+
+
 
 @Service
 public class CarRentalService {
@@ -131,10 +129,12 @@ public class CarRentalService {
 
             @SuppressWarnings("unchecked")
             Map<String, Object> uploadOptions = (Map<String, Object>) ObjectUtils.asMap(
-                    "transformation", new Transformation<>().width(1000)
-                            .crop("scale")
-                            .quality("auto")
-                            .fetchFormat("auto"));
+                    "transformation", ObjectUtils.asMap(
+                        "width", 1000,
+                        "crop", "scale",
+                        "quality", "auto",
+                        "fetch_format", "auto"
+                    ));
 
             @SuppressWarnings("unchecked")
             Map<String, Object> uploadResult = (Map<String, Object>) cloudinary.uploader().upload(imageFile.getBytes(), uploadOptions);
