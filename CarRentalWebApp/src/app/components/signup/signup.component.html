@@ -1,7 +1,7 @@
 <section
   class="signup-section position-relative text-white min-vh-100"
   style="
-    background-image: url('assets/images/car4.jpg');
+    background-image: url('assets/images/car4.webp');
     background-size: cover;
     background-position: center;
   "
@@ -106,7 +106,7 @@
               <!-- Confirm Password -->
               <div class="form-floating mb-4 position-relative">
                 <input
-                  [type]="showPassword ? 'text' : 'password'"
+                  [type]="showConfirmPassword ? 'text' : 'password'"
                   id="confirmPassword"
                   name="confirmPassword"
                   [(ngModel)]="confirmPassword"
@@ -122,21 +122,25 @@
                   (focus)="isConfirmPasswordFocused = true"
                   (blur)="isConfirmPasswordFocused = false"
                 />
-                <label *ngIf="!isConfirmPasswordFocused && !user.password" for="confirmPassword" class="text-white"
+                <label
+                  *ngIf="!isConfirmPasswordFocused && !confirmPassword"
+                  for="confirmPassword"
+                  class="text-white"
                   >Confirm Password</label
                 >
                 <button
                   type="button"
                   class="btn btn-sm position-absolute top-50 end-0 translate-middle-y me-3 text-white"
-                  (click)="togglePasswordVisibility()"
+                  (click)="toggleConfirmPasswordVisibility()"
                   tabindex="-1"
                 >
                   <i
                     class="bi"
-                    [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"
+                    [ngClass]="showConfirmPassword ? 'bi-eye-slash' : 'bi-eye'"
                   ></i>
                 </button>
               </div>
+
 
               <!-- Password Mismatch Message -->
               <div
