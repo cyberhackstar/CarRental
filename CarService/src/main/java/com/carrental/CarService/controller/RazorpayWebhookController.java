@@ -10,13 +10,15 @@ import com.carrental.CarService.messaging.PaymentFailedEventProducer;
 import com.carrental.common.dto.BookingEvent;
 import com.carrental.common.dto.PaymentFailedEvent;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import java.io.BufferedReader;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/payment")
@@ -30,13 +32,24 @@ public class RazorpayWebhookController {
     private final PaymentFailedEventProducer paymentFailedEventProducer;
 
     @PostMapping("/webhook")
-    public ResponseEntity<String> handleWebhook(@RequestBody String payload,
+    public ResponseEntity<String> handleWebhook(HttpServletRequest request,
                                                 @RequestHeader("X-Razorpay-Signature") String signature) {
-        if (!paymentService.verifyWebhookSignature(payload, signature)) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid signature");
-        }
-
         try {
+            // Read raw body from request
+            String payload = new BufferedReader(request.getReader())
+                    .lines()
+                    .collect(Collectors.joining(System.lineSeparator()));
+
+            // Log for debugging
+            System.out.println("Received webhook payload: " + payload);
+            System.out.println("Received signature: " + signature);
+
+            // Verify Razorpay signature
+            if (!paymentService.verifyWebhookSignature(payload, signature)) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid signature");
+            }
+
+            // Parse JSON payload
             JSONObject event = new JSONObject(payload);
             String eventType = event.getString("event");
 
