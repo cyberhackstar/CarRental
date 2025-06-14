@@ -2,7 +2,7 @@ package com.carrental.CarService.payment;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-import java.util.Base64;
+
 
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.razorpay.Order;
 import com.razorpay.RazorpayClient;
 import com.razorpay.RazorpayException;
-
+import org.apache.commons.codec.binary.Hex;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -25,7 +25,7 @@ public class PaymentService {
 
     public String createOrder(double amount) throws RazorpayException {
         JSONObject orderRequest = new JSONObject();
-        orderRequest.put("amount", (int)(amount * 100)); // amount in paise
+        orderRequest.put("amount", (int) (amount * 100)); // amount in paise
         orderRequest.put("currency", "INR");
         orderRequest.put("receipt", "order_rcptid_" + System.currentTimeMillis());
         orderRequest.put("payment_capture", 1);
@@ -41,7 +41,7 @@ public class PaymentService {
             sha256Hmac.init(secretKey);
 
             byte[] hash = sha256Hmac.doFinal(payload.getBytes());
-            String computedSignature = new String(Base64.getEncoder().encode(hash));
+            String computedSignature = Hex.encodeHexString(hash);
 
             return computedSignature.equals(actualSignature);
         } catch (Exception e) {
@@ -49,4 +49,5 @@ public class PaymentService {
             return false;
         }
     }
+
 }
