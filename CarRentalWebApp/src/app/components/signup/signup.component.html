@@ -183,8 +183,9 @@
                     user.password !== confirmPassword ||
                     !signupForm.form.valid
                   "
+                 [disabled]="loading"
                 >
-                  Sign Up
+                  {{ loading ? "Signing up..." : "Sign Up" }}
                 </button>
               </div>
               <div *ngIf="errorMessage" class="alert alert-danger mt-3">

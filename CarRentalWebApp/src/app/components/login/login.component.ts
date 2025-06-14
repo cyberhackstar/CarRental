@@ -20,8 +20,8 @@ export class LoginComponent {
     password: '',
   };
 
-  isUsernameFocused: boolean = true;
-  isPasswordFocused: boolean = true;
+  isUsernameFocused: boolean = false;
+  isPasswordFocused: boolean = false;
   showPassword = false;
 
   errorMessage = '';

@@ -29,6 +29,7 @@ export class BookingFormComponent implements OnInit {
   };
   successMessage = '';
   errorMessage = '';
+  loading: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -86,6 +87,7 @@ export class BookingFormComponent implements OnInit {
   }
 
   bookCar() {
+    this.loading = true;
   this.carRentalService.bookCarWithPayment(this.booking).subscribe(response => {
     const booking = response.booking;
     const razorpayOrder = JSON.parse(response.razorpayOrder); // Parse if it's a JSON string
@@ -100,7 +102,9 @@ export class BookingFormComponent implements OnInit {
       handler: (res: any) => {
         this.successMessage = 'Booking successful!';
         this.errorMessage = '';
+        this.loading = false;
         this.router.navigate(['/bookings']); // Redirect to bookings page
+        
         console.log('Payment response:', res);
         // Optionally call backend to confirm payment
       },

@@ -4,11 +4,12 @@ import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CarRentalService } from '../../services/car-rental.service';
+import { LoadingComponent } from "../loading/loading.component";
 
 @Component({
   selector: 'app-car-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule, HttpClientModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule, HttpClientModule, LoadingComponent],
   templateUrl: './car-form.component.html',
   styleUrls: ['./car-form.component.css']
 })
@@ -19,6 +20,7 @@ export class CarFormComponent {
   selectedFile: File | null = null;
   selectedFileName: string = '';
   dragging = false;
+  loading: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -50,6 +52,7 @@ export class CarFormComponent {
   }
 
   onSubmit(): void {
+    this.loading = true;
     this.submitted = true;
 
     if (this.carForm.invalid || !this.selectedFile) {
@@ -75,6 +78,7 @@ export class CarFormComponent {
         this.selectedFile = null;
         this.selectedFileName = '';
         this.submitted = false;
+        this.loading = false;
         this.router.navigate(['/carList']); // Adjust route as needed
       },
       error: (err) => {

@@ -25,21 +25,20 @@ export class SignupComponent {
   isConfirmPasswordFocused: boolean = false;
   agreed: boolean = false;
   confirmPassword: string = ''
-
-
-
+  loading = false;
   errorMessage: string = '';
   successMessage: string = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
   register(): void {
-
+    this.loading = true;
     this.authService.register(this.user).subscribe({
       next: () => {
         this.successMessage =
           'Registration successful! Redirecting to login...';
         this.router.navigate(['/login']);
+        this.loading = false;
       },
       error: (err) => {
         this.errorMessage = 'Registration failed. Please try again.';

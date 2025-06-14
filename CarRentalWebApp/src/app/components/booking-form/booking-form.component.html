@@ -134,9 +134,9 @@
                 <button
                   type="submit"
                   class="btn btn-outline-light btn-lg"
-                  [disabled]="!bookingForm.form.valid"
+                  [disabled]="!bookingForm.form.valid || loading"
                 >
-                  <i class="bi bi-calendar-check me-2"></i>Confirm Booking
+                  <i class="bi bi-calendar-check me-2"></i>{{ loading ? "Confirming..." : "Confirm Booking" }}
                 </button>
               </div>
 
