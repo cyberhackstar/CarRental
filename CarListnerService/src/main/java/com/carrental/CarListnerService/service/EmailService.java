@@ -1,6 +1,8 @@
 package com.carrental.CarListnerService.service;
 
 import com.carrental.common.dto.BookingEvent;
+import com.carrental.common.dto.PaymentFailedEvent;
+
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
@@ -38,6 +40,24 @@ public class EmailService {
         helper.setTo(event.getCustomerEmail());
         helper.setSubject("Your Car Rental Booking Confirmation");
         helper.setText(htmlContent, true); // true = HTML
+
+        mailSender.send(message);
+    }
+
+    public void sendPaymentFailureEmail(PaymentFailedEvent event) throws MessagingException, IOException {
+        String htmlTemplate = loadHtmlTemplate("templates/payment_failed_template.html");
+
+        String htmlContent = htmlTemplate
+                .replace("{{customer_name}}", event.getCustomerName())
+                .replace("{{booking_id}}", String.valueOf(event.getBookingId()))
+                .replace("{{reason}}", event.getReason());
+
+        MimeMessage message = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+
+        helper.setTo(event.getCustomerEmail());
+        helper.setSubject("Payment Failed for Your Car Booking");
+        helper.setText(htmlContent, true);
 
         mailSender.send(message);
     }

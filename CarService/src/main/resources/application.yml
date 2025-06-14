@@ -73,6 +73,9 @@ razorpay:
   keySecret: ${RAZORPAY_KEY_SECRET}
   currency: INR
   companyName: CarRental
+  webhook:
+    secret: ${RAZORPAY_WEBHOOK_SECRET}
+
   
 cloudinary:
   cloud-name: ${CLOUDINARY_CLOUD_NAME}

@@ -42,7 +42,6 @@ export class CarRentalService {
     return this.http.delete<void>(`${this.baseUrl}/cars/${id}`);
   }
 
-
   // Booking APIs
   getBookings(): Observable<Booking[]> {
     return this.http.get<Booking[]>(`${this.baseUrl}/bookings`);
@@ -57,19 +56,16 @@ export class CarRentalService {
   }
 
   getImageWithAuth(imageName: string): Observable<string> {
-  const token = localStorage.getItem('token');
-  const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-  return this.http
-    .get(`https://carservice.up.railway.app/api/cars/image/${imageName}`, {
-      headers,
-      responseType: 'blob',
-    })
-    .pipe(
-      map((blob) => URL.createObjectURL(blob))
-    );
-}
-
+    return this.http
+      .get(`https://carservice.up.railway.app/api/cars/image/${imageName}`, {
+        headers,
+        responseType: 'blob',
+      })
+      .pipe(map((blob) => URL.createObjectURL(blob)));
+  }
 
   deleteBooking(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/bookings/${id}`);
@@ -80,8 +76,20 @@ export class CarRentalService {
   }
 
   bookCarWithPayment(booking: Booking): Observable<any> {
-  return this.http.post<any>(`${this.baseUrl}/bookings/with-payment`, booking);
-}
+    return this.http.post<any>(
+      `${this.baseUrl}/bookings/with-payment`,
+      booking
+    );
+  }
 
-
+  confirmBookingPayment(paymentConfirmation: {
+    bookingId: number;
+    orderId: string;
+    paymentId: string;
+  }): Observable<any> {
+    return this.http.post<any>(
+      `${this.baseUrl}/bookings/confirm-payment`,
+      paymentConfirmation
+    );
+  }
 }

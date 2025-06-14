@@ -86,42 +86,51 @@ export class BookingFormComponent implements OnInit {
     });
   }
 
-  bookCar() {
-    this.loading = true;
-  this.carRentalService.bookCarWithPayment(this.booking).subscribe(response => {
-    const booking = response.booking;
-    const razorpayOrder = JSON.parse(response.razorpayOrder); // Parse if it's a JSON string
+  bookCar(): void {
+  this.loading = true;
+  this.calculateTotalAmount();
 
-    const options: any = {
-      key: 'rzp_test_wY3wb7z6dH7O5b', // Replace with your Razorpay key
-      amount: razorpayOrder.amount,
-      currency: razorpayOrder.currency,
-      name: 'CarRental',
-      description: 'Car Booking Payment',
-      order_id: razorpayOrder.id,
-      handler: (res: any) => {
-        this.successMessage = 'Booking successful!';
-        this.errorMessage = '';
-        this.loading = false;
-        this.router.navigate(['/bookings']); // Redirect to bookings page
-        
-        console.log('Payment response:', res);
-        // Optionally call backend to confirm payment
-      },
-      prefill: {
-        name: booking.customerName,
-        email: booking.customerEmail
-        
-      },
-      theme: {
-        color: '#007bff'
-      }
-    };
+  this.carRentalService.bookCarWithPayment(this.booking).subscribe({
+    next: (response) => {
+      const booking = response.booking;
+      const razorpayOrder = typeof response.razorpayOrder === 'string'
+        ? JSON.parse(response.razorpayOrder)
+        : response.razorpayOrder;
 
-    const rzp = new Razorpay(options);
-    rzp.open();
+      const options: any = {
+        key: 'rzp_test_wY3wb7z6dH7O5b', // Replace with your Razorpay key
+        amount: razorpayOrder.amount,
+        currency: razorpayOrder.currency,
+        name: 'CarRental',
+        description: 'Car Booking Payment',
+        order_id: razorpayOrder.id,
+        handler: (res: any) => {
+          console.log('Payment response:', res);
+          this.successMessage = 'Payment successful! Booking will be confirmed shortly.';
+          this.errorMessage = '';
+          this.loading = false;
+          this.router.navigate(['/bookings']);
+        },
+        prefill: {
+          name: booking.customerName,
+          email: booking.customerEmail
+        },
+        theme: {
+          color: '#007bff'
+        }
+      };
+
+      const rzp = new Razorpay(options);
+      rzp.open();
+    },
+    error: () => {
+      this.errorMessage = 'Failed to initiate payment. Please try again.';
+      this.successMessage = '';
+      this.loading = false;
+    }
   });
 }
+
 
 }
 

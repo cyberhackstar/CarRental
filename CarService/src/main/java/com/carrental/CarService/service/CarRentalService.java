@@ -6,6 +6,7 @@ import com.carrental.CarService.messaging.BookingEventProducer;
 import com.carrental.CarService.messaging.CarEventProducer;
 import com.carrental.CarService.model.Booking;
 import com.carrental.CarService.model.Car;
+import com.carrental.CarService.model.PaymentStatus;
 import com.carrental.CarService.payment.PaymentService;
 import com.carrental.CarService.repository.BookingRepository;
 import com.carrental.CarService.repository.CarRepository;
@@ -27,6 +28,7 @@ import java.util.Optional;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.Transformation;
 import com.cloudinary.utils.ObjectUtils;
+import org.json.JSONObject;
 
 
 
@@ -63,62 +65,6 @@ public class CarRentalService {
         return cars;
     }
 
-    // public Car createCar(CarRequestDto carDto, MultipartFile imageFile) throws IOException {
-    //     logger.info("Creating new car: {} {}", carDto.getBrand(), carDto.getModel());
-    //     Car car = CarMapper.toEntity(carDto);
-
-    //     if (imageFile != null && !imageFile.isEmpty()) {
-    //         // Save image to local file system
-    //         String fileName = UUID.randomUUID() + "_" + imageFile.getOriginalFilename();
-    //         Path imagePath = Paths.get(uploadDir).resolve(fileName);
-    //         Files.createDirectories(imagePath.getParent());
-    //         Files.copy(imageFile.getInputStream(), imagePath, StandardCopyOption.REPLACE_EXISTING);
-    //         car.setImageUrl(fileName); // Save file name or path
-    //         // Optionally, you can also store the image data in the database
-    //         // car.setImageData(imageFile.getBytes());
-    //         logger.info("Image uploaded and stored in database.");
-
-    //         // Save image data to database
-    //         // car.setImageData(imageFile.getBytes());
-
-    //         logger.info("Image uploaded and saved as: {}", fileName);
-    //     }
-
-    //     Car savedCar = carRepository.save(car);
-    //     logger.info("Car saved with ID: {}", savedCar.getId());
-
-    //     carEventProducer.sendCarEvent(CarEvent.builder()
-    //             .carId(savedCar.getId())
-    //             .brand(savedCar.getBrand())
-    //             .model(savedCar.getModel())
-    //             .available(savedCar.isAvailable())
-    //             .pricePerDay(savedCar.getPricePerDay())
-    //             .build());
-
-    //     logger.info("Car event sent for car ID: {}", savedCar.getId());
-    //     return savedCar;
-    // }
-
-    // public Optional<Car> getCarById(Long id) {
-    //     logger.info("Fetching car by ID: {}", id);
-    //     return carRepository.findById(id);
-    // }
-
-    // public void deleteCar(Long id) {
-    //     logger.info("Attempting to delete car with ID: {}", id);
-    //     carRepository.findById(id).ifPresent(car -> {
-    //         carRepository.deleteById(id);
-    //         logger.info("Car deleted with ID: {}", id);
-    //         if (car.getImageUrl() != null) {
-    //             try {
-    //                 Files.deleteIfExists(Paths.get(uploadDir).resolve(car.getImageUrl()));
-    //                 logger.info("Deleted image file: {}", car.getImageUrl());
-    //             } catch (IOException e) {
-    //                 logger.warn("Failed to delete image file: {}", car.getImageUrl(), e);
-    //             }
-    //         }
-    //     });
-    // }
 
     public Car createCar(CarRequestDto carDto, MultipartFile imageFile) throws IOException {
         logger.info("Creating new car: {} {}", carDto.getBrand(), carDto.getModel());
@@ -266,59 +212,47 @@ public class CarRentalService {
     }
 
     public Map<String, Object> bookCarWithPayment(Booking booking) {
-        logger.info("Booking request received for car ID: {}", booking.getCarId());
+    logger.info("Booking request received for car ID: {}", booking.getCarId());
 
-        if (booking.getCarId() == null) {
-            logger.warn("Booking failed: carId is null");
-            throw new IllegalArgumentException("Booking must include a valid carId.");
-        }
-
-        Car car = carRepository.findById(booking.getCarId())
-                .orElseThrow(() -> new RuntimeException("Car not found."));
-
-        List<Booking> overlapping = bookingRepository.findOverlappingBookings(
-                booking.getCarId(),
-                booking.getStartDate(),
-                booking.getEndDate());
-
-        if (!overlapping.isEmpty()) {
-            logger.warn("Car is already booked for the selected dates: {}", booking.getCarId());
-            throw new IllegalStateException("Car is already booked for the selected dates.");
-        }
-
-        long days = ChronoUnit.DAYS.between(booking.getStartDate(), booking.getEndDate()) + 1;
-        booking.setTotalAmount(days * car.getPricePerDay());
-
-        String razorpayOrder;
-        try {
-            razorpayOrder = paymentService.createOrder(booking.getTotalAmount());
-        } catch (com.razorpay.RazorpayException e) {
-            logger.error("Failed to create Razorpay order", e);
-            throw new RuntimeException("Payment order creation failed", e);
-        }
-
-        Booking savedBooking = bookingRepository.save(booking);
-        logger.info("Booking saved with ID: {}", savedBooking.getId());
-
-        bookingEventProducer.sendBookingEvent(BookingEvent.builder()
-                .bookingId(savedBooking.getId())
-                .carId(savedBooking.getCarId())
-                .customerName(savedBooking.getCustomerName())
-                .customerEmail(savedBooking.getCustomerEmail())
-                .startDate(savedBooking.getStartDate())
-                .endDate(savedBooking.getEndDate())
-                .totalAmount(savedBooking.getTotalAmount())
-                .carBrand(car.getBrand())
-                .carModel(car.getModel())
-                .pricePerDay(car.getPricePerDay())
-                .build());
-
-        logger.info("Booking event sent for booking ID: {}", savedBooking.getId());
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("booking", savedBooking);
-        response.put("razorpayOrder", razorpayOrder);
-        return response;
+    if (booking.getCarId() == null) {
+        logger.warn("Booking failed: carId is null");
+        throw new IllegalArgumentException("Booking must include a valid carId.");
     }
+
+    Car car = carRepository.findById(booking.getCarId())
+            .orElseThrow(() -> new RuntimeException("Car not found."));
+
+    List<Booking> overlapping = bookingRepository.findOverlappingBookings(
+            booking.getCarId(),
+            booking.getStartDate(),
+            booking.getEndDate());
+
+    if (!overlapping.isEmpty()) {
+        logger.warn("Car is already booked for the selected dates: {}", booking.getCarId());
+        throw new IllegalStateException("Car is already booked for the selected dates.");
+    }
+
+    long days = ChronoUnit.DAYS.between(booking.getStartDate(), booking.getEndDate()) + 1;
+    booking.setTotalAmount(days * car.getPricePerDay());
+
+    String razorpayOrderJson;
+    try {
+        razorpayOrderJson = paymentService.createOrder(booking.getTotalAmount());
+        JSONObject razorpayOrder = new JSONObject(razorpayOrderJson);
+        booking.setOrderId(razorpayOrder.getString("id")); // Save Razorpay order ID
+        booking.setPaymentStatus(PaymentStatus.PENDING);   // Mark as pending
+    } catch (com.razorpay.RazorpayException e) {
+        logger.error("Failed to create Razorpay order", e);
+        throw new RuntimeException("Payment order creation failed", e);
+    }
+
+    Booking savedBooking = bookingRepository.save(booking);
+    logger.info("Booking saved with ID: {} and status: PENDING", savedBooking.getId());
+
+    Map<String, Object> response = new HashMap<>();
+    response.put("booking", savedBooking);
+    response.put("razorpayOrder", razorpayOrderJson);
+    return response;
+}
 
 }

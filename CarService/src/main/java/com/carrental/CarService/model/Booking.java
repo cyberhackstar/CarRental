@@ -2,7 +2,7 @@ package com.carrental.CarService.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
+// import com.carrental.CarService.model.PaymentStatus;
 import java.time.LocalDate;
 
 @Entity
@@ -22,4 +22,8 @@ public class Booking {
     private LocalDate endDate;
     private double totalAmount;
 
+    private String orderId; // Razorpay order ID
+
+    @Enumerated(EnumType.STRING)
+    private PaymentStatus paymentStatus; // Enum to track payment status
 }

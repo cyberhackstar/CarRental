@@ -6,7 +6,6 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 
 @Configuration
@@ -25,6 +24,11 @@ public class RabbitMQConfig {
     @Bean
     public Queue bookingEventsQueue() {
         return new Queue("booking-events", true);
+    }
+
+    @Bean
+    public Queue paymentFailedEventsQueue() {
+        return new Queue("payment-failed-events", true);
     }
 
     @Bean

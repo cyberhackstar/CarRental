@@ -28,6 +28,11 @@ public class RabbitMQConfig {
     }
 
     @Bean
+    public Queue paymentFailedEventsQueue() {
+        return new Queue("payment-failed-events", true);
+    }
+
+    @Bean
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory,
             Jackson2JsonMessageConverter messageConverter) {
         RabbitTemplate template = new RabbitTemplate(connectionFactory);
