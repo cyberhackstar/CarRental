@@ -20,7 +20,7 @@ export const routes: Routes = [
   { path: '', component: HeroSection2Component },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'admin/create', component: AdminRegisterComponent}
+  { path: 'admin/create', component: AdminRegisterComponent},
 
   // Booking routes (no auth for now)
   { path: 'book/:carId', component: BookingFormComponent },
