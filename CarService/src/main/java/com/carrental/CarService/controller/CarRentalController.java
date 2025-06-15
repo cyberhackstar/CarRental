@@ -118,6 +118,19 @@ public class CarRentalController {
                 });
     }
 
+    @DeleteMapping("/cars/{id}")
+    public ResponseEntity<Void> deleteCar(@PathVariable Long id) {
+        logger.info("Received request to delete car with ID: {}", id);
+        try {
+            carRentalService.deleteCar(id);
+            logger.info("Car deleted successfully with ID: {}", id);
+            return ResponseEntity.noContent().build(); // 204 No Content
+        } catch (Exception e) {
+            logger.error("Failed to delete car with ID: {}", id, e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
     @GetMapping("/cars/image/{filename:.+}")
     // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Resource> getCarImage(@PathVariable String filename) throws IOException {
