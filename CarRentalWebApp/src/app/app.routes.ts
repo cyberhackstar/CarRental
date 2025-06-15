@@ -13,12 +13,14 @@ import { HeroSection2Component } from './components/hero-section2/hero-section2.
 import { UserBookingsComponent } from './components/user/user-bookings/user-bookings.component';
 import { AdminCarListComponent } from './components/admin/admin-car-list/admin-car-list.component';
 import { AdminCarUpdateComponent } from './components/admin/admin-car-update/admin-car-update.component';
+import { AdminRegisterComponent } from './components/super_admin/admin-register/admin-register.component';
 
 export const routes: Routes = [
   // Public routes
   { path: '', component: HeroSection2Component },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'admin/create', component: AdminRegisterComponent}
 
   // Booking routes (no auth for now)
   { path: 'book/:carId', component: BookingFormComponent },
