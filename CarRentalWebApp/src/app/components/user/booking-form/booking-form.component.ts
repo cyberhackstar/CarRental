@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Car } from '../../models/car.model';
-import { Booking } from '../../models/booking.model';
-import { CarRentalService } from '../../services/car-rental.service';
+import { Car } from '../../../models/car.model';
+import { Booking } from '../../../models/booking.model';
+import { CarRentalService } from '../../../services/car-rental.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
@@ -109,7 +109,7 @@ export class BookingFormComponent implements OnInit {
           this.successMessage = 'Payment successful! Booking will be confirmed shortly.';
           this.errorMessage = '';
           this.loading = false;
-          this.router.navigate(['/bookings']);
+          this.router.navigate(['/user/bookings']);
         },
         prefill: {
           name: booking.customerName,

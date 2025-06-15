@@ -1,8 +1,9 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule, NavigationEnd } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { filter } from 'rxjs/operators';
+import { Offcanvas } from 'bootstrap';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,8 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
+  @ViewChild('offcanvasNavbar') offcanvasNavbar!: ElementRef;
+
   userRole: string | null = null;
   username: string | null = null;
   isLoggedIn: boolean = false;
@@ -53,4 +56,23 @@ export class HeaderComponent {
     this.authService.logout();
     window.location.href = '/login';
   }
+
+  navigateTo(route: string): void {
+  this.router.navigate([route]).then(() => {
+    const offcanvasElement = this.offcanvasNavbar?.nativeElement;
+    if (offcanvasElement) {
+      const bsOffcanvas = Offcanvas.getInstance(offcanvasElement) || new Offcanvas(offcanvasElement);
+      bsOffcanvas.hide();
+
+      // Manually remove the backdrop if it remains
+      const backdrop = document.querySelector('.offcanvas-backdrop');
+      if (backdrop) {
+        backdrop.remove();
+        document.body.classList.remove('offcanvas-backdrop');
+        document.body.style.overflow = ''; // Restore scroll
+      }
+    }
+  });
+}
+
 }

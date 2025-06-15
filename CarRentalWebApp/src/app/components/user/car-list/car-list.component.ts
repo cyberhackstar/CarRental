@@ -1,11 +1,11 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { CarRentalService } from '../../services/car-rental.service';
-import { Car } from '../../models/car.model';
+import { CarRentalService } from '../../../services/car-rental.service';
+import { Car } from '../../../models/car.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CalendarModule } from 'primeng/calendar';
-import { LoadingComponent } from '../loading/loading.component';
+import { LoadingComponent } from '../../loading/loading.component';
 
 @Component({
   selector: 'app-car-list',

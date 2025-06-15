@@ -18,6 +18,11 @@ export class CarRentalService {
     return this.http.get<CarResponse[]>(`${this.baseUrl}/cars`);
   }
 
+  getAllCars(): Observable<CarResponse[]> {
+  return this.http.get<CarResponse[]>(`${this.baseUrl}/cars/all`);
+}
+
+
   getAvailableCarsByDate(
     startDate: string,
     endDate: string
@@ -35,27 +40,22 @@ export class CarRentalService {
   createCarWithImage(formData: FormData): Observable<CarResponse> {
     return this.http.post<CarResponse>(`${this.baseUrl}/cars`, formData);
   }
-  updateCar(id: number, car: Car): Observable<CarResponse> {
-    return this.http.put<CarResponse>(`${this.baseUrl}/cars/${id}`, car);
+  
+  updateCarWithImage(id: number, car: Car, imageFile?: File): Observable<CarResponse> {
+  const formData = new FormData();
+  formData.append('car', JSON.stringify(car));
+  if (imageFile) {
+    formData.append('image', imageFile);
   }
+
+  return this.http.put<CarResponse>(`${this.baseUrl}/cars/${id}`, formData);
+}
+
   deleteCar(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/cars/${id}`);
   }
 
-  // Booking APIs
-  getBookings(): Observable<Booking[]> {
-    return this.http.get<Booking[]>(`${this.baseUrl}/bookings`);
-  }
-
-  getBookingById(id: number): Observable<Booking> {
-    return this.http.get<Booking>(`${this.baseUrl}/bookings/${id}`);
-  }
-
-  bookCar(booking: Booking): Observable<Booking> {
-    return this.http.post<Booking>(`${this.baseUrl}/bookings`, booking);
-  }
-
-  getImageWithAuth(imageName: string): Observable<string> {
+    getImageWithAuth(imageName: string): Observable<string> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
@@ -67,6 +67,25 @@ export class CarRentalService {
       .pipe(map((blob) => URL.createObjectURL(blob)));
   }
 
+  // Booking APIs
+  getBookings(): Observable<Booking[]> {
+    return this.http.get<Booking[]>(`${this.baseUrl}/bookings`);
+  }
+
+  getBookingsByUsername(): Observable<Booking[]> {
+    return this.http.get<Booking[]>(`${this.baseUrl}/bookings/by-username`);
+  }
+
+  getBookingById(id: number): Observable<Booking> {
+    return this.http.get<Booking>(`${this.baseUrl}/bookings/${id}`);
+  }
+
+  bookCar(booking: Booking): Observable<Booking> {
+    return this.http.post<Booking>(`${this.baseUrl}/bookings`, booking);
+  }
+
+
+
   deleteBooking(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/bookings/${id}`);
   }
@@ -76,11 +95,9 @@ export class CarRentalService {
   }
 
   bookCarWithPayment(booking: Booking): Observable<any> {
-    return this.http.post<any>(
-      `${this.baseUrl}/bookings/with-payment`,
-      booking
-    );
-  }
+  return this.http.post<any>(`${this.baseUrl}/bookings/with-payment`, booking);
+}
+
 
   confirmBookingPayment(paymentConfirmation: {
     bookingId: number;

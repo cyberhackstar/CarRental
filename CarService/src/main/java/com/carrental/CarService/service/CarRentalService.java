@@ -30,8 +30,6 @@ import com.cloudinary.Transformation;
 import com.cloudinary.utils.ObjectUtils;
 import org.json.JSONObject;
 
-
-
 @Service
 public class CarRentalService {
 
@@ -57,7 +55,6 @@ public class CarRentalService {
     @Autowired
     private BookingRepository bookingRepository;
 
-
     public List<Car> getAllAvailableCars() {
         logger.info("Fetching all available cars...");
         List<Car> cars = carRepository.findByAvailableTrue();
@@ -65,6 +62,12 @@ public class CarRentalService {
         return cars;
     }
 
+    public List<Car> getAllCars() {
+        logger.info("Fetching all cars...");
+        List<Car> cars = carRepository.findAll();
+        logger.info("Found {} cars in total", cars.size());
+        return cars;
+    }
 
     public Car createCar(CarRequestDto carDto, MultipartFile imageFile) throws IOException {
         logger.info("Creating new car: {} {}", carDto.getBrand(), carDto.getModel());
@@ -81,7 +84,8 @@ public class CarRentalService {
                             .fetchFormat("auto"));
 
             @SuppressWarnings("unchecked")
-            Map<String, Object> uploadResult = (Map<String, Object>) cloudinary.uploader().upload(imageFile.getBytes(), uploadOptions);
+            Map<String, Object> uploadResult = (Map<String, Object>) cloudinary.uploader().upload(imageFile.getBytes(),
+                    uploadOptions);
             String imageUrl = uploadResult.get("secure_url").toString();
             car.setImageUrl(imageUrl);
 
@@ -101,6 +105,55 @@ public class CarRentalService {
 
         logger.info("Car event sent for car ID: {}", savedCar.getId());
         return savedCar;
+    }
+
+    public Car updateCar(Long id, CarRequestDto carDto, MultipartFile imageFile) throws IOException {
+        logger.info("Updating car with ID: {}", id);
+
+        Car existingCar = carRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Car not found with ID: " + id));
+
+        // Update fields
+        existingCar.setBrand(carDto.getBrand());
+        existingCar.setModel(carDto.getModel());
+        existingCar.setPricePerDay(carDto.getPricePerDay());
+        existingCar.setAvailable(carDto.getAvailable());
+
+        // If a new image is provided, delete the old one and upload the new one
+        if (imageFile != null && !imageFile.isEmpty()) {
+            // Delete old image from Cloudinary
+            if (existingCar.getImageUrl() != null && existingCar.getImageUrl().contains("cloudinary.com")) {
+                try {
+                    String publicId = extractPublicIdFromUrl(existingCar.getImageUrl());
+                    cloudinary.uploader().destroy(publicId, ObjectUtils.emptyMap());
+                    logger.info("Deleted old image from Cloudinary: {}", publicId);
+                } catch (Exception e) {
+                    logger.warn("Failed to delete old image from Cloudinary: {}", existingCar.getImageUrl(), e);
+                }
+            }
+
+            // Upload new image
+            logger.info("Uploading new image to Cloudinary...");
+            @SuppressWarnings("unchecked")
+            Map<String, Object> uploadOptions = (Map<String, Object>) ObjectUtils.asMap(
+                    "transformation", new Transformation<>().width(1000)
+                            .crop("scale")
+                            .quality("auto")
+                            .fetchFormat("auto"));
+
+            @SuppressWarnings("unchecked")
+            Map<String, Object> uploadResult = (Map<String, Object>) cloudinary.uploader().upload(imageFile.getBytes(),
+                    uploadOptions);
+            String imageUrl = uploadResult.get("secure_url").toString();
+            existingCar.setImageUrl(imageUrl);
+
+            logger.info("New image uploaded successfully: {}", imageUrl);
+        }
+
+        Car updatedCar = carRepository.save(existingCar);
+        logger.info("Car updated successfully with ID: {}", updatedCar.getId());
+
+        return updatedCar;
     }
 
     public Optional<Car> getCarById(Long id) {
@@ -211,48 +264,53 @@ public class CarRentalService {
         return bookingRepository.findById(id);
     }
 
+    public List<Booking> getBookingsByUsername(String username) {
+        logger.info("Fetching bookings for user: {}", username);
+        return bookingRepository.findBookingsByUsername(username);
+    }
+
     public Map<String, Object> bookCarWithPayment(Booking booking) {
-    logger.info("Booking request received for car ID: {}", booking.getCarId());
+        logger.info("Booking request received for car ID: {}", booking.getCarId());
 
-    if (booking.getCarId() == null) {
-        logger.warn("Booking failed: carId is null");
-        throw new IllegalArgumentException("Booking must include a valid carId.");
+        if (booking.getCarId() == null) {
+            logger.warn("Booking failed: carId is null");
+            throw new IllegalArgumentException("Booking must include a valid carId.");
+        }
+
+        Car car = carRepository.findById(booking.getCarId())
+                .orElseThrow(() -> new RuntimeException("Car not found."));
+
+        List<Booking> overlapping = bookingRepository.findOverlappingBookings(
+                booking.getCarId(),
+                booking.getStartDate(),
+                booking.getEndDate());
+
+        if (!overlapping.isEmpty()) {
+            logger.warn("Car is already booked for the selected dates: {}", booking.getCarId());
+            throw new IllegalStateException("Car is already booked for the selected dates.");
+        }
+
+        long days = ChronoUnit.DAYS.between(booking.getStartDate(), booking.getEndDate()) + 1;
+        booking.setTotalAmount(days * car.getPricePerDay());
+
+        String razorpayOrderJson;
+        try {
+            razorpayOrderJson = paymentService.createOrder(booking.getTotalAmount());
+            JSONObject razorpayOrder = new JSONObject(razorpayOrderJson);
+            booking.setOrderId(razorpayOrder.getString("id")); // Save Razorpay order ID
+            booking.setPaymentStatus(PaymentStatus.PENDING); // Mark as pending
+        } catch (com.razorpay.RazorpayException e) {
+            logger.error("Failed to create Razorpay order", e);
+            throw new RuntimeException("Payment order creation failed", e);
+        }
+
+        Booking savedBooking = bookingRepository.save(booking);
+        logger.info("Booking saved with ID: {} and status: PENDING", savedBooking.getId());
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("booking", savedBooking);
+        response.put("razorpayOrder", razorpayOrderJson);
+        return response;
     }
-
-    Car car = carRepository.findById(booking.getCarId())
-            .orElseThrow(() -> new RuntimeException("Car not found."));
-
-    List<Booking> overlapping = bookingRepository.findOverlappingBookings(
-            booking.getCarId(),
-            booking.getStartDate(),
-            booking.getEndDate());
-
-    if (!overlapping.isEmpty()) {
-        logger.warn("Car is already booked for the selected dates: {}", booking.getCarId());
-        throw new IllegalStateException("Car is already booked for the selected dates.");
-    }
-
-    long days = ChronoUnit.DAYS.between(booking.getStartDate(), booking.getEndDate()) + 1;
-    booking.setTotalAmount(days * car.getPricePerDay());
-
-    String razorpayOrderJson;
-    try {
-        razorpayOrderJson = paymentService.createOrder(booking.getTotalAmount());
-        JSONObject razorpayOrder = new JSONObject(razorpayOrderJson);
-        booking.setOrderId(razorpayOrder.getString("id")); // Save Razorpay order ID
-        booking.setPaymentStatus(PaymentStatus.PENDING);   // Mark as pending
-    } catch (com.razorpay.RazorpayException e) {
-        logger.error("Failed to create Razorpay order", e);
-        throw new RuntimeException("Payment order creation failed", e);
-    }
-
-    Booking savedBooking = bookingRepository.save(booking);
-    logger.info("Booking saved with ID: {} and status: PENDING", savedBooking.getId());
-
-    Map<String, Object> response = new HashMap<>();
-    response.put("booking", savedBooking);
-    response.put("razorpayOrder", razorpayOrderJson);
-    return response;
-}
 
 }

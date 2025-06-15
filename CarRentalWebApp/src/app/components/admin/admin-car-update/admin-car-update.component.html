@@ -1,0 +1,85 @@
+<!-- Spinner -->
+<app-loading *ngIf="loading"></app-loading>
+
+<section class="bsb-cta-1 px-2 py-5 bsb-overlay" style="background-image: url('assets/images/car3.webp'); background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+        <div class="card bg-dark bg-opacity-75 border-0 shadow-lg text-white">
+          <div class="card-body p-4 p-md-5">
+            <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+              <h2 class="display-6 fw-bold text-white">Update Car</h2>
+
+              <!-- Brand -->
+              <div class="mb-3">
+                <label for="brand" class="form-label text-white">Brand</label>
+                <input type="text" id="brand" class="form-control" formControlName="brand" placeholder="e.g. Toyota" />
+              </div>
+
+              <!-- Model -->
+              <div class="mb-3">
+                <label for="model" class="form-label text-white">Model</label>
+                <input type="text" id="model" class="form-control" formControlName="model" placeholder="e.g. Corolla" />
+              </div>
+
+              <!-- Price -->
+              <div class="mb-3">
+                <label for="pricePerDay" class="form-label text-white">Rental Price (₹/day)</label>
+                <input type="number" id="pricePerDay" class="form-control" formControlName="pricePerDay" placeholder="e.g. 1500" />
+              </div>
+
+              <!-- Availability -->
+              <div class="form-check form-switch mb-3">
+                <input type="checkbox" id="available" class="form-check-input" formControlName="available" />
+                <label for="available" class="form-check-label text-white">Available</label>
+              </div>
+
+              <!-- Drag & Drop Upload -->
+              <div
+                class="mb-3 p-4 border border-light rounded text-center bg-dark bg-opacity-50"
+                (dragover)="onDragOver($event)"
+                (dragleave)="onDragLeave($event)"
+                (drop)="onDrop($event)"
+                [class.border-primary]="dragging"
+              >
+                <p class="text-white mb-2">
+                  <i class="bi bi-cloud-arrow-up-fill fs-3"></i><br>
+                  Drag & drop new car image here or click to upload
+                </p>
+                <input
+                  type="file"
+                  id="image"
+                  class="form-control d-none"
+                  (change)="onFileChange($event)"
+                  #fileInput
+                />
+                <button type="button" class="btn btn-outline-light btn-sm mt-2" (click)="fileInput.click()">Choose File</button>
+
+                <!-- Show selected file name -->
+                <p class="text-white mt-2" *ngIf="selectedFileName">
+                  Selected file: <strong>{{ selectedFileName }}</strong>
+                </p>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-outline-light btn-lg">
+                  <i class="bi bi-pencil-square me-2"></i>Update Car
+                </button>
+              </div>
+
+              <!-- Feedback Message -->
+              <div *ngIf="responseMessage" class="alert mt-4 text-center"
+                   [ngClass]="{
+                     'alert-success': responseMessage.includes('success'),
+                     'alert-danger': responseMessage.includes('Failed') || responseMessage.includes('Please')
+                   }">
+                {{ responseMessage }}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

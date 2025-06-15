@@ -26,4 +26,6 @@ public class Booking {
 
     @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus; // Enum to track payment status
+
+    private String username; // ✅ New field to store logged-in user's username
 }

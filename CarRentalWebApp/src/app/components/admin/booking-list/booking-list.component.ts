@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CarRentalService } from '../../services/car-rental.service';
-import { Booking } from '../../models/booking.model';
+import { CarRentalService } from '../../../services/car-rental.service';
+import { Booking } from '../../../models/booking.model';
 
 import * as XLSX from 'xlsx';
 import * as FileSaver from 'file-saver';
-import { LoadingComponent } from '../loading/loading.component';
+import { LoadingComponent } from '../../loading/loading.component';
 
 @Component({
   selector: 'app-booking-list',

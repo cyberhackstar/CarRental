@@ -14,16 +14,15 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.*;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.multipart.MultipartFile;
-
+import org.springframework.security.core.Authentication;
 import java.io.IOException;
 import java.nio.file.*;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ForkJoinPool;
 
 @RestController
 @RequestMapping("/api")
@@ -40,19 +39,7 @@ public class CarRentalController {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    // @PostMapping(value = "/cars", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    // // @PreAuthorize("hasRole('ADMIN')")
-    // public ResponseEntity<CarResponseDto> createCar(
-    //         @RequestPart("car") String carJson,
-    //         @RequestPart("image") MultipartFile imageFile) throws IOException {
-
-    //     logger.info("Received request to create a new car with image: {}", imageFile.getOriginalFilename());
-    //     CarRequestDto carDto = objectMapper.readValue(carJson, CarRequestDto.class);
-    //     Car savedCar = carRentalService.createCar(carDto, imageFile);
-    //     logger.info("Car created successfully with ID: {}", savedCar.getId());
-    //     return ResponseEntity.ok(new CarResponseDto(savedCar));
-    // }
-     /**
+    /**
      * Create a new car with image upload to Cloudinary
      */
     @PostMapping(value = "/cars", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -67,28 +54,7 @@ public class CarRentalController {
         return ResponseEntity.ok(new CarResponseDto(savedCar));
     }
 
-
-
-    // @GetMapping("/cars")
-    // // @PreAuthorize("hasRole('ADMIN')")
-    // public ResponseEntity<List<CarResponseDto>> getAvailableCars() {
-    //     logger.info("Fetching all available cars...");
-
-    //     try {
-    //         List<Car> cars = carRentalService.getAllAvailableCars();
-    //         List<CarResponseDto> response = cars.stream()
-    //                 .map(CarResponseDto::new)
-    //                 .toList();
-    //         logger.info("Successfully fetched {} available cars", response.size());
-    //         return ResponseEntity.ok(response);
-    //     } catch (Exception e) {
-    //         logger.error("Failed to fetch available cars", e);
-    //         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-    //                 .body(List.of());
-    //     }
-
-    // }
-     /**
+    /**
      * Get all available cars with image URLs
      */
     @GetMapping("/cars")
@@ -108,6 +74,27 @@ public class CarRentalController {
         }
     }
 
+    @PutMapping(value = "/cars/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<CarResponseDto> updateCar(
+            @PathVariable Long id,
+            @RequestPart("car") String carJson,
+            @RequestPart(value = "image", required = false) MultipartFile imageFile) throws IOException {
+
+        logger.info("Received request to update car with ID: {}", id);
+        CarRequestDto carDto = objectMapper.readValue(carJson, CarRequestDto.class);
+        Car updatedCar = carRentalService.updateCar(id, carDto, imageFile);
+        logger.info("Car updated successfully with ID: {}", updatedCar.getId());
+        return ResponseEntity.ok(new CarResponseDto(updatedCar));
+    }
+
+    // ✅ Get all cars
+    @GetMapping("/cars/all")
+    public ResponseEntity<List<Car>> getAllCars() {
+        logger.info("Fetching all cars...");
+        List<Car> cars = carRentalService.getAllCars();
+        logger.info("Found {} cars", cars.size());
+        return ResponseEntity.ok(cars);
+    }
 
     @GetMapping("/available")
     public ResponseEntity<List<Car>> getAvailableCars(
@@ -167,6 +154,15 @@ public class CarRentalController {
         return ResponseEntity.ok(bookings);
     }
 
+    @GetMapping("/bookings/by-username")
+    public ResponseEntity<List<Booking>> getBookingsByUsername() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+
+        List<Booking> bookings = carRentalService.getBookingsByUsername(username);
+        return ResponseEntity.ok(bookings);
+    }
+
     @PostMapping("/bookings")
     public ResponseEntity<Booking> bookCar(@RequestBody Booking booking) {
         logger.info("Booking request received for car ID: {}", booking.getCarId());
@@ -177,6 +173,14 @@ public class CarRentalController {
 
     @PostMapping("/bookings/with-payment")
     public ResponseEntity<Map<String, Object>> bookCarWithPayment(@RequestBody Booking booking) {
+        // ✅ Get the logged-in user's username
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+
+        // ✅ Set the username in the booking object
+        booking.setUsername(username);
+
+        // ✅ Proceed with booking
         Map<String, Object> response = carRentalService.bookCarWithPayment(booking);
         return ResponseEntity.ok(response);
     }

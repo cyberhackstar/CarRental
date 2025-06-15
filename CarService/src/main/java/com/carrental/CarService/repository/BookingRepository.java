@@ -29,4 +29,7 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
 
         List<Booking> findByPaymentStatus(PaymentStatus status);
 
+        @Query("SELECT b FROM Booking b WHERE b.username = :username")
+        List<Booking> findBookingsByUsername(@Param("username") String username);
+
 }
