@@ -1,146 +1,203 @@
-<!-- Registration 8 - Bootstrap Brain Component -->
-<section class="bg-light p-3 p-md-4 p-xl-5">
-  <div class="container">
+<section
+  class="signup-section position-relative text-white min-vh-100"
+  style="
+    background-image: url('assets/images/car4.webp');
+    background-size: cover;
+    background-position: center;
+  "
+>
+  <!-- Dark Overlay -->
+  <div
+    class="overlay position-absolute top-0 start-0 w-100 h-100"
+    style="background-color: rgba(0, 0, 0, 0.6); z-index: 1"
+  ></div>
+
+  <!-- Signup Form Container -->
+  <div class="container position-relative py-5" style="z-index: 2">
     <div class="row justify-content-center">
-      <div class="col-12 col-xxl-11">
-        <div class="card border-light-subtle shadow-sm">
-          <div class="row g-0">
-            <div class="col-12 col-md-6">
-              <img
-                class="img-fluid rounded-start w-100 h-100 object-fit-cover"
-                loading="lazy"
-                src="assets/images/car3.jpg"
-                alt="Welcome back you've been missed!"
-              />
+      <div class="col-md-8 col-lg-6">
+        <div
+          class="card bg-dark bg-opacity-75 text-white shadow-lg border-0 rounded"
+        >
+          <div class="card-body p-4">
+            <!-- Logo -->
+            <div class="text-center mb-4">
+              <!-- <img
+                src="assets/images/logoLight.png"
+                alt="Logo"
+                width="175"
+                height="57"
+              /> -->
+              <h4 class="text-center mb-4 trade-winds-regular">Your Road Starts Here</h4>
             </div>
-            <div
-              class="col-12 col-md-6 d-flex align-items-center justify-content-center"
-            >
-              <div class="col-12 col-lg-11 col-xl-10">
-                <div class="card-body p-3 p-md-4 p-xl-5">
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="mb-5">
-                        <div class="text-center mb-4">
-                          <a href="#!">
-                            <img
-                              src="assets/images/logoDark.png"
-                              alt="BootstrapBrain Logo"
-                              width="175"
-                              height="57"
-                            />
-                          </a>
-                        </div>
-                        <h2 class="h4 text-center">Register Admin</h2>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- <div class="row">
-                    <div class="col-12">
-                      <div class="d-flex gap-3 flex-column">
-                        <a href="#!" class="btn btn-lg btn-outline-dark">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
-                            <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
-                          </svg>
-                          <span class="ms-2 fs-6">Log in with Google</span>
-                        </a>
-                      </div>
-                      <p class="text-center mt-4 mb-5">Or enter your details to register</p>
-                    </div>
-                  </div> -->
-                  <form action="#!" (ngSubmit)="register()">
-                    <div class="row gy-3 overflow-hidden">
-                      <div class="col-12">
-                        <div class="form-floating mb-3">
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="firstName"
-                            id="firstName"
-                            [(ngModel)]="user.username"
-                            placeholder="Username"
-                            required
-                          />
-                          <label for="firstName" class="form-label"
-                            >Username</label
-                          >
-                        </div>
-                      </div>
-                      <!-- <div class="col-12">
-                        <div class="form-floating mb-3">
-                          <input type="text" class="form-control" name="lastName" id="lastName" placeholder="First Name" required>
-                          <label for="lastName" class="form-label">Last Name</label>
-                        </div>
-                      </div> -->
-                      <!-- <div class="col-12">
-                        <div class="form-floating mb-3">
-                          <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
-                          <label for="email" class="form-label">Email</label>
-                        </div>
-                      </div> -->
-                      <div class="col-12">
-                        <div class="form-floating mb-3">
-                          <input
-                            type="password"
-                            class="form-control"
-                            name="password"
-                            id="password"
-                            value=""
-                            [(ngModel)]="user.password"
-                            placeholder="Password"
-                            required
-                          />
-                          <label for="password" class="form-label"
-                            >Password</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value=""
-                            name="iAgree"
-                            id="iAgree"
-                            required
-                          />
-                          <label
-                            class="form-check-label text-secondary"
-                            for="iAgree"
-                          >
-                            I agree to the
-                            <a
-                              href="#!"
-                              class="link-primary text-decoration-none"
-                              >terms and conditions</a
-                            >
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="d-grid">
-                          <button class="btn btn-dark btn-lg" type="submit">
-                            Sign up
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                  <div class="row">
-                    <div class="col-12">
-                      <p class="mb-0 mt-5 text-secondary text-center">
-                        Already have an account?
-                        <a
-                          href="/login"
-                          class="link-primary text-decoration-none"
-                          >Sign in</a
-                        >
-                      </p>
-                    </div>
-                  </div>
-                </div>
+
+            <!-- Heading -->
+            <h4 class="text-center mb-4 open-sans-simple">Join the Crew</h4>
+
+            <!-- Signup Form -->
+            <form (ngSubmit)="register()" #signupForm="ngForm" novalidate>
+              <!-- Username -->
+              <div class="form-floating mb-4">
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  [(ngModel)]="user.username"
+                  style="
+                    height: 3.2rem;
+                    font-size: 1rem;
+                    line-height: normal;
+                    padding-top: 0.5rem;
+                  "
+                  class="form-control bg-transparent text-white border-light"
+                  placeholder=" "
+                  required
+                  (focus)="isUsernameFocused = true"
+                  (blur)="isUsernameFocused = false"
+                />
+                <label
+                  *ngIf="!isUsernameFocused && !user.username"
+                  for="username"
+                  class="text-white"
+                  >Username</label
+                >
               </div>
+
+              
+
+              <!-- Password -->
+              <div class="form-floating mb-4 position-relative">
+                <input
+                  [type]="showPassword ? 'text' : 'password'"
+                  id="password"
+                  name="password"
+                  [(ngModel)]="user.password"
+                  style="
+                    height: 3.2rem;
+                    font-size: 1rem;
+                    line-height: normal;
+                    padding-top: 0.5rem;
+                  "
+                  class="form-control bg-transparent text-white border-light"
+                  placeholder=" "
+                  required
+                  (focus)="isPasswordFocused = true"
+                  (blur)="isPasswordFocused = false"
+                />
+                <label
+                  *ngIf="!isPasswordFocused && !user.password"
+                  for="password"
+                  class="text-white"
+                  >Password</label
+                >
+                <button
+                  type="button"
+                  class="btn btn-sm position-absolute top-50 end-0 translate-middle-y me-3 text-white"
+                  (click)="togglePasswordVisibility()"
+                  tabindex="-1"
+                >
+                  <i
+                    class="bi"
+                    [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"
+                  ></i>
+                </button>
+              </div>
+
+              <!-- Confirm Password -->
+              <div class="form-floating mb-4 position-relative">
+                <input
+                  [type]="showConfirmPassword ? 'text' : 'password'"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  [(ngModel)]="confirmPassword"
+                  style="
+                    height: 3.2rem;
+                    font-size: 1rem;
+                    line-height: normal;
+                    padding-top: 0.5rem;
+                  "
+                  class="form-control bg-transparent text-white border-light"
+                  placeholder=" "
+                  required
+                  (focus)="isConfirmPasswordFocused = true"
+                  (blur)="isConfirmPasswordFocused = false"
+                />
+                <label
+                  *ngIf="!isConfirmPasswordFocused && !confirmPassword"
+                  for="confirmPassword"
+                  class="text-white"
+                  >Confirm Password</label
+                >
+                <button
+                  type="button"
+                  class="btn btn-sm position-absolute top-50 end-0 translate-middle-y me-3 text-white"
+                  (click)="toggleConfirmPasswordVisibility()"
+                  tabindex="-1"
+                >
+                  <i
+                    class="bi"
+                    [ngClass]="showConfirmPassword ? 'bi-eye-slash' : 'bi-eye'"
+                  ></i>
+                </button>
+              </div>
+
+
+              <!-- Password Mismatch Message -->
+              <div
+                *ngIf="
+                  user.password &&
+                  confirmPassword &&
+                  user.password !== confirmPassword
+                "
+                class="text-danger mb-3"
+              >
+                Passwords do not match.
+              </div>
+
+              <!-- Terms Checkbox -->
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="iAgree"
+                  [(ngModel)]="agreed"
+                  name="iAgree"
+                  required
+                  
+                />
+                <label class="form-check-label text-white" for="iAgree">
+                  I agree to the
+                  <a href="#" class="text-info text-decoration-none"
+                    >terms and conditions</a
+                  >
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-grid">
+                <button
+                  class="btn btn-outline-light btn-lg"
+                  type="submit"
+                  [disabled]="
+                    !agreed ||
+                    user.password !== confirmPassword ||
+                    !signupForm.form.valid
+                  "
+                 [disabled]="loading"
+                >
+                  {{ loading ? "Signing up..." : "Sign Up" }}
+                </button>
+              </div>
+              <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+                {{ errorMessage }}
+              </div>
+            </form>
+
+            <!-- Redirect Link -->
+            <div class="d-flex justify-content-center gap-4 mt-4">
+              <a href="/login" class="link-light text-decoration-none">
+                Already have an account?
+              </a>
             </div>
           </div>
         </div>

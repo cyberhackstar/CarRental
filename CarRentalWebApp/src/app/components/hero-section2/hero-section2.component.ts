@@ -1,15 +1,25 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-hero-section2',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './hero-section2.component.html',
   styleUrl: './hero-section2.component.css',
 })
 export class HeroSection2Component {
   constructor(private router: Router, private authService:AuthService) {}
+
+  userRole: string = 'USER'; // Default role
+
+ngOnInit() {
+  // Example: Fetch role from a service or localStorage
+  const role = localStorage.getItem('userRole');
+  this.userRole = role ? role : 'ROLE_USER';
+}
+
 
   goToCarList(): void {
     if (this.authService.isLoggedIn()) {
@@ -17,5 +27,10 @@ export class HeroSection2Component {
     } else {
       this.router.navigate(['/login']);
     }
+  }
+
+  goToSuperAdmin(){}
+  goToAdminPanel(){
+    this.router.navigate(['/cars/new']);
   }
 }

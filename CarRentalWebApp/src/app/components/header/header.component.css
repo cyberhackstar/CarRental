@@ -21,6 +21,16 @@
   color: #ffc107 !important;
   transition: color 0.3s ease;
 }
+.nav-link {
+  cursor: pointer;
+  /* transition: font-weight 0.2s ease; */
+}
+
+.nav-link:hover {
+  /* font-weight: bold; */
+}
+
+
 
 .logout-link:hover {
   color: #dc3545 !important; /* Bootstrap danger red */

@@ -79,7 +79,7 @@ export class CarFormComponent {
         this.selectedFileName = '';
         this.submitted = false;
         this.loading = false;
-        this.router.navigate(['/carList']); // Adjust route as needed
+        this.router.navigate(['/cars/all']); // Adjust route as needed
       },
       error: (err) => {
         this.responseMessage = 'Car registration failed. Please try again.';

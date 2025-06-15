@@ -14,24 +14,25 @@ import { UserBookingsComponent } from './components/user/user-bookings/user-book
 import { AdminCarListComponent } from './components/admin/admin-car-list/admin-car-list.component';
 import { AdminCarUpdateComponent } from './components/admin/admin-car-update/admin-car-update.component';
 import { AdminRegisterComponent } from './components/super_admin/admin-register/admin-register.component';
+import { RoleGuard } from './guards/role.guard';
 
 export const routes: Routes = [
   // Public routes
   { path: '', component: HeroSection2Component },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'admin/create', component: AdminRegisterComponent},
+  { path: 'admin/create', component: AdminRegisterComponent , canActivate: [RoleGuard], data: { roles: ['ROLE_SUPER'] }},
 
   // Booking routes (no auth for now)
-  { path: 'book/:carId', component: BookingFormComponent },
-  { path: 'bookings', component: BookingListComponent },
-  { path: 'user/bookings', component: UserBookingsComponent },
+  { path: 'book/:carId', component: BookingFormComponent , canActivate: [RoleGuard], data: { roles: ['ROLE_USER'] } },
+  { path: 'bookings', component: BookingListComponent , canActivate: [RoleGuard], data: { roles: ['ROLE_ADMIN'] } },
+  { path: 'user/bookings', component: UserBookingsComponent , canActivate: [RoleGuard], data: { roles: ['ROLE_USER'] } },
 
   // Admin routes (auth removed for now)
-  { path: 'cars/new', component: CarFormComponent },
-  { path: 'cars', component: CarListComponent },
-  { path: 'cars/all', component: AdminCarListComponent },
-  { path: 'cars/update/:id', component: AdminCarUpdateComponent },
+  { path: 'cars/new', component: CarFormComponent , canActivate: [RoleGuard], data: { roles: ['ROLE_ADMIN'] }},
+  { path: 'cars', component: CarListComponent , canActivate: [RoleGuard], data: { roles: ['ROLE_ADMIN', 'ROLE_USER'] } },
+  { path: 'cars/all', component: AdminCarListComponent , canActivate: [RoleGuard], data: { roles: ['ROLE_ADMIN'] } },
+  { path: 'cars/update/:id', component: AdminCarUpdateComponent , canActivate: [RoleGuard], data: { roles: ['ROLE_ADMIN'] } },
 
   // Shared components
   { path: 'header', component: HeaderComponent },
