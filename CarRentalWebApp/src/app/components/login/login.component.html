@@ -22,20 +22,20 @@
                 width="375"
                 height="57"
               /> -->
-              <h4 class="text-center mb-4 trade-winds-regular">Ready to Hit the Road?</h4>
+              <h4 class="text-center mb-4 trade-winds-regular">
+                Ready to Hit the Road?
+              </h4>
             </div>
             <!-- <h4 class="text-center mb-4 " >Login</h4> -->
-             <h4 class="text-center mb-4 trade-winds-regular">
-              
-             Let’s Go   <img
+            <h4 class="text-center mb-4 trade-winds-text">
+              Your Ride Starts Here
+              <img
                 src="assets/images/cargif4.gif"
                 alt="Logo"
-                width="80"
-                height="70"
+                width="50"
+                height="35"
               />
-
-             
-              </h4>
+            </h4>
 
             <form #loginForm="ngForm" (ngSubmit)="login()" novalidate>
               <!-- Username Field -->
@@ -116,9 +116,11 @@
 
               <div class="d-grid">
                 <button
-                  class="btn btn-outline-light btn-lg"
+                  class="btn btn-outline-light btn-lg roboto-bold"
                   type="submit"
-                  [disabled]="loading || user.username === '' || user.password === ''"
+                  [disabled]="
+                    loading || user.username === '' || user.password === ''
+                  "
                 >
                   {{ loading ? "Logging in..." : "Log in now" }}
                 </button>

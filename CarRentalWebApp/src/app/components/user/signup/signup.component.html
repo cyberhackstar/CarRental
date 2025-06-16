@@ -28,11 +28,13 @@
                 width="175"
                 height="57"
               /> -->
-              <h4 class="text-center mb-4 trade-winds-regular">Your Road Starts Here</h4>
+              <h4 class="text-center mb-4 trade-winds-regular">
+                Your Road Starts Here
+              </h4>
             </div>
 
             <!-- Heading -->
-            <h4 class="text-center mb-4 open-sans-simple">Join the Crew</h4>
+            <h4 class="text-center mb-4 trade-winds-text">Join the Crew</h4>
 
             <!-- Signup Form -->
             <form (ngSubmit)="register()" #signupForm="ngForm" novalidate>
@@ -62,8 +64,6 @@
                   >Username</label
                 >
               </div>
-
-              
 
               <!-- Password -->
               <div class="form-floating mb-4 position-relative">
@@ -141,7 +141,6 @@
                 </button>
               </div>
 
-
               <!-- Password Mismatch Message -->
               <div
                 *ngIf="
@@ -163,7 +162,6 @@
                   [(ngModel)]="agreed"
                   name="iAgree"
                   required
-                  
                 />
                 <label class="form-check-label text-white" for="iAgree">
                   I agree to the
@@ -176,14 +174,14 @@
               <!-- Submit Button -->
               <div class="d-grid">
                 <button
-                  class="btn btn-outline-light btn-lg"
+                  class="btn btn-outline-light btn-lg roboto-bold"
                   type="submit"
                   [disabled]="
                     !agreed ||
                     user.password !== confirmPassword ||
                     !signupForm.form.valid
                   "
-                 [disabled]="loading"
+                  [disabled]="loading"
                 >
                   {{ loading ? "Signing up..." : "Sign Up" }}
                 </button>
