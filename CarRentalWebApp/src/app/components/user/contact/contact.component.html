@@ -1,0 +1,103 @@
+<section
+  class="contact-section position-relative text-white min-vh-100"
+  style="
+    background-image: url('assets/images/car4.webp');
+    background-size: cover;
+    background-position: center;
+  "
+>
+  <!-- Dark Overlay -->
+  <div
+    class="overlay position-absolute top-0 start-0 w-100 h-100"
+    style="background-color: rgba(0, 0, 0, 0.6); z-index: 1"
+  ></div>
+
+  <!-- Contact Form Container -->
+  <div class="container position-relative py-5" style="z-index: 2">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card bg-dark bg-opacity-75 text-white shadow-lg border-0 rounded">
+          <div class="card-body p-4">
+            <h4 class="text-center mb-4 open-sans-simple">Get in Touch</h4>
+            <form (ngSubmit)="submitContactForm()" #contactForm="ngForm" novalidate>
+              <!-- Name -->
+              <div class="form-floating mb-4">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  [(ngModel)]="contact.name"
+                  class="form-control bg-transparent text-white border-light"
+                  placeholder=" "
+                  required
+                />
+                <label for="name" class="text-white">Your Name</label>
+              </div>
+
+              <!-- Email -->
+              <div class="form-floating mb-4">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  [(ngModel)]="contact.email"
+                  class="form-control bg-transparent text-white border-light"
+                  placeholder=" "
+                  required
+                />
+                <label for="email" class="text-white">Email Address</label>
+              </div>
+
+              <!-- Subject -->
+              <div class="form-floating mb-4">
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  [(ngModel)]="contact.subject"
+                  class="form-control bg-transparent text-white border-light"
+                  placeholder=" "
+                  required
+                />
+                <label for="subject" class="text-white">Subject</label>
+              </div>
+
+              <!-- Message -->
+              <div class="form-floating mb-4">
+                <textarea
+                  id="message"
+                  name="message"
+                  [(ngModel)]="contact.message"
+                  class="form-control bg-transparent text-white border-light"
+                  placeholder=" "
+                  style="height: 120px"
+                  required
+                ></textarea>
+                <label for="message" class="text-white">Your Message</label>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-grid">
+                <button
+                  class="btn btn-outline-light btn-lg"
+                  type="submit"
+                  [disabled]="!contactForm.form.valid"
+                >
+                  Send Message
+                </button>
+              </div>
+
+              <!-- Success/Error Message -->
+              <div *ngIf="contactSuccess" class="alert alert-success mt-3">
+                Your message has been sent successfully!
+              </div>
+              <div *ngIf="contactError" class="alert alert-danger mt-3">
+                Something went wrong. Please try again later.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

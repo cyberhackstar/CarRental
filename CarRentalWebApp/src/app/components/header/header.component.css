@@ -30,6 +30,10 @@
   /* font-weight: bold; */
 }
 
+.navbar-brand{
+  cursor: pointer;
+}
+
 
 
 .logout-link:hover {

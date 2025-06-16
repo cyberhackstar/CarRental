@@ -15,6 +15,7 @@ import { AdminCarListComponent } from './components/admin/admin-car-list/admin-c
 import { AdminCarUpdateComponent } from './components/admin/admin-car-update/admin-car-update.component';
 import { AdminRegisterComponent } from './components/super_admin/admin-register/admin-register.component';
 import { RoleGuard } from './guards/role.guard';
+import { ContactComponent } from './components/user/contact/contact.component';
 
 export const routes: Routes = [
   // Public routes
@@ -39,6 +40,7 @@ export const routes: Routes = [
   { path: 'footer', component: FooterComponent },
   { path: 'services', component: ServicesSectionComponent },
   { path: 'dialog-demo', component: DialogHeadlessDemo },
+  { path: 'contact', component: ContactComponent},
 
   // Fallback route
   { path: '**', redirectTo: '' },
