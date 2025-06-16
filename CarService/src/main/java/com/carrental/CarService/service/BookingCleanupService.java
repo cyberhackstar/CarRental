@@ -17,7 +17,7 @@ public class BookingCleanupService {
 
     private final BookingRepository bookingRepository;
 
-    @Scheduled(fixedRate = 3600000) // Runs every hour
+    @Scheduled(fixedRate = 86400000) // Runs every 24 hour
     public void deleteFailedBookings() {
         List<Booking> failedBookings = bookingRepository.findByPaymentStatus(PaymentStatus.FAILED);
         bookingRepository.deleteAll(failedBookings);
