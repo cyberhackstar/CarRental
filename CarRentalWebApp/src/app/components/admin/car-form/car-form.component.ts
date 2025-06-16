@@ -4,7 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CarRentalService } from '../../../services/car-rental.service';
-import { LoadingComponent } from "../../loading/loading.component";
+import { LoadingComponent } from "../../../features/loading/loading.component";
 
 @Component({
   selector: 'app-car-form',

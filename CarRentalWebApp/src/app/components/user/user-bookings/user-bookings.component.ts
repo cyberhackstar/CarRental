@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import * as XLSX from 'xlsx';
 import * as FileSaver from 'file-saver';
-import { LoadingComponent } from '../../loading/loading.component';
+import { LoadingComponent } from '../../../features/loading/loading.component';
 import { Booking } from '../../../models/booking.model';
 import { CarRentalService } from '../../../services/car-rental.service';
 

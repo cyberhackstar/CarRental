@@ -1,0 +1,16 @@
+<!-- Counter Section -->
+<section class="bsb-cta-1 px-2 bsb-overlay py-5" style="background-image: url('assets/images/back2.webp'); background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="row text-center text-white">
+      <div class="col-md-6 col-lg-3" *ngFor="let stat of stats">
+        <div class="p-4 bg-dark bg-opacity-75 rounded shadow">
+          <i [class]="stat.icon + ' fs-2 mb-2'" [ngClass]="stat.color"></i>
+          <h2 class="display-6 fw-bold mb-1">
+            <span class="counter" [attr.data-target]="stat.value">{{ stat.start }}</span>+
+          </h2>
+          <p class="mb-0 text-white-50">{{ stat.label }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

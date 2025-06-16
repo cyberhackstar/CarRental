@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { ServicesSectionComponent } from "../services-section/services-section.component";
+import { TestimonialSectionComponent } from "../testimonial-section/testimonial-section.component";
+import { TotalcarComponent } from "../totalcar/totalcar.component";
 
 @Component({
   selector: 'app-hero-section2',
-  imports: [CommonModule],
+  imports: [CommonModule, ServicesSectionComponent, TestimonialSectionComponent, TotalcarComponent],
   templateUrl: './hero-section2.component.html',
   styleUrl: './hero-section2.component.css',
 })

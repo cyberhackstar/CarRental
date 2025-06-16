@@ -1,0 +1,118 @@
+/* Ensure the section allows overflow */
+section.bsb-cta-1 {
+  position: relative;
+  overflow: visible;
+  z-index: 0;
+}
+
+/* Ensure heading section stays behind on hover */
+.row.justify-content-center.mb-5 {
+  position: relative;
+  z-index: 1;
+}
+
+/* Testimonial card hover fix */
+.testimonial-card {
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-card:hover {
+  z-index: 10;
+}
+
+.testimonial-carousel .p-carousel-items-content {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 1rem 0;
+  overflow: visible; /* Allow hover lift */
+  position: relative;
+}
+
+.testimonial-card {
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 3rem 1rem; /* Equal spacing between cards */
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute content */
+  height: 80%; /* Fill available height */
+}
+
+/* Hover effect */
+.testimonial-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Slight zoom on image hover */
+.testimonial-card:hover .testimonial-img {
+  transform: scale(1.1);
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-role {
+  color: #aaa;
+}
+
+/* Responsive layout */
+@media (max-width: 992px) {
+  .testimonial-card {
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-carousel .p-carousel-items-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    margin: 0 auto 1rem;
+    width: 90%;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonial-card {
+    width: 95%;
+    margin: 0 auto 1rem;
+  }
+}
+
+.testimonial-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Show max 4 lines */
+  -webkit-box-orient: vertical;
+}

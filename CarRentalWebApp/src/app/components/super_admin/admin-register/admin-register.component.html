@@ -28,7 +28,9 @@
                 width="175"
                 height="57"
               /> -->
-              <h4 class="text-center mb-4 trade-winds-regular">Your Road Starts Here</h4>
+              <h4 class="text-center mb-4 trade-winds-regular">
+                Your Road Starts Here
+              </h4>
             </div>
 
             <!-- Heading -->
@@ -62,8 +64,6 @@
                   >Username</label
                 >
               </div>
-
-              
 
               <!-- Password -->
               <div class="form-floating mb-4 position-relative">
@@ -141,7 +141,6 @@
                 </button>
               </div>
 
-
               <!-- Password Mismatch Message -->
               <div
                 *ngIf="
@@ -163,7 +162,6 @@
                   [(ngModel)]="agreed"
                   name="iAgree"
                   required
-                  
                 />
                 <label class="form-check-label text-white" for="iAgree">
                   I agree to the
@@ -179,11 +177,11 @@
                   class="btn btn-outline-light btn-lg"
                   type="submit"
                   [disabled]="
+                    loading ||
                     !agreed ||
                     user.password !== confirmPassword ||
                     !signupForm.form.valid
                   "
-                 [disabled]="loading"
                 >
                   {{ loading ? "Signing up..." : "Sign Up" }}
                 </button>

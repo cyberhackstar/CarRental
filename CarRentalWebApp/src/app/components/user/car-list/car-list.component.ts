@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CalendarModule } from 'primeng/calendar';
-import { LoadingComponent } from '../../loading/loading.component';
+import { LoadingComponent } from '../../../features/loading/loading.component';
 
 @Component({
   selector: 'app-car-list',

@@ -1,12 +1,12 @@
 import { Component, HostListener } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './features/header/header.component';
 
-import { FooterComponent } from './components/footer/footer.component';
+import { FooterComponent } from './features/footer/footer.component';
 
 import { filter } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { LoadingComponent } from "./components/loading/loading.component";
+import { LoadingComponent } from "./features/loading/loading.component";
 
 @Component({
   selector: 'app-root',

@@ -1,0 +1,32 @@
+<section class="bsb-cta-1 px-2 bsb-overlay py-5" style="background-image: url('assets/images/back3.webp'); background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="row justify-content-center mb-1">
+      <div class="col-md-8 text-center">
+        <span class="badge bg-warning text-dark mb-3 roboto-bold">Testimonials</span>
+        <h2 class="display-5 text-white fw-bold">What Our Clients Say</h2>
+        <p class="text-white-50">Real feedback from customers who’ve enjoyed our car rental services.</p>
+      </div>
+    </div>
+
+    <p-carousel
+  [value]="testimonials"
+  [numVisible]="numVisible"
+  [numScroll]="1"
+  [circular]="true"
+  [autoplayInterval]="5000"
+  [showIndicators]="true"
+  [showNavigators]="true"
+  styleClass="testimonial-carousel"
+>
+
+      <ng-template pTemplate="item" let-testimonial>
+        <div class="testimonial-card p-2">
+          <img [src]="testimonial.image" alt="{{ testimonial.name }}" class="testimonial-img" />
+          <p class="testimonial-text">"{{ testimonial.feedback }}"</p>
+          <h5 class="testimonial-name">{{ testimonial.name }}</h5>
+          <!-- <small class="testimonial-role">{{ testimonial.role }}</small> -->
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</section>

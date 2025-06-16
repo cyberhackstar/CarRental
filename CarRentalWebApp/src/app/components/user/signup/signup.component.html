@@ -177,11 +177,11 @@
                   class="btn btn-outline-light btn-lg roboto-bold"
                   type="submit"
                   [disabled]="
+                    loading ||
                     !agreed ||
                     user.password !== confirmPassword ||
                     !signupForm.form.valid
                   "
-                  [disabled]="loading"
                 >
                   {{ loading ? "Signing up..." : "Sign Up" }}
                 </button>
