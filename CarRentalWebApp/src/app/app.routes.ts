@@ -6,7 +6,6 @@ import { BookingListComponent } from './components/admin/booking-list/booking-li
 import { HeaderComponent } from './features/header/header.component';
 import { LoginComponent } from './features/login/login.component';
 import { SignupComponent } from './components/user/signup/signup.component';
-import { DialogHeadlessDemo } from './components/dialog-headless-demo/dialog-headless-demo.component';
 import { FooterComponent } from './features/footer/footer.component';
 import { ServicesSectionComponent } from './features/services-section/services-section.component';
 import { HeroSection2Component } from './features/hero-section2/hero-section2.component';
@@ -39,7 +38,6 @@ export const routes: Routes = [
   { path: 'header', component: HeaderComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'services', component: ServicesSectionComponent },
-  { path: 'dialog-demo', component: DialogHeadlessDemo },
   { path: 'contact', component: ContactComponent},
 
   // Fallback route
