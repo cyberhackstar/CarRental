@@ -5,5 +5,6 @@ export class Booking {
   customerEmail!: string;
   startDate!: string; // ISO format date string
   endDate!: string;
+  paymentStatus?: string;
   totalAmount!: number;
 }
