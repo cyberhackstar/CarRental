@@ -12,26 +12,26 @@ import { CarouselModule } from 'primeng/carousel'; // ✅ PrimeNG Carousel
 export class TestimonialSectionComponent {
   testimonials = [
     {
-      image: 'assets/images/car3.webp',
-      name: 'Aarav Mehta',
+      image: 'assets/images/tm1.webp',
+      name: 'Saloni Rathi',
       role: 'Business Traveler',
       feedback: 'The booking process was seamless and the car was in excellent condition.'
     },
     {
-      image: 'assets/images/car1.webp',
-      name: 'Priya Sharma',
+      image: 'assets/images/tm2.webp',
+      name: 'Sachin Thakur',
       role: 'Vacationer',
       feedback: 'We rented a car for our family trip and it was perfect. Clean, spacious, and very affordable.'
     },
     {
-      image: 'assets/images/car2.webp',
-      name: 'Rahul Verma',
+      image: 'assets/images/tm3.webp',
+      name: 'Rohit Kumar',
       role: 'Frequent Flyer',
       feedback: 'Airport pickup was on time and the driver was courteous. Great experience every time I travel.'
     },
     {
-      image: 'assets/images/car4.webp',
-      name: 'Sneha Kapoor',
+      image: 'assets/images/tm4.webp',
+      name: 'Meghana Konka',
       role: 'Event Organizer',
       feedback: 'Used their luxury fleet for a wedding event. The cars were stunning and service was top-notch.'
     }

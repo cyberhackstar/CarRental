@@ -37,6 +37,7 @@ export class BookingFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     const carIdFromRoute = this.route.snapshot.paramMap.get('carId');
     const startDateFromQuery = this.route.snapshot.queryParamMap.get('startDate');
     const endDateFromQuery = this.route.snapshot.queryParamMap.get('endDate');

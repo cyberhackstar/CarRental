@@ -1,71 +1,40 @@
-<nav
-  class="navbar navbar-expand-md fixed-top transition-navbar"
-  [ngClass]="{
+<nav class="navbar navbar-expand-md fixed-top transition-navbar" [ngClass]="{
     'navbar-transparent': isHomePage && !isScrolled,
     'navbar-colored': !isHomePage || isScrolled
-  }"
->
+  }">
   <div class="container">
-    <a
-      class="navbar-brand d-flex align-items-center gap-2"
-      (click)="navigateTo('/')"
-      style="margin-left: -4%;"
-    >
-      <span class="fw-bold text-white fs-5 trade-winds-regular">Rental <span style="color: #ffc107;">Cars</span></span>
-      <img
-        src="assets/images/logo-white.png"
-        alt="Car Rental Logo"
-        width="80"
-        height="30"
-      />
+    <a class="navbar-brand d-flex align-items-center gap-2 flex-wrap" (click)="navigateTo('/')" style="margin-left: 0;">
+      <span class="fw-bold text-white fs-5 trade-winds-regular text-nowrap">
+        Rental <span style="color: #ffc107;">Cars</span>
+      </span>
+      <img src="assets/images/logo-white.png" alt="Car Rental Logo" class="img-fluid d-none d-sm-block"
+        style="max-width: 70px; height: auto;" />
+      <img src="assets/images/logo-white.png" alt="Car Rental Logo" class="img-fluid d-sm-none"
+        style="max-width: 50px; height: auto;" />
     </a>
 
-    <button
-      class="navbar-toggler border-0"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasNavbar"
-    >
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
       <i class="bi bi-list text-white fs-3"></i>
     </button>
 
-    <div
-      class="offcanvas offcanvas-end bg-dark text-white"
-      id="offcanvasNavbar"
-      #offcanvasNavbar
-    >
+    <div class="offcanvas offcanvas-end bg-dark text-white" id="offcanvasNavbar" #offcanvasNavbar>
       <div class="offcanvas-header">
         <h5 class="offcanvas-title">Menu</h5>
-        <button
-          type="button"
-          class="btn-close btn-close-white"
-          data-bs-dismiss="offcanvas"
-        ></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="mainNavbar">
           <!-- Admin -->
           <ng-container *ngIf="userRole === 'ROLE_ADMIN'">
             <li class="nav-item">
-              <a
-                class="nav-link nav-hover text-white"
-                (click)="navigateTo('/cars/new')"
-                >Add Car</a
-              >
+              <a class="nav-link nav-hover text-white" (click)="navigateTo('/cars/new')">Add Car</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link nav-hover text-white"
-                (click)="navigateTo('/cars/all')"
-                >Car List</a
-              >
+              <a class="nav-link nav-hover text-white" (click)="navigateTo('/cars/all')">Car List</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link nav-hover text-white"
-                (click)="navigateTo('/bookings')"
-                >Bookings</a
-              >
+              <a class="nav-link nav-hover text-white" (click)="navigateTo('/bookings')">Bookings</a>
             </li>
           </ng-container>
 
@@ -79,40 +48,24 @@
               >
             </li> -->
             <li class="nav-item">
-              <a
-                class="nav-link nav-hover text-white"
-                (click)="navigateTo('/cars')"
-                >Book Car</a
-              >
+              <a class="nav-link nav-hover text-white" (click)="navigateTo('/cars')">Book Car</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link nav-hover text-white"
-                (click)="navigateTo('/user/bookings')"
-                >Bookings</a
-              >
+              <a class="nav-link nav-hover text-white" (click)="navigateTo('/user/bookings')">Bookings</a>
             </li>
           </ng-container>
 
           <!-- Super Admin -->
           <ng-container *ngIf="userRole === 'ROLE_SUPER'">
             <li class="nav-item">
-              <a
-                class="nav-link nav-hover text-white"
-                (click)="navigateTo('/admin/create')"
-                >Create Admin</a
-              >
+              <a class="nav-link nav-hover text-white" (click)="navigateTo('/admin/create')">Create Admin</a>
             </li>
           </ng-container>
 
           <!-- Common for Logged In Users -->
           <ng-container *ngIf="isLoggedIn">
             <li class="nav-item">
-              <a
-                class="nav-link nav-hover text-white logout-link"
-                (click)="logout()"
-                >Logout</a
-              >
+              <a class="nav-link nav-hover text-white logout-link" (click)="logout()">Logout</a>
             </li>
             <li class="nav-item">
               <span class="nav-link text-warning fw-bold">{{ username }}</span>
@@ -122,18 +75,10 @@
           <!-- If Not Logged In -->
           <ng-container *ngIf="!isLoggedIn">
             <li class="nav-item">
-              <a
-                class="nav-link nav-hover text-white"
-                (click)="navigateTo('/login')"
-                >Login</a
-              >
+              <a class="nav-link nav-hover text-white" (click)="navigateTo('/login')">Login</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link nav-hover text-white"
-                (click)="navigateTo('/signup')"
-                >Register</a
-              >
+              <a class="nav-link nav-hover text-white" (click)="navigateTo('/signup')">Register</a>
             </li>
           </ng-container>
         </ul>
