@@ -9,6 +9,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.carrental.CarService.config.JwtUtils;
+import com.carrental.CarService.exception.AuthenticationFailedException;
+import com.carrental.CarService.exception.UserAlreadyExistsException;
 import com.carrental.CarService.model.User;
 import com.carrental.CarService.repository.UserRepo;
 
@@ -24,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     public UserServiceImpl(UserRepo userRepo, PasswordEncoder passwordEncoder,
-                           AuthenticationManager authenticationManager, JwtUtils jwtUtils) {
+            AuthenticationManager authenticationManager, JwtUtils jwtUtils) {
         this.userRepo = userRepo;
         this.passwordEncoder = passwordEncoder;
         this.authenticationManager = authenticationManager;
@@ -32,12 +34,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+
     public User createUser(User user) {
         logger.info("Attempting to register user: {}", user.getUsername());
-        User existUser = userRepo.findByUsername(user.getUsername());
-        if (existUser != null) {
+        if (userRepo.findByUsername(user.getUsername()) != null) {
             logger.warn("Registration failed: Username already exists - {}", user.getUsername());
-            throw new IllegalArgumentException("Username or Email already exists");
+            throw new UserAlreadyExistsException("Username or Email already exists");
         }
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -47,24 +49,27 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User loginUser(User user) {
-        logger.info("Login attempt for username: {}", user.getUsername());
-        try {
-            Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+    
+public User loginUser(User user) {
+    logger.info("Login attempt for username: {}", user.getUsername());
+    try {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
 
-            if (authentication.isAuthenticated()) {
-                String token = jwtUtils.generateToken(user.getUsername());
-                User mainUser = userRepo.findByUsername(user.getUsername());
-                mainUser.setToken(token);
-                logger.info("Login successful for username: {}", mainUser.getUsername());
-                return mainUser;
-            } else {
-                logger.warn("Authentication failed for username: {}", user.getUsername());
-            }
-        } catch (Exception e) {
-            logger.error("Login error for username: {} - {}", user.getUsername(), e.getMessage(), e);
+        if (authentication.isAuthenticated()) {
+            String token = jwtUtils.generateToken(user.getUsername());
+            User mainUser = userRepo.findByUsername(user.getUsername());
+            mainUser.setToken(token);
+            logger.info("Login successful for username: {}", mainUser.getUsername());
+            return mainUser;
+        } else {
+            logger.warn("Authentication failed for username: {}", user.getUsername());
+            throw new AuthenticationFailedException("Invalid username or password");
         }
-        return null;
+    } catch (Exception e) {
+        logger.error("Login error for username: {}", user.getUsername(), e);
+        throw new AuthenticationFailedException("Login failed: " + e.getMessage());
     }
+}
+
 }

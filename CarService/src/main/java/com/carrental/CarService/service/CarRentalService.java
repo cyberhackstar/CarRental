@@ -2,6 +2,11 @@ package com.carrental.CarService.service;
 
 import com.carrental.common.dto.CarEvent;
 import com.carrental.CarService.dto.CarRequestDto;
+import com.carrental.CarService.exception.CarAlreadyBookedException;
+import com.carrental.CarService.exception.CarNotFoundException;
+import com.carrental.CarService.exception.ImageUploadException;
+import com.carrental.CarService.exception.InvalidBookingException;
+import com.carrental.CarService.exception.PaymentProcessingException;
 import com.carrental.CarService.messaging.BookingEventProducer;
 import com.carrental.CarService.messaging.CarEventProducer;
 import com.carrental.CarService.model.Booking;
@@ -75,21 +80,27 @@ public class CarRentalService {
 
         if (imageFile != null && !imageFile.isEmpty()) {
             logger.info("Uploading optimized image to Cloudinary...");
+            try {
+                @SuppressWarnings("unchecked")
+                Map<String, Object> uploadOptions = (Map<String, Object>) ObjectUtils.asMap(
+                        "transformation", new Transformation<>().width(1000)
+                                .crop("scale")
+                                .quality("auto")
+                                .fetchFormat("auto"));
 
-            @SuppressWarnings("unchecked")
-            Map<String, Object> uploadOptions = (Map<String, Object>) ObjectUtils.asMap(
-                    "transformation", new Transformation<>().width(1000)
-                            .crop("scale")
-                            .quality("auto")
-                            .fetchFormat("auto"));
+                @SuppressWarnings("unchecked")
+                Map<String, Object> uploadResult = (Map<String, Object>) cloudinary.uploader().upload(
+                        imageFile.getBytes(),
+                        uploadOptions);
+                String imageUrl = uploadResult.get("secure_url").toString();
+                car.setImageUrl(imageUrl);
 
-            @SuppressWarnings("unchecked")
-            Map<String, Object> uploadResult = (Map<String, Object>) cloudinary.uploader().upload(imageFile.getBytes(),
-                    uploadOptions);
-            String imageUrl = uploadResult.get("secure_url").toString();
-            car.setImageUrl(imageUrl);
+                logger.info("Optimized image uploaded successfully: {}", imageUrl);
 
-            logger.info("Optimized image uploaded successfully: {}", imageUrl);
+            } catch (IOException e) {
+                throw new ImageUploadException("Failed to upload image", e);
+            }
+
         }
 
         Car savedCar = carRepository.save(car);
@@ -111,7 +122,7 @@ public class CarRentalService {
         logger.info("Updating car with ID: {}", id);
 
         Car existingCar = carRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Car not found with ID: " + id));
+                .orElseThrow(() -> new CarNotFoundException("Car not found with ID: " + id));
 
         // Update fields
         existingCar.setBrand(carDto.getBrand());
@@ -134,20 +145,27 @@ public class CarRentalService {
 
             // Upload new image
             logger.info("Uploading new image to Cloudinary...");
-            @SuppressWarnings("unchecked")
-            Map<String, Object> uploadOptions = (Map<String, Object>) ObjectUtils.asMap(
-                    "transformation", new Transformation<>().width(1000)
-                            .crop("scale")
-                            .quality("auto")
-                            .fetchFormat("auto"));
+            try {
+                @SuppressWarnings("unchecked")
+                Map<String, Object> uploadOptions = (Map<String, Object>) ObjectUtils.asMap(
+                        "transformation", new Transformation<>().width(1000)
+                                .crop("scale")
+                                .quality("auto")
+                                .fetchFormat("auto"));
 
-            @SuppressWarnings("unchecked")
-            Map<String, Object> uploadResult = (Map<String, Object>) cloudinary.uploader().upload(imageFile.getBytes(),
-                    uploadOptions);
-            String imageUrl = uploadResult.get("secure_url").toString();
-            existingCar.setImageUrl(imageUrl);
+                @SuppressWarnings("unchecked")
+                Map<String, Object> uploadResult = (Map<String, Object>) cloudinary.uploader().upload(
+                        imageFile.getBytes(),
+                        uploadOptions);
+                String imageUrl = uploadResult.get("secure_url").toString();
+                existingCar.setImageUrl(imageUrl);
 
-            logger.info("New image uploaded successfully: {}", imageUrl);
+                logger.info("New image uploaded successfully: {}", imageUrl);
+
+            } catch (IOException e) {
+                throw new ImageUploadException("Failed to upload new image", e);
+            }
+
         }
 
         Car updatedCar = carRepository.save(existingCar);
@@ -156,9 +174,10 @@ public class CarRentalService {
         return updatedCar;
     }
 
-    public Optional<Car> getCarById(Long id) {
+    public Car getCarById(Long id) {
         logger.info("Fetching car by ID: {}", id);
-        return carRepository.findById(id);
+        return carRepository.findById(id)
+                .orElseThrow(() -> new CarNotFoundException("Car not found with ID: " + id));
     }
 
     public void deleteCar(Long id) {
@@ -199,11 +218,11 @@ public class CarRentalService {
 
         if (booking.getCarId() == null) {
             logger.warn("Booking failed: carId is null");
-            throw new IllegalArgumentException("Booking must include a valid carId.");
+            throw new InvalidBookingException("Booking must include a valid carId.");
         }
 
         Car car = carRepository.findById(booking.getCarId())
-                .orElseThrow(() -> new RuntimeException("Car not found."));
+                .orElseThrow(() -> new CarNotFoundException("Car not found with ID: " + booking.getCarId()));
 
         // Check for overlapping bookings
         List<Booking> overlapping = bookingRepository.findOverlappingBookings(
@@ -213,7 +232,7 @@ public class CarRentalService {
 
         if (!overlapping.isEmpty()) {
             logger.warn("Car is already booked for the selected dates: {}", booking.getCarId());
-            throw new IllegalStateException("Car is already booked for the selected dates.");
+            throw new CarAlreadyBookedException("Car is already booked for the selected dates.");
         }
 
         // Calculate total amount
@@ -274,11 +293,11 @@ public class CarRentalService {
 
         if (booking.getCarId() == null) {
             logger.warn("Booking failed: carId is null");
-            throw new IllegalArgumentException("Booking must include a valid carId.");
+            throw new InvalidBookingException("Booking must include a valid carId.");
         }
 
         Car car = carRepository.findById(booking.getCarId())
-                .orElseThrow(() -> new RuntimeException("Car not found."));
+                .orElseThrow(() -> new CarNotFoundException("Car not found with ID: " + booking.getCarId()));
 
         List<Booking> overlapping = bookingRepository.findOverlappingBookings(
                 booking.getCarId(),
@@ -287,7 +306,7 @@ public class CarRentalService {
 
         if (!overlapping.isEmpty()) {
             logger.warn("Car is already booked for the selected dates: {}", booking.getCarId());
-            throw new IllegalStateException("Car is already booked for the selected dates.");
+            throw new CarAlreadyBookedException("Car is already booked for the selected dates.");
         }
 
         long days = ChronoUnit.DAYS.between(booking.getStartDate(), booking.getEndDate()) + 1;
@@ -301,7 +320,7 @@ public class CarRentalService {
             booking.setPaymentStatus(PaymentStatus.PENDING); // Mark as pending
         } catch (com.razorpay.RazorpayException e) {
             logger.error("Failed to create Razorpay order", e);
-            throw new RuntimeException("Payment order creation failed", e);
+            throw new PaymentProcessingException("Payment order creation failed", e);
         }
 
         Booking savedBooking = bookingRepository.save(booking);

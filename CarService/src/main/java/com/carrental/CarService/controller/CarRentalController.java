@@ -2,6 +2,7 @@ package com.carrental.CarService.controller;
 
 import com.carrental.CarService.dto.CarRequestDto;
 import com.carrental.CarService.dto.CarResponseDto;
+import com.carrental.CarService.exception.CarNotFoundException;
 import com.carrental.CarService.model.Booking;
 import com.carrental.CarService.model.Car;
 import com.carrental.CarService.service.CarRentalService;
@@ -23,6 +24,7 @@ import java.nio.file.*;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -104,18 +106,16 @@ public class CarRentalController {
     }
 
     @GetMapping("/cars/{id}")
-    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CarResponseDto> getCarById(@PathVariable Long id) {
         logger.info("Fetching car with ID: {}", id);
-        return carRentalService.getCarById(id)
-                .map(car -> {
-                    logger.info("Car found with ID: {}", id);
-                    return ResponseEntity.ok(new CarResponseDto(car));
-                })
-                .orElseGet(() -> {
-                    logger.warn("Car not found with ID: {}", id);
-                    return ResponseEntity.notFound().build();
-                });
+        try {
+            Car car = carRentalService.getCarById(id);
+            logger.info("Car found with ID: {}", id);
+            return ResponseEntity.ok(new CarResponseDto(car));
+        } catch (CarNotFoundException ex) {
+            logger.warn("Car not found with ID: {}", id);
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @DeleteMapping("/cars/{id}")
