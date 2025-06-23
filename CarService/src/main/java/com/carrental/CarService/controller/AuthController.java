@@ -59,7 +59,7 @@ public class AuthController {
     @PostMapping("/google-login")
     public ResponseEntity<?> loginWithGoogle(@RequestBody GoogleTokenRequest request) {
         String idToken = request.getIdToken();
-        System.out.println("Token "+idToken);
+        // System.out.println("Token "+idToken);
         logger.info("Google login request received",idToken);
         try {
             User user = userService.loginWithGoogle(idToken);
@@ -73,7 +73,7 @@ public class AuthController {
     @PostMapping("/google-signup")
     public ResponseEntity<?> signupWithGoogle(@RequestBody GoogleTokenRequest request) {
         String idToken = request.getIdToken();
-        System.out.println("Token "+idToken);
+        // System.out.println("Token "+idToken);
         logger.info("Google signup request received", idToken);
         try {
             User user = userService.signupWithGoogle(idToken);
