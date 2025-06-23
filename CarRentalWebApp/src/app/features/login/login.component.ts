@@ -9,6 +9,12 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 
 declare const google: any;
 
+declare global {
+  interface Window {
+    google: any;
+  }
+}
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -22,49 +28,45 @@ export class LoginComponent implements OnInit, AfterViewInit {
     password: '',
   };
 
-  isUsernameFocused: boolean = true;
-  isPasswordFocused: boolean = true;
+  isUsernameFocused = false;
+  isPasswordFocused = false;
   showPassword = false;
-
   errorMessage = '';
   loading = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
-    google.accounts.id.initialize({
-      client_id:
-        '448352300820-hi510d2gaf720i4nhqo9kko5865h2rlo.apps.googleusercontent.com',
-      callback: this.handleCredentialResponse.bind(this),
-    });
+    if (window.google && window.google.accounts) {
+      google.accounts.id.initialize({
+        client_id: '448352300820-hi510d2gaf720i4nhqo9kko5865h2rlo.apps.googleusercontent.com',
+        callback: this.handleCredentialResponse.bind(this),
+      });
+    } else {
+      console.warn('Google Identity Services script not loaded yet.');
+    }
   }
 
   ngAfterViewInit(): void {
-    google.accounts.id.renderButton(
-      document.getElementById('google-signin-button'),
-      {
-        theme: 'filled_black', // Dark theme
-        size: 'large',
-        type: 'standard',
-        shape: 'pill',
-        text: 'signin_with',
-        logo_alignment: 'center',
+    const interval = setInterval(() => {
+      if (window.google && window.google.accounts) {
+        google.accounts.id.renderButton(
+          document.getElementById('google-signin-button'),
+          {
+            theme: 'filled_black',
+            size: 'large',
+            type: 'standard',
+            shape: 'pill',
+            text: 'signin_with',
+            logo_alignment: 'center',
+          }
+        );
+        clearInterval(interval);
       }
-    );
+    }, 100);
   }
 
-  handleGoogleLogin(): void {
-  google.accounts.id.initialize({
-    client_id: 'YOUR_CLIENT_ID',
-    callback: this.handleCredentialResponse.bind(this),
-  });
-
-  google.accounts.id.prompt(); // Opens the Google login popup
-}
-
-
-
-  handleCredentialResponse(response: any) {
+  handleCredentialResponse(response: any): void {
     const idToken = response.credential;
 
     this.authService.googleLogin(idToken).subscribe({
@@ -80,7 +82,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     });
   }
 
-  login() {
+  login(): void {
     if (!this.user.username || !this.user.password) {
       this.errorMessage = 'Please enter both username and password.';
       return;
@@ -104,7 +106,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     });
   }
 
-  navigateByRole(role: string) {
+  navigateByRole(role: string): void {
     switch (role) {
       case 'USER':
         this.router.navigate(['/user/dashboard']);

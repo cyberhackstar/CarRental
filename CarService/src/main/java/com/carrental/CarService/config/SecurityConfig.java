@@ -56,7 +56,7 @@ public class SecurityConfig {
                 })
                 .authorizeHttpRequests(auth -> {
                     logger.debug("Configuring URL access rules");
-                    auth.requestMatchers("/api/login", "/api/register", "/api/payment/webhook", "/api/public/**", "/api/cars/image/**",
+                    auth.requestMatchers("/api/login", "/api/google-login", "/api/register", "/api/google-signup", "/api/payment/webhook", "/api/public/**", "/api/cars/image/**",
                             "/error", "/actuator/**").permitAll();
                     auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll();
 

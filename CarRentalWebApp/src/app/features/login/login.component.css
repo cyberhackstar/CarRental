@@ -6,12 +6,3 @@ input:-webkit-autofill {
 }
 
 
-#google-signin-button {
-
-  background-color: transparent !important;
-  color: #ffffff !important;
-  font-weight: bold !important;
-  text-align: center !important;
-  cursor: pointer !important;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
