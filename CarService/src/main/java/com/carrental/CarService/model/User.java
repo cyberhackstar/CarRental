@@ -19,7 +19,8 @@ public class User {
     private String username;
     // private String email;
     
-    @NotBlank
+    private String email;
+
     private String password;
     
     private String userRole;
@@ -42,13 +43,13 @@ public class User {
         this.username = username;
     }
 
-    // public String getEmail() {
-    //     return email;
-    // }
+    public String getEmail() {
+        return email;
+    }
 
-    // public void setEmail(String email) {
-    //     this.email = email;
-    // }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
 
     public String getPassword() {

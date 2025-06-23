@@ -10,7 +10,7 @@ export interface LoginResponse {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private baseUrl = 'https://carservice.up.railway.app/api';
@@ -18,14 +18,20 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(user: User, rememberMe: boolean = false): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${this.baseUrl}/login`, user).pipe(
-      tap((response: LoginResponse) => {
-        const storage = rememberMe ? localStorage : sessionStorage;
-        storage.setItem('token', response.token);
-        storage.setItem('username', response.username);
-        storage.setItem('userRole', response.userRole);
-      })
-    );
+    return this.http.post<LoginResponse>(`${this.baseUrl}/login`, user);
+  }
+
+  googleLogin(idToken: string): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(`${this.baseUrl}/google-login`, {
+      idToken,
+    });
+  }
+
+  // Google Signup
+  googleSignUp(idToken: string): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(`${this.baseUrl}/google-signup`, {
+      idToken,
+    });
   }
 
   register(user: User): Observable<User> {
@@ -42,12 +48,12 @@ export class AuthService {
   }
 
   getUserRole(): string | null {
-    return localStorage.getItem('userRole') || sessionStorage.getItem('userRole');
+    return (
+      localStorage.getItem('userRole') || sessionStorage.getItem('userRole')
+    );
   }
 
   isLoggedIn(): boolean {
     return !!this.getToken();
   }
-
-  
 }

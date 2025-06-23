@@ -1,16 +1,15 @@
 package com.carrental.CarService.controller;
 
+import com.carrental.CarService.model.User;
+import com.carrental.CarService.service.UserService;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import com.carrental.CarService.model.User;
-
-import com.carrental.CarService.service.UserService;
-
-import jakarta.validation.Valid;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -30,13 +29,13 @@ public class AuthController {
         try {
             User newUser = userService.createUser(user);
             logger.info("User registered successfully: {}", newUser.getUsername());
-            return ResponseEntity.status(200).body(newUser);
+            return ResponseEntity.ok(newUser);
         } catch (IllegalArgumentException e) {
             logger.warn("Registration failed for username {}: {}", user.getUsername(), e.getMessage());
-            return ResponseEntity.status(400).body(e.getMessage());
+            return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
             logger.error("Unexpected error during registration for username {}: {}", user.getUsername(), e.getMessage(), e);
-            return ResponseEntity.status(500).body("Internal server error");
+            return ResponseEntity.internalServerError().body("Internal server error");
         }
     }
 
@@ -50,10 +49,36 @@ public class AuthController {
                 return ResponseEntity.status(401).body("Login unsuccessful");
             }
             logger.info("Login successful for username: {}", newUser.getUsername());
-            return ResponseEntity.status(200).body(newUser);
+            return ResponseEntity.ok(newUser);
         } catch (Exception e) {
             logger.error("Unexpected error during login for username {}: {}", user.getUsername(), e.getMessage(), e);
-            return ResponseEntity.status(500).body("Internal server error");
+            return ResponseEntity.internalServerError().body("Internal server error");
+        }
+    }
+
+    @PostMapping("/google-login")
+    public ResponseEntity<?> loginWithGoogle(@RequestBody Map<String, String> payload) {
+        String idToken = payload.get("idToken");
+        logger.info("Google login request received");
+        try {
+            User user = userService.loginWithGoogle(idToken);
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            logger.error("Google login failed: {}", e.getMessage(), e);
+            return ResponseEntity.status(401).body("Google login failed");
+        }
+    }
+
+    @PostMapping("/google-signup")
+    public ResponseEntity<?> signupWithGoogle(@RequestBody Map<String, String> payload) {
+        String idToken = payload.get("idToken");
+        logger.info("Google signup request received");
+        try {
+            User user = userService.signupWithGoogle(idToken);
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            logger.error("Google signup failed: {}", e.getMessage(), e);
+            return ResponseEntity.status(400).body("Google signup failed: " + e.getMessage());
         }
     }
 

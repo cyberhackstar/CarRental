@@ -1,4 +1,3 @@
-
 server:
   port: ${PORT:8080}
 
@@ -28,10 +27,8 @@ spring:
   #   packages:
   #     trust-all: true
 
-
   rabbitmq:
     addresses: ${CLOUDAMQP_URL}
-
 
   boot:
     admin:
@@ -52,8 +49,6 @@ management:
       show-details: always
       jms:
         enabled: false
-
-
 
 logging:
   file:
@@ -76,9 +71,14 @@ razorpay:
   webhook:
     secret: ${RAZORPAY_WEBHOOK_SECRET}
 
-  
 cloudinary:
   cloud-name: ${CLOUDINARY_CLOUD_NAME}
   api-key: ${CLOUDINARY_API_KEY}
   api-secret: ${CLOUDINARY_API_SECRET}
 
+google:
+  oauth:
+    client-id: ${GOOGLE_CLIENT_ID}
+
+jwt:
+  secret: ${JWT_SECRET}

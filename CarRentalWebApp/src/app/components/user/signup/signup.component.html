@@ -64,6 +64,31 @@
                   >Username</label
                 >
               </div>
+              <div class="form-floating mb-4">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  [(ngModel)]="user.email"
+                  style="
+                    height: 3.2rem;
+                    font-size: 1rem;
+                    line-height: normal;
+                    padding-top: 0.5rem;
+                  "
+                  class="form-control bg-transparent text-white border-light"
+                  placeholder=" "
+                  required
+                  (focus)="isEmailFocused = true"
+                  (blur)="isEmailFocused = false"
+                />
+                <label
+                  *ngIf="!isEmailFocused && !user.email"
+                  for="email"
+                  class="text-white"
+                  >Email</label
+                >
+              </div>
 
               <!-- Password -->
               <div class="form-floating mb-4 position-relative">
@@ -196,6 +221,13 @@
               <a href="/login" class="link-light text-decoration-none">
                 Already have an account?
               </a>
+            </div>
+            <!-- Google Signup Button -->
+            <div
+              id="google-signin-wrapper"
+              class="google-button-wrapper d-grid mt-3"
+            >
+              <div id="google-signin-button"></div>
             </div>
           </div>
         </div>

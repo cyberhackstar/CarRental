@@ -7,6 +7,7 @@ import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +21,13 @@ import java.util.function.Function;
 public class JwtUtils {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
-    public static final String SECRET = "357638792F423F4428472B4B6250655368566D597133743677397A2443264629";
+    
+private final String secret;
+
+ public JwtUtils(@Value("${jwt.secret}") String secret) {
+ this.secret = secret;
+ }
+
 
     public String extractUsername(String token) {
         logger.debug("Extracting username from token");
@@ -77,7 +84,7 @@ public class JwtUtils {
 
     private Key getSignKey() {
         logger.debug("Getting signing key");
-        byte[] keyBytes = Decoders.BASE64.decode(SECRET);
+        byte[] keyBytes = Decoders.BASE64.decode(secret);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 }
