@@ -8,6 +8,9 @@ import com.google.api.client.json.gson.GsonFactory;
 
 import java.util.Collections;
 
+import org.springframework.stereotype.Controller;
+
+@Controller
 public class GoogleTokenVerifier {
 
     private static final String CLIENT_ID = "448352300820-hi510d2gaf720i4nhqo9kko5865h2rlo.apps.googleusercontent.com";
