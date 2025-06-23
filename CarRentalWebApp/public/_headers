@@ -1,0 +1,5 @@
+/login
+  Cross-Origin-Opener-Policy: unsafe-none
+
+/signup
+  Cross-Origin-Opener-Policy: unsafe-none
