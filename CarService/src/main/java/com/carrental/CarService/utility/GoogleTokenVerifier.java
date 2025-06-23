@@ -5,25 +5,19 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
-import com.google.api.client.util.Value;
 
 import java.util.Collections;
 
-import org.springframework.stereotype.Component;
-
-
-@Component
 public class GoogleTokenVerifier {
 
-    @Value("${google.oauth.client-id}")
-    private String clientId;
+    private static final String CLIENT_ID = "448352300820-hi510d2gaf720i4nhqo9kko5865h2rlo.apps.googleusercontent.com";
 
-    public GoogleIdToken.Payload verifyToken(String idTokenString) {
+    public static GoogleIdToken.Payload verifyToken(String idTokenString) {
         try {
             GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(
                     new NetHttpTransport(),
                     new GsonFactory())
-                    .setAudience(Collections.singletonList(clientId))
+                    .setAudience(Collections.singletonList(CLIENT_ID))
                     .build();
 
             GoogleIdToken idToken = verifier.verify(idTokenString);
