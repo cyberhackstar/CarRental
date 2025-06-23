@@ -24,11 +24,9 @@ import java.nio.file.*;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*")
 public class CarRentalController {
 
     private static final Logger logger = LoggerFactory.getLogger(CarRentalController.class);
