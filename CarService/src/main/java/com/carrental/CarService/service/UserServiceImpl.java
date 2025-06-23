@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User signupWithGoogle(String idToken) {
-        logger.info("Google signup attempt with ID token");
+        logger.info("Google signup attempt with ID token", idToken);
 
         GoogleIdToken.Payload payload = googleTokenVerifier.verifyToken(idToken);
         if (payload == null) {
@@ -110,7 +110,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User loginWithGoogle(String idToken) {
-        logger.info("Google login attempt with ID token");
+        logger.info("Google login attempt with ID token", idToken);
 
         GoogleIdToken.Payload payload = googleTokenVerifier.verifyToken(idToken);
         if (payload == null) {
