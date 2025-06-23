@@ -1,5 +1,6 @@
 package com.carrental.CarService.controller;
 
+import com.carrental.CarService.dto.GoogleTokenRequest;
 import com.carrental.CarService.model.User;
 import com.carrental.CarService.service.UserService;
 import jakarta.validation.Valid;
@@ -9,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -57,8 +57,9 @@ public class AuthController {
     }
 
     @PostMapping("/google-login")
-    public ResponseEntity<?> loginWithGoogle(@RequestBody Map<String, String> payload) {
-        String idToken = payload.get("idToken");
+    public ResponseEntity<?> loginWithGoogle(@RequestBody GoogleTokenRequest request) {
+        String idToken = request.getIdToken();
+        System.out.println("Token "+idToken);
         logger.info("Google login request received",idToken);
         try {
             User user = userService.loginWithGoogle(idToken);
@@ -70,8 +71,9 @@ public class AuthController {
     }
 
     @PostMapping("/google-signup")
-    public ResponseEntity<?> signupWithGoogle(@RequestBody Map<String, String> payload) {
-        String idToken = payload.get("idToken");
+    public ResponseEntity<?> signupWithGoogle(@RequestBody GoogleTokenRequest request) {
+        String idToken = request.getIdToken();
+        System.out.println("Token "+idToken);
         logger.info("Google signup request received", idToken);
         try {
             User user = userService.signupWithGoogle(idToken);
