@@ -9,6 +9,10 @@ import com.google.api.client.util.Value;
 
 import java.util.Collections;
 
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class GoogleTokenVerifier {
 
     @Value("${google.oauth.client-id}")
