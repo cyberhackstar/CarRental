@@ -72,7 +72,7 @@ public class AuthController {
     @PostMapping("/google-signup")
     public ResponseEntity<?> signupWithGoogle(@RequestBody Map<String, String> payload) {
         String idToken = payload.get("idToken");
-        logger.info("Google signup request received",idToken);
+        logger.info("Google signup request received", idToken);
         try {
             User user = userService.signupWithGoogle(idToken);
             return ResponseEntity.ok(user);

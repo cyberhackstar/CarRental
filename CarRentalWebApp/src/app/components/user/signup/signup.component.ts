@@ -98,7 +98,7 @@ export class SignupComponent implements OnInit, AfterViewInit {
 
   handleGoogleCredentialResponse(response: any): void {
     const idToken = response.credential;
-    console.log(idToken);
+    console.log("Token",idToken);
     this.authService.googleSignUp(idToken).subscribe({
       next: () => {
         this.router.navigate(['/login']);
