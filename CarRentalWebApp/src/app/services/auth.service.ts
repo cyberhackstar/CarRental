@@ -13,7 +13,7 @@ export interface LoginResponse {
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl = 'http://carservice.ap-south-1.elasticbeanstalk.com/api';
+  private baseUrl = 'https://www.carrentalservice.help/api';
 
   constructor(private http: HttpClient) {}
 
