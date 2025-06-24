@@ -17,14 +17,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
+    - name: Set up Java and Maven
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '21'
 
-    - name: Build Docker image
-      run: docker build -t carservice .
+    - name: Build JAR
+      run: mvn clean package -DskipTests
 
     - name: Zip Docker deployment
-      run: zip -r deploy.zip Dockerfile target/*.jar
+      run: zip -r ../deploy.zip Dockerfile target/*.jar
 
     - name: Deploy to Elastic Beanstalk
       uses: einaregilsson/beanstalk-deploy@v21
@@ -35,4 +38,4 @@ jobs:
         environment_name: CarService-env
         version_label: v-${{ github.run_id }}-${{ github.sha }}
         region: ap-south-1
-        deployment_package: CarService/deploy.zip
+        deployment_package: deploy.zip
