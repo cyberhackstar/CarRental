@@ -1,0 +1,38 @@
+name: Deploy CarListnerService to Elastic Beanstalk
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: CarListnerService
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Build Docker image
+      run: docker build -t carlistnerservice .
+
+    - name: Zip Docker deployment
+      run: zip -r deploy.zip Dockerfile target/*.jar
+
+    - name: Deploy to Elastic Beanstalk
+      uses: einaregilsson/beanstalk-deploy@v21
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        application_name: CarListnerService
+        environment_name: CarListnerServiceEnv
+        version_label: v-${{ github.run_id }}
+        region: ap-south-1
+        deployment_package: CarListnerService/deploy.zip
