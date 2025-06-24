@@ -29,7 +29,8 @@ WORKDIR /app
 COPY --from=build /app/target/CarService-0.0.1-SNAPSHOT.jar app.jar
 
 # Copy Nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+
 
 # Create directories for Certbot
 RUN mkdir -p /var/www/certbot /etc/letsencrypt
