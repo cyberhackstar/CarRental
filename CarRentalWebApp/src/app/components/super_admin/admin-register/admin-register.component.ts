@@ -17,7 +17,7 @@ export class AdminRegisterComponent {
 user: User = {
     username: '',
     password: '',
-    userRole: 'ROLE_USER', // default
+    userRole: 'ROLE_ADMIN', // default
   };
 
   isUsernameFocused: boolean = false;
