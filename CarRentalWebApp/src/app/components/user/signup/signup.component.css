@@ -8,3 +8,11 @@ input:-webkit-autofill::first-line {
   font-family: 'Poppins', 'Montserrat', sans-serif;
   font-size: 16px;
 }
+
+.google-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: -20px;
+}

@@ -6,3 +6,10 @@ input:-webkit-autofill {
 }
 
 
+.google-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: -20px;
+}
