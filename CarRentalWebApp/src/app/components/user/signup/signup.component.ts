@@ -57,7 +57,7 @@ export class SignupComponent implements OnInit, AfterViewInit {
             theme: 'outline',
             size: 'large',
             type: 'standard',
-            shape: 'pill',
+            shape: 'rectangle',
             text: 'signup_with',
             logo_alignment: 'center',
           }

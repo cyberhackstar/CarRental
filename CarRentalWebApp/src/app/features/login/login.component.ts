@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
             theme: 'outline',
             size: 'large',
             type: 'standard',
-            shape: 'pill',
+            shape: 'rectangle',
             text: 'signin_with',
             logo_alignment: 'center',
           }
