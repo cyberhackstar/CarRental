@@ -9,7 +9,7 @@ import { CarResponse } from '../models/car-response.model';
   providedIn: 'root',
 })
 export class CarRentalService {
-  private baseUrl = 'https://main.carrentalservice.help/api'; // Adjust if needed
+  private baseUrl = 'https://carrentalservice.help/carservice/api'; // Adjust if needed
 
   constructor(private http: HttpClient) {}
 
