@@ -54,7 +54,7 @@ export class SignupComponent implements OnInit, AfterViewInit {
         google.accounts.id.renderButton(
           document.getElementById('google-signin-button'),
           {
-            theme: 'filled_black',
+            theme: 'outline',
             size: 'large',
             type: 'standard',
             shape: 'pill',
