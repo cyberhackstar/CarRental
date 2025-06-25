@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  carservice:
+    build: ./CarService
+    ports:
+      - "8081:8080"
+    environment:
+      - PORT=${PORT}
+      - DB_URL=${DB_URL}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - CLOUDAMQP_URL=${CLOUDAMQP_URL}
+      - ADMIN_SERVER_URL=${ADMIN_SERVER_URL}
+      - ADMIN_USERNAME=${ADMIN_USERNAME}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}
+      - CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY}
+      - CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET}
+      - RAZORPAY_KEY_ID=${RAZORPAY_KEY_ID}
+      - RAZORPAY_KEY_SECRET=${RAZORPAY_KEY_SECRET}
+      - RAZORPAY_WEBHOOK_SECRET=${RAZORPAY_WEBHOOK_SECRET}
+      - google.oauth.client-id=${google.oauth.client-id}
+      - JWT_SECRET=${JWT_SECRET}
+
+  carlistnerservice:
+    build: ./CarListnerService
+    ports:
+      - "8082:8080"
+    environment:
+      - PORT=${PORT}
+      - DB_URL=${DB_URL}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - CLOUDAMQP_URL=${CLOUDAMQP_URL}
+      - MAIL_USERNAME=${MAIL_USERNAME}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
+
+  caradminmonitor:
+    build: ./CarAdminMonitor
+    ports:
+      - "8083:8080"
+    environment:
+      - PORT=8083
