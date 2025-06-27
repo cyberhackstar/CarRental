@@ -35,6 +35,9 @@ storage_config:
   filesystem:
     directory: /tmp/loki/chunks
 
+compactor:
+  working_directory: /loki/compactor
+
 limits_config:
   enforce_metric_name: false
   reject_old_samples: true
