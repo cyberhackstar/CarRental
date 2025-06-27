@@ -6,27 +6,15 @@ pipeline {
     }
 
     stages {
-        stage('Clone Repository') {
+        stage('Inject .env') {
             steps {
-                git 'https://github.com/cyberhackstar/CarRental.git'
-            }
-        }
-
-        stage('Load .env') {
-            steps {
-                script {
-                    def envFile = readFile('.env')
-                    envFile.split('\n').each {
-                        if (it && it.contains('=')) {
-                            def (key, value) = it.tokenize('=')
-                            env[key.trim()] = value.trim()
-                        }
-                    }
+                withCredentials([file(credentialsId: 'carrental-env', variable: 'ENV_FILE')]) {
+                    sh 'cp $ENV_FILE .env'
                 }
             }
         }
 
-        stage('Build and Deploy with Docker Compose') {
+        stage('Build and Deploy') {
             steps {
                 sh 'docker-compose down'
                 sh 'docker-compose build'
