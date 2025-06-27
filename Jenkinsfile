@@ -26,6 +26,8 @@ pipeline {
             steps {
                 dir('monitoring') {
                     sh '''
+                        mkdir -p loki-data
+                        chmod -R 777 loki-data
                         docker-compose down --remove-orphans || echo "Monitoring stack cleanup skipped"
                         docker-compose up -d || echo "Monitoring stack deployment failed"
                     '''
@@ -103,6 +105,3 @@ pipeline {
         }
     }
 }
-
-// This Jenkinsfile is designed to automate the deployment of a microservices architecture for a car rental application.
-// It includes stages for injecting environment variables, deploying a monitoring stack, cleaning up previous containers,
