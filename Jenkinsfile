@@ -30,14 +30,33 @@ pipeline {
             }
         }
 
-        stage('Capture Logs') {
+        stage('Capture Full Logs') {
             steps {
                 sh '''
                     mkdir -p logs
-                    docker logs carrental_carservice_1 > logs/carservice.log
-                    docker logs carrental_carlistnerservice_1 > logs/carlistenerservice.log
-                    docker logs carrental_caradminmonitor_1 > logs/caradminmonitor.log
+                    docker-compose logs carservice > logs/carservice.log
+                    docker-compose logs carlistnerservice > logs/carlistenerservice.log
+                    docker-compose logs caradminmonitor > logs/caradminmonitor.log
                 '''
+            }
+        }
+
+        stage('Capture Startup Logs Only') {
+            steps {
+                sh '''
+                    mkdir -p logs
+                    docker-compose logs carservice | grep -iE "Started|Tomcat started|Started Application" > logs/carservice_startup.log
+                    docker-compose logs carlistnerservice | grep -iE "Started|Tomcat started|Started Application" > logs/carlistenerservice_startup.log
+                    docker-compose logs caradminmonitor | grep -iE "Started|Tomcat started|Started Application" > logs/caradminmonitor_startup.log
+                '''
+            }
+        }
+
+        stage('Print Logs to Console') {
+            steps {
+                sh 'docker-compose logs carservice'
+                sh 'docker-compose logs carlistnerservice'
+                sh 'docker-compose logs caradminmonitor'
             }
         }
 
