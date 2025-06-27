@@ -35,7 +35,7 @@ pipeline {
                 sh '''
                     mkdir -p logs
                     docker logs carrental_carservice_1 > logs/carservice.log
-                    docker logs carrental_carlistenerservice_1 > logs/carlistenerservice.log
+                    docker logs carrental_carlistnerservice_1 > logs/carlistenerservice.log
                     docker logs carrental_caradminmonitor_1 > logs/caradminmonitor.log
                 '''
             }
