@@ -40,4 +40,4 @@ services:
     ports:
       - "8083:8080"
     environment:
-      - PORT=8083
+      - PORT=${PORT}

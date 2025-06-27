@@ -78,7 +78,7 @@ cloudinary:
 
 google:
   oauth:
-    client-id: ${google.oauth.client-id}
+    client-id: ${GOOGLE_OAUTH_CLIENT_ID}
 
 jwt:
   secret: ${JWT_SECRET}
