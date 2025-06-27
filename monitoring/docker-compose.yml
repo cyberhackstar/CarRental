@@ -8,7 +8,8 @@ services:
     command: -config.file=/etc/loki/local-config.yaml
     volumes:
       - ./loki-config.yaml:/etc/loki/local-config.yaml
-      - ./loki-data:/wal
+      - loki-wal:/wal
+    restart: unless-stopped
 
   promtail:
     image: grafana/promtail:2.9.4
@@ -18,13 +19,16 @@ services:
       - /etc/machine-id:/etc/machine-id
       - ./promtail-config.yaml:/etc/promtail/config.yaml
     command: -config.file=/etc/promtail/config.yaml
+    restart: unless-stopped
 
   grafana:
     image: grafana/grafana:10.0.0
     ports:
-      - "3000:3000"
+      - "3000:3000"  # Change to "3001:3000" if port 3000 is already in use
     volumes:
       - grafana-storage:/var/lib/grafana
+    restart: unless-stopped
 
 volumes:
   grafana-storage:
+  loki-wal:
