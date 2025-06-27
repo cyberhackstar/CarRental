@@ -28,8 +28,8 @@ pipeline {
                     sh '''
                         mkdir -p loki-data
                         chmod -R 777 loki-data
-                        docker-compose down --remove-orphans || echo "Monitoring stack cleanup skipped"
-                        docker-compose up -d || echo "Monitoring stack deployment failed"
+                        docker-compose -p monitoring down --remove-orphans || echo "Monitoring stack cleanup skipped"
+                        docker-compose -p monitoring up -d || echo "Monitoring stack deployment failed"
                     '''
                 }
             }
@@ -38,7 +38,7 @@ pipeline {
         stage('Clean Previous Containers') {
             steps {
                 sh '''
-                    docker-compose down --remove-orphans --timeout 10 || echo "Cleanup warning: containers or network may still be active"
+                    docker-compose -p carrental down --remove-orphans --timeout 10 || echo "Cleanup warning: containers or network may still be active"
                 '''
             }
         }
@@ -46,8 +46,8 @@ pipeline {
         stage('Build and Deploy Services') {
             steps {
                 sh '''
-                    docker-compose build --no-cache || echo "Build failed"
-                    docker-compose up -d || echo "Deployment failed"
+                    docker-compose -p carrental build --no-cache || echo "Build failed"
+                    docker-compose -p carrental up -d || echo "Deployment failed"
                 '''
             }
         }
@@ -72,9 +72,9 @@ pipeline {
         stage('Capture Startup Logs Only') {
             steps {
                 sh '''
-                    docker-compose logs carservice | grep -iE "Started|Tomcat started|Started Application" > logs/carservice_startup.log || echo "No startup logs for carservice"
-                    docker-compose logs carlistnerservice | grep -iE "Started|Tomcat started|Started Application" > logs/carlistenerservice_startup.log || echo "No startup logs for carlistenerservice"
-                    docker-compose logs caradminmonitor | grep -iE "Started|Tomcat started|Started Application" > logs/caradminmonitor_startup.log || echo "No startup logs for caradminmonitor"
+                    docker-compose -p carrental logs carservice | grep -iE "Started|Tomcat started|Started Application" > logs/carservice_startup.log || echo "No startup logs for carservice"
+                    docker-compose -p carrental logs carlistnerservice | grep -iE "Started|Tomcat started|Started Application" > logs/carlistenerservice_startup.log || echo "No startup logs for carlistenerservice"
+                    docker-compose -p carrental logs caradminmonitor | grep -iE "Started|Tomcat started|Started Application" > logs/caradminmonitor_startup.log || echo "No startup logs for caradminmonitor"
                 '''
             }
         }
@@ -82,9 +82,9 @@ pipeline {
         stage('Print Logs to Console') {
             steps {
                 sh '''
-                    docker-compose logs carservice || echo "Console logs for carservice unavailable"
-                    docker-compose logs carlistnerservice || echo "Console logs for carlistnerservice unavailable"
-                    docker-compose logs caradminmonitor || echo "Console logs for caradminmonitor unavailable"
+                    docker-compose -p carrental logs carservice || echo "Console logs for carservice unavailable"
+                    docker-compose -p carrental logs carlistnerservice || echo "Console logs for carlistnerservice unavailable"
+                    docker-compose -p carrental logs caradminmonitor || echo "Console logs for caradminmonitor unavailable"
                 '''
             }
         }
