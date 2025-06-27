@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -18,6 +19,14 @@ pipeline {
                         ls -l
                         cp -f $ENV_FILE .env
                     '''
+                }
+            }
+        }
+
+        stage('Deploy Monitoring Stack') {
+            steps {
+                dir('monitoring') {
+                    sh 'docker-compose up -d'
                 }
             }
         }
