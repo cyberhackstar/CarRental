@@ -13,7 +13,11 @@ pipeline {
         stage('Inject .env') {
             steps {
                 withCredentials([file(credentialsId: 'carrental-env', variable: 'ENV_FILE')]) {
-                    sh 'cp $ENV_FILE .env'
+                    sh '''
+                        echo "Current user: $(whoami)"
+                        ls -l
+                        cp -f $ENV_FILE .env
+                    '''
                 }
             }
         }
