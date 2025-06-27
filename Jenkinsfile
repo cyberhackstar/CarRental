@@ -27,7 +27,8 @@ pipeline {
                 dir('monitoring') {
                     sh '''
                         mkdir -p loki-data
-                        chmod -R 777 loki-data
+                        docker volume create monitoring_loki-wal || true
+                        sudo chmod -R 777 /var/lib/docker/volumes/monitoring_loki-wal/_data || echo "Permission fix failed"
                         docker-compose -p monitoring down --remove-orphans || echo "Monitoring stack cleanup skipped"
                         docker-compose -p monitoring up -d || echo "Monitoring stack deployment failed"
                     '''
