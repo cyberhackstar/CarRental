@@ -30,13 +30,19 @@ pipeline {
             }
         }
 
-        stage('Capture Full Logs') {
+        stage('Wait for Services to Start') {
+            steps {
+                sh 'sleep 10'
+            }
+        }
+
+        stage('Copy Internal Log Files') {
             steps {
                 sh '''
                     mkdir -p logs
-                    docker-compose logs carservice > logs/carservice.log
-                    docker-compose logs carlistnerservice > logs/carlistenerservice.log
-                    docker-compose logs caradminmonitor > logs/caradminmonitor.log
+                    docker cp carrental_carservice_1:/app/logs/CarService.log logs/carservice_internal.log || echo "carservice log not found"
+                    docker cp carrental_carlistnerservice_1:/app/logs/CarService.log logs/carlistenerservice_internal.log || echo "carlistenerservice log not found"
+                    docker cp carrental_caradminmonitor_1:/app/logs/CarService.log logs/caradminmonitor_internal.log || echo "caradminmonitor log not found"
                 '''
             }
         }
@@ -44,10 +50,9 @@ pipeline {
         stage('Capture Startup Logs Only') {
             steps {
                 sh '''
-                    mkdir -p logs
-                    docker-compose logs carservice | grep -iE "Started|Tomcat started|Started Application" > logs/carservice_startup.log
-                    docker-compose logs carlistnerservice | grep -iE "Started|Tomcat started|Started Application" > logs/carlistenerservice_startup.log
-                    docker-compose logs caradminmonitor | grep -iE "Started|Tomcat started|Started Application" > logs/caradminmonitor_startup.log
+                    docker-compose logs carservice | grep -iE "Started|Tomcat started|Started Application" > logs/carservice_startup.log || echo "No startup logs for carservice"
+                    docker-compose logs carlistnerservice | grep -iE "Started|Tomcat started|Started Application" > logs/carlistenerservice_startup.log || echo "No startup logs for carlistenerservice"
+                    docker-compose logs caradminmonitor | grep -iE "Started|Tomcat started|Started Application" > logs/caradminmonitor_startup.log || echo "No startup logs for caradminmonitor"
                 '''
             }
         }
