@@ -4,6 +4,9 @@ services:
     build: ./CarService
     ports:
       - "8081:8080"
+    container_name: carservice
+    volumes:
+      - ./CarService/logs:/app/logs
     environment:
       - PORT=${PORT}
       - DB_URL=${DB_URL}
@@ -26,6 +29,9 @@ services:
     build: ./CarListnerService
     ports:
       - "8082:8080"
+    container_name: carlistnerservice
+    volumes:
+      - ./CarListnerService/logs:/app/logs
     environment:
       - PORT=${PORT}
       - DB_URL=${DB_URL}
@@ -39,5 +45,8 @@ services:
     build: ./CarAdminMonitor
     ports:
       - "8083:8080"
+    container_name: caradminmonitor
+    volumes:
+      - ./CarAdminMonitor/logs:/app/logs
     environment:
       - PORT=${PORT}

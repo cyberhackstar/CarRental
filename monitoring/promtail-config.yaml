@@ -16,3 +16,29 @@ scrape_configs:
         labels:
           job: docker
           __path__: /var/lib/docker/containers/*/*.log
+          
+  - job_name: carservice
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: carservice
+          __path__: /app/logs/carservice/*.log
+
+  - job_name: carlistnerservice
+    static_configs:
+      - targets:
+          - localhost
+        labels: 
+          job: carlistnerservice
+          __path__: /app/logs/carlistnerservice/*.log
+
+  - job_name: caradminmonitor
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: caradminmonitor
+          __path__: /app/logs/caradminmonitor/*.log
+
+  

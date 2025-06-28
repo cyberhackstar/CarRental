@@ -19,6 +19,11 @@ services:
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - /etc/machine-id:/etc/machine-id
       - ./promtail-config.yaml:/etc/promtail/config.yaml
+      - ../CarService/logs:/app/logs/carservice
+      - ../CarAdminMonitor/logs:/app/logs/caradminmonitor
+      - ../CarListnerService/logs:/app/logs/carlistnerservice
+      - ../CarRentalWebApp/logs:/app/logs/carwebapp
+      - ../promtail-config.yaml:/etc/promtail/config.yaml
     command: "-config.file=/etc/promtail/config.yaml"
     restart: unless-stopped
 
