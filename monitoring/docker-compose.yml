@@ -23,7 +23,6 @@ services:
       - ../CarAdminMonitor/logs:/app/logs/caradminmonitor
       - ../CarListnerService/logs:/app/logs/carlistnerservice
       - ../CarRentalWebApp/logs:/app/logs/carwebapp
-      - ../promtail-config.yaml:/etc/promtail/config.yaml
     command: "-config.file=/etc/promtail/config.yaml"
     restart: unless-stopped
 
