@@ -139,6 +139,14 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- Servlet API (for compatibility with older versions) -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -154,6 +162,8 @@
         </dependency>
 
     </dependencies>
+
+
 
     <!-- Dependency Management -->
     <dependencyManagement>

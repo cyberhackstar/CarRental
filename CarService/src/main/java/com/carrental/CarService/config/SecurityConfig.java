@@ -9,8 +9,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -20,8 +18,10 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import static org.springframework.security.config.Customizer.withDefaults;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Configuration
@@ -31,12 +31,12 @@ public class SecurityConfig {
 
     private final UserDetailsService userDetailsService;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
-    private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
     @Autowired
     public SecurityConfig(UserDetailsService userDetailsService,
-            JwtAuthenticationFilter jwtAuthenticationFilter,
-            JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint) {
+                          JwtAuthenticationFilter jwtAuthenticationFilter,
+                          JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint) {
         this.userDetailsService = userDetailsService;
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
         this.jwtAuthenticationEntryPoint = jwtAuthenticationEntryPoint;
@@ -47,23 +47,26 @@ public class SecurityConfig {
         logger.info("Configuring SecurityFilterChain");
 
         return http
-                .cors(withDefaults())
+                .cors(cors -> corsConfigurationSource())
                 .csrf(csrf -> csrf.disable())
                 .exceptionHandling(exceptionHandling -> {
-                    logger.debug("Setting custom AuthenticationEntryPoint");
-                    exceptionHandling.authenticationEntryPoint(jwtAuthenticationEntryPoint);
+                    logger.debug("Setting custom AuthenticationEntryPoint and AccessDeniedHandler");
+                    exceptionHandling
+                            .authenticationEntryPoint(jwtAuthenticationEntryPoint)
+                            .accessDeniedHandler((request, response, accessDeniedException) -> {
+                                logger.warn("Access denied: {}", accessDeniedException.getMessage());
+                                response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access Denied");
+                            });
                 })
                 .authorizeHttpRequests(auth -> {
                     logger.debug("Configuring URL access rules");
-                    auth.requestMatchers("/api/login", "/api/google-login", "/api/register", "/api/google-signup", "/api/payment/webhook", "/api/public/**", "/api/cars/image/**",
+                    auth.requestMatchers("/api/login", "/api/google-login", "/api/register", "/api/google-signup",
+                            "/api/payment/webhook", "/api/public/**", "/api/cars/image/**",
                             "/error", "/actuator/**").permitAll();
                     auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll();
-
-                    // Role-based access
                     auth.requestMatchers("/api/admin/**").hasRole("ADMIN");
                     auth.requestMatchers("/api/super_admin/**").hasRole("SUPER_ADMIN");
                     auth.requestMatchers("/api/user/**").hasAnyRole("USER");
-
                     auth.anyRequest().authenticated();
                 })
                 .sessionManagement(session -> {
@@ -79,13 +82,12 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         logger.info("Setting up CORS configuration");
         CorsConfiguration configuration = new CorsConfiguration();
-
-        // Allow multiple origins
         configuration.setAllowedOrigins(List.of(
                 "https://carrentalwebapp.onrender.com",
-                "http://localhost:4200", "https://carrentalservice.help",
-                "https://carrentalwebapp.netlify.app"));
-
+                "http://localhost:4200",
+                "https://carrentalservice.help",
+                "https://carrentalwebapp.netlify.app"
+        ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept"));
         configuration.setAllowCredentials(true);
