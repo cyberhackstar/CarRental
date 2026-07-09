@@ -1,52 +1,121 @@
-version: '3.8'
+version: "3.9"
+
 services:
+
+  # ---------------- Car Rental Backend ----------------
   carservice:
-    build: ./CarService
-    ports:
-      - "8081:8080"
+    build:
+      context: ./CarService
+      dockerfile: Dockerfile
     container_name: carservice
+    hostname: carservice
+    restart: always
+    networks:
+      - shared_net
+    expose:
+      - "8080"
     volumes:
       - ./CarService/logs:/app/logs
     environment:
-      - PORT=${PORT}
-      - DB_URL=${DB_URL}
-      - DB_USERNAME=${DB_USERNAME}
-      - DB_PASSWORD=${DB_PASSWORD}
-      - CLOUDAMQP_URL=${CLOUDAMQP_URL}
-      - ADMIN_SERVER_URL=${ADMIN_SERVER_URL}
-      - ADMIN_USERNAME=${ADMIN_USERNAME}
-      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
-      - CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}
-      - CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY}
-      - CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET}
-      - RAZORPAY_KEY_ID=${RAZORPAY_KEY_ID}
-      - RAZORPAY_KEY_SECRET=${RAZORPAY_KEY_SECRET}
-      - RAZORPAY_WEBHOOK_SECRET=${RAZORPAY_WEBHOOK_SECRET}
-      - GOOGLE_OAUTH_CLIENT_ID=${GOOGLE_OAUTH_CLIENT_ID}
-      - JWT_SECRET=${JWT_SECRET}
+      PORT: ${PORT}
+      DB_URL: ${DB_URL}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      CLOUDAMQP_URL: ${CLOUDAMQP_URL}
+      ADMIN_SERVER_URL: ${ADMIN_SERVER_URL}
+      ADMIN_USERNAME: ${ADMIN_USERNAME}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET}
+      RAZORPAY_KEY_ID: ${RAZORPAY_KEY_ID}
+      RAZORPAY_KEY_SECRET: ${RAZORPAY_KEY_SECRET}
+      RAZORPAY_WEBHOOK_SECRET: ${RAZORPAY_WEBHOOK_SECRET}
+      GOOGLE_OAUTH_CLIENT_ID: ${GOOGLE_OAUTH_CLIENT_ID}
+      JWT_SECRET: ${JWT_SECRET}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
 
-  carlistnerservice:
-    build: ./CarListnerService
-    ports:
-      - "8082:8080"
-    container_name: carlistnerservice
+  # ---------------- Email Listener ----------------
+  carlistenerservice:
+    build:
+      context: ./CarListnerService
+      dockerfile: Dockerfile
+    container_name: carlistenerservice
+    hostname: carlistenerservice
+    restart: always
+    depends_on:
+      - carservice
+    networks:
+      - shared_net
+    expose:
+      - "8080"
     volumes:
       - ./CarListnerService/logs:/app/logs
     environment:
-      - PORT=${PORT}
-      - DB_URL=${DB_URL}
-      - DB_USERNAME=${DB_USERNAME}
-      - DB_PASSWORD=${DB_PASSWORD}
-      - CLOUDAMQP_URL=${CLOUDAMQP_URL}
-      - MAIL_USERNAME=${MAIL_USERNAME}
-      - MAIL_PASSWORD=${MAIL_PASSWORD}
+      PORT: ${PORT}
+      DB_URL: ${DB_URL}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      CLOUDAMQP_URL: ${CLOUDAMQP_URL}
+      MAIL_USERNAME: ${MAIL_USERNAME}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
 
+  # ---------------- Spring Boot Admin ----------------
   caradminmonitor:
-    build: ./CarAdminMonitor
-    ports:
-      - "8083:8080"
+    build:
+      context: ./CarAdminMonitor
+      dockerfile: Dockerfile
     container_name: caradminmonitor
+    hostname: caradminmonitor
+    restart: always
+    depends_on:
+      - carservice
+    networks:
+      - shared_net
+    expose:
+      - "8080"
     volumes:
       - ./CarAdminMonitor/logs:/app/logs
     environment:
-      - PORT=${PORT}
+      PORT: ${PORT}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # ---------------- Angular Frontend ----------------
+  car-frontend:
+    build:
+      context: ./CarWeb
+      dockerfile: Dockerfile
+    container_name: car-frontend
+    hostname: car-frontend
+    restart: always
+    networks:
+      - shared_net
+    expose:
+      - "80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O- http://localhost || exit 1"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+networks:
+  shared_net:
+    external: true
+    name: shared_net
