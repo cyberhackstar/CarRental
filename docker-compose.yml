@@ -72,29 +72,7 @@ services:
       start_period: 60s
 
   # ---------------- Spring Boot Admin ----------------
-  caradminmonitor:
-    build:
-      context: ./CarAdminMonitor
-      dockerfile: Dockerfile
-    container_name: caradminmonitor
-    hostname: caradminmonitor
-    restart: always
-    depends_on:
-      - carservice
-    networks:
-      - shared_net
-    expose:
-      - "8080"
-    volumes:
-      - ./CarAdminMonitor/logs:/app/logs
-    environment:
-      PORT: ${PORT}
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 60s
+  
 
   # ---------------- Angular Frontend ----------------
   car-frontend:
