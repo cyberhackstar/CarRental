@@ -86,6 +86,7 @@ private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
                 "https://carrentalwebapp.onrender.com",
                 "http://localhost:4200",
                 "https://carrentalservice.help",
+                "https://rentalservicecar.vercel.app",
                 "https://carrentalwebapp.netlify.app"
         ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
