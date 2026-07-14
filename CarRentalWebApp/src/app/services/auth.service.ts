@@ -13,7 +13,7 @@ export interface LoginResponse {
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl = 'https://carrentalservice.neelahouse.cloud/carservice/api';
+  private baseUrl = 'https://carrentalservice.neelahouse.cloud/api';
 
   constructor(private http: HttpClient) {}
 
